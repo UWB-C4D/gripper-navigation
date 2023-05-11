@@ -1,0 +1,1239 @@
+Model {
+  Name                    "mavlink_task"
+  Version                 3.00
+  #RexVersion             "2.52.0 rev. 15123 - REXCONV, Date 2023-3-29"
+  ShowPortLabels          on
+  SavedCharacterEncoding  "UTF-8"
+  MaskType                "REX sequence"
+  MaskIconFrame           on
+  MaskIconOpaque          on
+  MaskIconRotate          "none"
+  MaskIconUnits           "autoscale"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "center"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "mavlink_task"
+    ZoomFactor              110
+    Location                [299, 33, 1432, 695]
+    #GUID                   13a2f1bf-adc5-42ba-9f2b-f576939a6341
+    Block {
+      BlockType               Inport
+      Name                    "aruco_SEND"
+      Position                [30, 183, 60, 197]
+      Port                    1
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   7ee7b1aa-2c87-49c2-a2b0-5e1fb8900733
+    }
+    Block {
+      BlockType               Inport
+      Name                    "aruco_ENABLE"
+      Position                [30, 223, 60, 237]
+      Port                    2
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   de9449ae-0078-4b25-8eed-b9b155c51cec
+    }
+    Block {
+      BlockType               Inport
+      Name                    "aruco_marker_id"
+      Position                [30, 298, 60, 312]
+      Port                    3
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   a01696ce-7a6b-4b0e-abcb-3991b4c3fa0f
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CMP_by_name"
+      Ports                   [6, 4, 0, 0, 0]
+      Position                [910, 625, 1030, 685]
+      SourceBlock             "MAVLink_library/CMP_by_name"
+      FontSize                10
+      ShowPortLabels          on
+      #MaskTypeString         "string"
+      name                    "aruco"
+      #GUID                   c91658e2-3545-4ad0-a64c-7e624f443a90
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [975, 28, 995, 42]
+      SourceBlock             "mathlib/CNB"
+      YCN                     on
+      FontSize                10
+      #GUID                   0673cd48-21b3-4683-9253-9be69d3d4a84
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB1"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [1215, 438, 1235, 452]
+      SourceBlock             "mathlib/CNB"
+      YCN                     off
+      FontSize                10
+      #GUID                   8e7249bc-f053-4431-a8c7-c0d8705189f2
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB_Diagnostics"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [315, 33, 335, 47]
+      SourceBlock             "mathlib/CNB"
+      YCN                     off
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   53777c34-8e55-496c-8168-820f21105f4d
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB_ENABLE"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [120, 233, 140, 247]
+      SourceBlock             "mathlib/CNB"
+      YCN                     on
+      FontSize                10
+      BackgroundColor         "gray"
+      #GUID                   1de322b3-479d-4c3e-b000-fc203a7f23dd
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB_LOGGING"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [315, 63, 335, 77]
+      SourceBlock             "mathlib/CNB"
+      YCN                     off
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   83ec1529-76d6-4b98-ab48-bbbf1eed24a4
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNB_SAVE_IMAGE_PREVIEW"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [140, 533, 160, 547]
+      SourceBlock             "mathlib/CNB"
+      YCN                     off
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   75b1dfc5-75f4-4bb7-89b0-df65943e7bfb
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNE_MAV_SEVERITY"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [295, 93, 370, 107]
+      SourceBlock             "mathlib/CNE"
+      yenum                   "6: Info"
+      pupstr                  "3: Error|4: Warning|6: Info|7: Verbose"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   eca09c01-e19d-491a-974e-c35ec9b5903b
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNE_command"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [280, 207, 425, 223]
+      SourceBlock             "mathlib/CNE"
+      yenum                   "31010: MAV_CMD_USER_1"
+      pupstr                  "31010: MAV_CMD_USER_1|31011: MAV_CMD_USER_2|31012: MAV_CMD_USER_3|31013: MAV_CMD_USER_4"
+      FontSize                10
+      #GUID                   19690ee2-8e14-4e7d-a62c-0759aada883c
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNE_command1"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [150, 582, 295, 598]
+      SourceBlock             "mathlib/CNE"
+      yenum                   "31012: MAV_CMD_USER_3"
+      pupstr                  "31010: MAV_CMD_USER_1|31011: MAV_CMD_USER_2|31012: MAV_CMD_USER_3|31013: MAV_CMD_USER_4"
+      FontSize                10
+      #GUID                   c1d83506-f72b-4bbb-8f82-e974f05c3de2
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNE_resolution"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [280, 333, 355, 347]
+      SourceBlock             "mathlib/CNE"
+      yenum                   "4: 1920x1080"
+      pupstr                  "0: 640x480|1: 800x600|2: 1280x720|3: 1280x960|4: 1920x1080|5: 1920x1200"
+      FontSize                10
+      #GUID                   a44236ab-0660-43da-980b-d7692ac6cc3b
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNI_camera_id"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [280, 258, 300, 272]
+      SourceBlock             "mathlib/CNI"
+      icn                     0
+      FontSize                10
+      #GUID                   616b713d-07d7-436c-9e4c-a2365d5707bf
+       vtype    "4: Long (I32)"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNI_image_modulo"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [75, 508, 95, 522]
+      SourceBlock             "mathlib/CNI"
+      icn                     0
+      FontSize                10
+      #GUID                   ab8f6e09-ae88-410d-906e-a37f605c0045
+       vtype    "4: Long (I32)"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNI_marker_id"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [120, 308, 140, 322]
+      SourceBlock             "mathlib/CNI"
+      icn                     12
+      FontSize                10
+      BackgroundColor         "gray"
+      #GUID                   1e81b52d-eebe-4594-939e-04443cd9a677
+       vtype    "4: Long (I32)"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNR_marker_length_mm"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [340, 283, 360, 297]
+      SourceBlock             "mathlib/CNR"
+      ycn                     20
+      FontSize                10
+      #GUID                   0119150c-f08e-4357-ab5e-6db954b9a7d5
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNR_period_s"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [785, 58, 805, 72]
+      SourceBlock             "mathlib/CNR"
+      ycn                     5
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   9f2ad607-a949-4627-b9e7-2940b8568d85
+    }
+    Block {
+      BlockType               Reference
+      Name                    "Change_period"
+      Ports                   [2, 1, 0, 0, 0]
+      Position                [840, 34, 940, 76]
+      SourceBlock             "MAVLink_library/Change_period"
+      FontSize                10
+      #OpenSubsysOnDblClick   on
+      ShowPortLabels          on
+      #MaskTypeString         "int16,int16"
+      TgtSysID                254
+      TgtCompID               173
+      #GUID                   41b7b042-e9e5-4741-be71-43d10e9d73cc
+    }
+    Block {
+      BlockType               Reference
+      Name                    "DIF_"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [135, 458, 160, 472]
+      SourceBlock             "mathlib/DIF"
+      ISSF                    off
+      #GUID                   115fdae1-ed9b-4b1f-bac3-1de5b24c7e84
+    }
+    Block {
+      BlockType               Reference
+      Name                    "DIF_1"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [235, 473, 260, 487]
+      SourceBlock             "mathlib/DIF"
+      ISSF                    off
+      #GUID                   2c92d060-1678-4b3d-ad86-67ac3ba3e199
+    }
+    Block {
+      BlockType               Reference
+      Name                    "Diagnostics"
+      Ports                   [3, 5, 0, 0, 0]
+      Position                [390, 22, 510, 118]
+      SourceBlock             "MAVLink_library/Diagnostics"
+      FontSize                10
+      ShowPortLabels          on
+      #OpenSubsysOnDblClick   on
+      #MaskTypeString         "int16,int16"
+      SrcSystemID             254
+      SrcComponentID          173
+      #GUID                   3a2d8df3-32c5-441f-9f1e-23120b0051c9
+    }
+    Block {
+      BlockType               Goto
+      Name                    "Goto"
+      Position                [1060, 83, 1095, 97]
+      ShowName                off
+      GotoTag                 "tstamp"
+      TagVisibility           "global"
+      FontSize                10
+      BackgroundColor         "gray"
+      #GUID                   9888a179-ed2a-4d48-a4b5-4fccfcfe9b97
+    }
+    Block {
+      BlockType               Reference
+      Name                    "LIN_R2D"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [920, 468, 945, 482]
+      SourceBlock             "mathlib/LIN"
+      u1                      0
+      y1                      0
+      u2                      "3.14159265359"
+      y2                      180
+      FontSize                10
+      #GUID                   e1603aa8-aad1-4305-82fc-dfea4be738db
+    }
+    Block {
+      BlockType               Reference
+      Name                    "LIN_R2D1"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [970, 448, 995, 462]
+      SourceBlock             "mathlib/LIN"
+      u1                      0
+      y1                      0
+      u2                      "3.14159265359"
+      y2                      180
+      FontSize                10
+      #GUID                   42e1c223-a459-475b-a9f7-1bc0cd9dec12
+    }
+    Block {
+      BlockType               Reference
+      Name                    "LIN_R2D2"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [920, 428, 945, 442]
+      SourceBlock             "mathlib/LIN"
+      u1                      0
+      y1                      0
+      u2                      "3.14159265359"
+      y2                      180
+      FontSize                10
+      #GUID                   6b5da501-a80b-48c8-8c84-986ac226ce96
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MAV__RECV_DEBUG_VECT"
+      Ports                   [1, 9, 0, 0, 0]
+      Position                [730, 577, 870, 683]
+      SourceBlock             "mavlinklib/MAV_RECV_DEBUG_VECT"
+      SrcSystemID             254
+      SrcComponentID          173
+      TgtSystemID             -1
+      TgtComponentID          -1
+      TimeoutMS               1000
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   d1c3e18e-1298-4344-a460-b3f798b4e541
+      #SignalWatchMask        ff03
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MAV__RECV_HEARTBEAT"
+      Ports                   [1, 10, 0, 0, 0]
+      Position                [30, 15, 170, 135]
+      SourceBlock             "mavlinklib/MAV_RECV_HEARTBEAT"
+      SrcSystemID             254
+      SrcComponentID          173
+      TgtSystemID             -1
+      TgtComponentID          -1
+      TimeoutMS               0
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   4afd6ebe-de00-4877-a31f-3a6b2f4d5d9c
+      #SignalWatchMask        ff07
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MAV__RECV_VISION_POSITION_ESTIMATE"
+      Ports                   [1, 13, 0, 0, 0]
+      Position                [730, 270, 870, 520]
+      SourceBlock             "mavlinklib/MAV_RECV_VISION_POSITION_ESTIMATE"
+      SrcSystemID             254
+      SrcComponentID          173
+      TgtSystemID             -1
+      TgtComponentID          -1
+      TimeoutMS               1000
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   530ed147-6bde-4835-9e02-bf5e2f6791d0
+      #SignalWatchMask        ff3f00
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MP"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [755, 38, 770, 52]
+      SourceBlock             "genlib/MP"
+      BSTATE                  off
+      pwidth                  1
+      RPTF                    off
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   6191edb4-9404-438f-8239-d080599369b2
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MP_RESET_SERVICE"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [765, 108, 780, 122]
+      SourceBlock             "genlib/MP"
+      BSTATE                  off
+      pwidth                  1
+      RPTF                    off
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   81880f63-690d-4cfb-bde6-2e14c9a7f169
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MP_SEND"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [120, 193, 135, 207]
+      SourceBlock             "genlib/MP"
+      BSTATE                  off
+      pwidth                  1
+      RPTF                    off
+      FontSize                10
+      BackgroundColor         "gray"
+      #GUID                   38daebf7-8973-4f8f-a9b9-40f370ad706b
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MP_SEND1"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [75, 448, 90, 462]
+      SourceBlock             "genlib/MP"
+      BSTATE                  off
+      pwidth                  1
+      RPTF                    off
+      FontSize                10
+      #GUID                   553c1845-51a1-4d81-b781-d6b5decad6f9
+    }
+    Block {
+      BlockType               Reference
+      Name                    "ORQUAD"
+      Ports                   [4, 2, 0, 0, 0]
+      Position                [350, 453, 385, 497]
+      SourceBlock             "logiclib/ORQUAD"
+      nl                      0
+      #GUID                   3cd9f56f-9368-45f3-865d-102c63fadaa7
+    }
+    Block {
+      BlockType               Reference
+      Name                    "OR_"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [200, 183, 235, 207]
+      SourceBlock             "logiclib/OR"
+      #GUID                   8c631cf2-bd57-4077-b416-95b795a67e1a
+    }
+    Block {
+      BlockType               Reference
+      Name                    "REL"
+      Ports                   [2, 1, 0, 0, 0]
+      Position                [180, 458, 205, 482]
+      SourceBlock             "mathlib/REL"
+      irel                    "2: inequality (!=)"
+      FontSize                10
+      #GUID                   50e03595-4b95-4237-bd2e-8cbb1e27c0e4
+    }
+    Block {
+      BlockType               Reference
+      Name                    "REL1"
+      Ports                   [2, 1, 0, 0, 0]
+      Position                [285, 473, 310, 497]
+      SourceBlock             "mathlib/REL"
+      irel                    "2: inequality (!=)"
+      FontSize                10
+      #GUID                   b604105a-6d3d-4fee-9718-c2cc66b0146d
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "RESET_aruco_detector"
+      Ports                   [1, 0, 0, 0, 0]
+      Position                [875, 107, 920, 123]
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      #GUID                   dc249249-c483-410a-ae1e-692795675e8c
+      System {
+        Name                    "RESET_aruco_detector"
+        __CopyByReference       off
+        #GUID                   dc249249-c483-410a-ae1e-692795675e8c
+        Block {
+          BlockType               Inport
+          Name                    "RESET"
+          Position                [35, 133, 65, 147]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         "yellow"
+          #GUID                   3e0528ed-a160-4de2-9a2a-f73f2bef768a
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNA"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [100, 13, 130, 27]
+          SourceBlock             "matrixlib/CNA"
+          filename                ""
+          TRN                     off
+          nmax                    100
+          etype                   "8: Double (F64)"
+          acn                     [0 1 2 3]
+          #GUID                   c40203a3-8a3e-4aea-83e8-40e9d40f1757
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EDGE_1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [100, 133, 125, 147]
+          SourceBlock             "logiclib/EDGE"
+          iedge                   "1: Rising edge"
+          FontSize                10
+          #GUID                   64dea5e2-afff-4496-8588-45952a05e456
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EPC"
+          Ports                   [12, 15, 0, 0, 0]
+          Position                [165, 8, 235, 192]
+          SourceBlock             "speclib/EPC"
+          cmd                     "systemctl restart aruco-detector.service"
+          ifns                    "epc_uVec1"
+          ofns                    "epc_yVec1"
+          sl                      85
+          ifm                     1
+          format                  "1: Space-delimited values"
+          nmax                    100
+          FontSize                10
+          #GUID                   60a9eb2e-5cb8-46cb-91be-a9757f594920
+        }
+        Line {
+          SrcBlock                "CNA"
+          SrcPort                 1
+          DstBlock                "EPC"
+          DstPort                 1
+          #GUID                   dd030473-8f97-4309-beda-a09142e2fc90
+        }
+        Line {
+          SrcBlock                "EDGE_1"
+          SrcPort                 1
+          DstBlock                "EPC"
+          DstPort                 9
+          #GUID                   158d5102-2bc5-4d02-9ada-10cc59df370d
+        }
+        Line {
+          SrcBlock                "RESET"
+          SrcPort                 1
+          DstBlock                "EDGE_1"
+          DstPort                 1
+          #GUID                   9236db62-b3fc-493e-9ede-3b9a2d07fc8a
+        }
+      }
+    }
+    Block {
+      BlockType               Reference
+      Name                    "RTOV"
+      Ports                   [9, 1, 0, 0, 0]
+      Position                [1130, 351, 1170, 519]
+      SourceBlock             "matrixlib/RTOV"
+      nmax                    8
+      offset                  0
+      n                       8
+      etype                   "8: Double (F64)"
+      #GUID                   416d0f53-533c-4a4f-8bdf-fc6e019e437e
+    }
+    Block {
+      BlockType               Reference
+      Name                    "SEND_COMMAND_LONG1"
+      Ports                   [9, 3, 0, 0, 0]
+      Position                [460, 170, 590, 410]
+      SourceBlock             "MAVLink_library/SEND_COMMAND_LONG"
+      ShowPortLabels          on
+      FontSize                10
+      #OpenSubsysOnDblClick   off
+      #MaskTypeString         "int16,int16,double"
+      TgtSysID                254
+      TgtCompID               173
+      Timeout                 1
+      BackgroundColor         "yellow"
+      #GUID                   b20c79e5-c049-459a-a4e0-3261d81f91cc
+    }
+    Block {
+      BlockType               Reference
+      Name                    "SEND_COMMAND_LONG2"
+      Ports                   [9, 3, 0, 0, 0]
+      Position                [460, 445, 590, 685]
+      SourceBlock             "MAVLink_library/SEND_COMMAND_LONG"
+      ShowPortLabels          on
+      FontSize                10
+      #OpenSubsysOnDblClick   off
+      #MaskTypeString         "int16,int16,double"
+      TgtSysID                254
+      TgtCompID               173
+      Timeout                 1
+      BackgroundColor         "yellow"
+      #GUID                   64219d69-0710-4c59-96b4-c5c8c02ff5cc
+    }
+    Block {
+      BlockType               Reference
+      Name                    "SEND_HEARTBEAT"
+      Ports                   [1, 0, 0, 0, 0]
+      Position                [1035, 20, 1095, 50]
+      SourceBlock             "MAVLink_library/HEARTBEAT"
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      #GUID                   e753d092-2539-4853-8980-40ab316a3436
+    }
+    Block {
+      BlockType               Reference
+      Name                    "SSW"
+      Ports                   [3, 1, 0, 0, 0]
+      Position                [220, 298, 250, 332]
+      SourceBlock             "analoglib/SSW"
+      #GUID                   6cafb54e-84b2-4aa7-b10c-729e3900f441
+    }
+    Block {
+      BlockType               Reference
+      Name                    "SSW1"
+      Ports                   [3, 1, 0, 0, 0]
+      Position                [220, 223, 250, 257]
+      SourceBlock             "analoglib/SSW"
+      #GUID                   9d6e18ab-f3cc-44b9-a14e-69d98895dd11
+    }
+    Block {
+      BlockType               Reference
+      Name                    "TRNDV"
+      Ports                   [2, 1, 0, 0, 0]
+      Position                [1265, 428, 1310, 452]
+      SourceBlock             "arclib/TRNDV"
+      n                       6
+      l                       1000
+      btype                   "8: Double (F64)"
+      pfac                    1
+      afac                    0
+      arc                     0
+      id                      1
+      Title                   "Trend Title"
+      timesrc                 "1: CORETIMER"
+      ViewConfig              "{\"View\":{\"Data\":{\"History\":13.107200000000004,\"XAxisTimeFormat\":66},\"PropertiesModel\":[{\"Id\":0,\"Items\":[{\"Color\":\"#ff0000\",\"Id\":0,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"X\",\"SceneNumber\":2},{\"Color\":\"#669900\",\"Id\":1,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"Y\",\"SceneNumber\":2},{\"Color\":\"#000099\",\"Id\":2,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"Z\",\"SceneNumber\":2},{\"Color\":\"#9966cc\",\"Id\":3,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"roll\",\"SceneNumber\":2},{\"Color\":\"#339999\",\"Id\":4,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"pitch\",\"SceneNumber\":2},{\"Color\":\"#996600\",\"Id\":5,\"IsActive\":true,\"LineWidth\":2,\"Name\":\"yaw\",\"SceneNumber\":2}]}],\"Scenes\":[{\"Id\":2}],\"sync\":false}}"
+      FontSize                10
+      #GUID                   daffeaf8-493f-4fe8-8aeb-af11b8fea31b
+       SigNames    ""
+    }
+    Block {
+      BlockType               Reference
+      Name                    "tstamp"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [970, 82, 1000, 98]
+      SourceBlock             "MAVLink_library/tstamp"
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      #GUID                   df5c86c3-db95-4098-975b-1952672ae6d2
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_FOUND"
+      Position                [1280, 118, 1310, 132]
+      Port                    1
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   b931f499-c182-44c4-9c69-884f94183e1d
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_x"
+      Position                [1280, 148, 1310, 162]
+      Port                    2
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   11c34be2-fd9f-4520-9400-babcd844f633
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_y"
+      Position                [1280, 178, 1310, 192]
+      Port                    3
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   ded02c4d-d676-49f6-8d8e-f93e98438946
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_z"
+      Position                [1280, 208, 1310, 222]
+      Port                    4
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   3a0cc916-c783-47bb-ab7f-39edfbadcc58
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_roll"
+      Position                [1280, 238, 1310, 252]
+      Port                    5
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   fc127c7f-6d39-41b6-abbd-81050b472c69
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_pitch"
+      Position                [1280, 268, 1310, 282]
+      Port                    6
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   d7dfd76a-f73d-4a46-9dae-49dcd223a2ca
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_yaw"
+      Position                [1280, 298, 1310, 312]
+      Port                    7
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   35b6718f-c831-41c1-aa8a-2c93574762bf
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_curr_ENABLE"
+      Position                [1280, 563, 1310, 577]
+      Port                    8
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   cef92626-64b1-4d96-8ff1-935c7589f229
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_curr_marker_id"
+      Position                [1280, 598, 1310, 612]
+      Port                    9
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   572f24ef-a01b-4e20-96a3-2f98338f61e9
+    }
+    Block {
+      BlockType               Outport
+      Name                    "aruco_curr_marker_lenght"
+      Position                [1280, 633, 1310, 647]
+      Port                    10
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "yellow"
+      #GUID                   8bf2dab3-0b75-43a8-888b-6e61232d22a3
+    }
+    Line {
+      SrcBlock                "CMP_by_name"
+      SrcPort                 2
+      Points                  [175, 0; 0, -80]
+      DstBlock                "aruco_curr_ENABLE"
+      DstPort                 1
+      #GUID                   8751c8a1-a740-4874-b021-2224691ab22a
+    }
+    Line {
+      SrcBlock                "CMP_by_name"
+      SrcPort                 3
+      Points                  [185, 0; 0, -60]
+      DstBlock                "aruco_curr_marker_id"
+      DstPort                 1
+      #GUID                   fbb7270a-6b20-43f0-a2c9-df112a9499a5
+    }
+    Line {
+      SrcBlock                "CMP_by_name"
+      SrcPort                 4
+      Points                  [195, 0; 0, -40]
+      DstBlock                "aruco_curr_marker_lenght"
+      DstPort                 1
+      #GUID                   d9cb4b1a-2e76-436c-85af-dc3106ad579d
+    }
+    Line {
+      SrcBlock                "CNB"
+      SrcPort                 1
+      DstBlock                "SEND_HEARTBEAT"
+      DstPort                 1
+      #GUID                   58adc3ed-9f48-41a5-bc07-94d817c4ead4
+    }
+    Line {
+      SrcBlock                "CNB1"
+      SrcPort                 1
+      DstBlock                "TRNDV"
+      DstPort                 2
+      #GUID                   02feba43-fc16-40e1-8c2e-6f43e6b8686f
+    }
+    Line {
+      SrcBlock                "CNB_Diagnostics"
+      SrcPort                 1
+      DstBlock                "Diagnostics"
+      DstPort                 1
+      #GUID                   2fdcea80-e575-4ab1-b616-0186b0ab259d
+    }
+    Line {
+      SrcBlock                "CNB_ENABLE"
+      SrcPort                 1
+      DstBlock                "SSW1"
+      DstPort                 2
+      #GUID                   6f8ab411-50bb-49fb-9c22-c14a47da9868
+    }
+    Line {
+      SrcBlock                "CNB_LOGGING"
+      SrcPort                 1
+      DstBlock                "Diagnostics"
+      DstPort                 2
+      #GUID                   e60522f1-286d-4fa5-860d-26b327c9ab14
+    }
+    Line {
+      SrcBlock                "CNB_SAVE_IMAGE_PREVIEW"
+      SrcPort                 1
+      Points                  [5, 0]
+      #GUID                   5c72a54b-aa51-42b2-8538-59f7911078f0
+      Branch {
+        Points                  [50, 0]
+        DstBlock                "DIF_1"
+        DstPort                 1
+        #GUID                   44d41591-49c5-45e2-8b78-89fa32ec0eec
+      }
+      Branch {
+        DstBlock                "SEND_COMMAND_LONG2"
+        DstPort                 4
+        #GUID                   b0780969-7709-44d6-bad3-a8d1829236a8
+      }
+    }
+    Line {
+      SrcBlock                "CNE_MAV_SEVERITY"
+      SrcPort                 1
+      DstBlock                "Diagnostics"
+      DstPort                 3
+      #GUID                   b2a21a69-f04d-452e-ab75-35265b473fc3
+    }
+    Line {
+      SrcBlock                "CNE_command"
+      SrcPort                 1
+      DstBlock                "SEND_COMMAND_LONG1"
+      DstPort                 2
+      #GUID                   95b26149-8a44-432a-a1dc-5c6a61ca38bd
+    }
+    Line {
+      SrcBlock                "CNE_command1"
+      SrcPort                 1
+      Points                  [145, 0]
+      DstBlock                "SEND_COMMAND_LONG2"
+      DstPort                 2
+      #GUID                   aefda5f8-3817-4100-afd2-0a1cde8e6887
+    }
+    Line {
+      SrcBlock                "CNE_resolution"
+      SrcPort                 1
+      DstBlock                "SEND_COMMAND_LONG1"
+      DstPort                 7
+      #GUID                   0ad7a4f8-3156-4ab1-8569-fa9922b894f1
+    }
+    Line {
+      SrcBlock                "CNI_camera_id"
+      SrcPort                 1
+      DstBlock                "SEND_COMMAND_LONG1"
+      DstPort                 4
+      #GUID                   eec99f0d-60a6-49a4-9447-0ff1c7420066
+    }
+    Line {
+      SrcBlock                "CNI_image_modulo"
+      SrcPort                 1
+      Points                  [20, 0]
+      #GUID                   01fc39fa-ae7d-4592-bd87-8f29f5296dfc
+      Branch {
+        DstBlock                "DIF_"
+        DstPort                 1
+        #GUID                   4c931926-f81e-46d1-a408-9461b99a21e3
+      }
+      Branch {
+        DstBlock                "SEND_COMMAND_LONG2"
+        DstPort                 3
+        #GUID                   78a7f298-155f-4f81-ad87-a2f341e769e6
+      }
+    }
+    Line {
+      SrcBlock                "CNI_marker_id"
+      SrcPort                 1
+      DstBlock                "SSW"
+      DstPort                 2
+      #GUID                   90a863b0-e500-4305-a5a3-ca0141163d68
+    }
+    Line {
+      SrcBlock                "CNR_marker_length_mm"
+      SrcPort                 1
+      DstBlock                "SEND_COMMAND_LONG1"
+      DstPort                 5
+      #GUID                   9c7f510b-b70a-4c97-a19b-7009d417ad5b
+    }
+    Line {
+      SrcBlock                "CNR_period_s"
+      SrcPort                 1
+      DstBlock                "Change_period"
+      DstPort                 2
+      #GUID                   ac16624a-e534-4ec4-be5a-e8a16dee9331
+    }
+    Line {
+      SrcBlock                "DIF_"
+      SrcPort                 1
+      DstBlock                "REL"
+      DstPort                 1
+      #GUID                   a389a356-4ebb-454f-aa56-f975d7d08883
+    }
+    Line {
+      SrcBlock                "DIF_1"
+      SrcPort                 1
+      DstBlock                "REL1"
+      DstPort                 1
+      #GUID                   e49c27b1-0bcd-4130-a999-638baf9dfed2
+    }
+    Line {
+      SrcBlock                "LIN_R2D"
+      SrcPort                 1
+      Points                  [120, 0]
+      #GUID                   813e8a1a-161e-4c57-8a03-ef43f39af5be
+      Branch {
+        DstBlock                "RTOV"
+        DstPort                 7
+        #GUID                   e08f54fb-3f36-42d8-a4da-aecbd99b1218
+      }
+      Branch {
+        Points                  [0, -170]
+        DstBlock                "aruco_yaw"
+        DstPort                 1
+        #GUID                   4a3847e3-9e80-4fba-910c-0a9fbe24f296
+      }
+    }
+    Line {
+      SrcBlock                "LIN_R2D1"
+      SrcPort                 1
+      Points                  [60, 0]
+      #GUID                   d5e26bef-c735-4526-b1d8-9c50e77dd275
+      Branch {
+        DstBlock                "RTOV"
+        DstPort                 6
+        #GUID                   e6850362-270d-4e48-bd14-a8da0d4f9aa4
+      }
+      Branch {
+        Points                  [0, -180]
+        DstBlock                "aruco_pitch"
+        DstPort                 1
+        #GUID                   12497a54-aa24-4350-9e25-af87eeba0847
+      }
+    }
+    Line {
+      SrcBlock                "LIN_R2D2"
+      SrcPort                 1
+      Points                  [100, 0]
+      #GUID                   9a9b6339-b814-40b8-ae7f-1d024388f768
+      Branch {
+        DstBlock                "RTOV"
+        DstPort                 5
+        #GUID                   f15eaa85-36af-40a6-9422-6d5a7c967f6d
+      }
+      Branch {
+        Points                  [0, -190]
+        DstBlock                "aruco_roll"
+        DstPort                 1
+        #GUID                   44857718-9e63-4ae0-a739-d6eff8e9b648
+      }
+    }
+    Line {
+      SrcBlock                "MAV__RECV_DEBUG_VECT"
+      SrcPort                 5
+      DstBlock                "CMP_by_name"
+      DstPort                 1
+      #GUID                   85099589-97e7-4c3b-a22d-37d7dfcff41f
+    }
+    Line {
+      SrcBlock                "MAV__RECV_DEBUG_VECT"
+      SrcPort                 6
+      DstBlock                "CMP_by_name"
+      DstPort                 2
+      #GUID                   2396faba-3bf8-4c96-aba6-bfa5c00b6fce
+    }
+    Line {
+      SrcBlock                "MAV__RECV_DEBUG_VECT"
+      SrcPort                 7
+      DstBlock                "CMP_by_name"
+      DstPort                 3
+      #GUID                   d25a5b1e-8e66-4796-bdc5-74a1314a5542
+    }
+    Line {
+      SrcBlock                "MAV__RECV_DEBUG_VECT"
+      SrcPort                 8
+      DstBlock                "CMP_by_name"
+      DstPort                 4
+      #GUID                   f691116c-fd94-44f1-a11d-bc9aa473652c
+    }
+    Line {
+      SrcBlock                "MAV__RECV_DEBUG_VECT"
+      SrcPort                 9
+      DstBlock                "CMP_by_name"
+      DstPort                 5
+      #GUID                   51dc8318-161a-42eb-928d-41c76b9b0757
+    }
+    Line {
+      SrcBlock                "MAV__RECV_VISION_POSITION_ESTIMATE"
+      SrcPort                 2
+      Points                  [140, 0; 0, -170]
+      DstBlock                "aruco_FOUND"
+      DstPort                 1
+      #GUID                   a36aaddc-a667-49c3-ada2-cc42d25963cd
+    }
+    Line {
+      SrcBlock                "MAV__RECV_VISION_POSITION_ESTIMATE"
+      SrcPort                 6
+      Points                  [145, 0]
+      #GUID                   fedf84ff-201b-46e4-b05b-ed0a833bc70f
+      Branch {
+        DstBlock                "RTOV"
+        DstPort                 2
+        #GUID                   d5ea322e-5acb-4c5c-9ace-2990a812d098
+      }
+      Branch {
+        Points                  [0, -220]
+        DstBlock                "aruco_x"
+        DstPort                 1
+        #GUID                   99546ad7-c36a-480e-824c-a573e7157573
+      }
+    }
+    Line {
+      SrcBlock                "MAV__RECV_VISION_POSITION_ESTIMATE"
+      SrcPort                 7
+      Points                  [155, 0]
+      #GUID                   0dc9cd0e-a671-4a03-9d61-cab3228cd04f
+      Branch {
+        DstBlock                "RTOV"
+        DstPort                 3
+        #GUID                   a69ebe57-6c45-4088-9386-bb2ffd371b6c
+      }
+      Branch {
+        Points                  [0, -210]
+        DstBlock                "aruco_y"
+        DstPort                 1
+        #GUID                   582d1e17-4afd-479b-b7e5-e55135154e77
+      }
+    }
+    Line {
+      SrcBlock                "MAV__RECV_VISION_POSITION_ESTIMATE"
+      SrcPort                 8
+      Points                  [165, 0]
+      #GUID                   03322966-e56f-4e63-abf3-7c59738b2853
+      Branch {
+        DstBlock                "RTOV"
+        DstPort                 4
+        #GUID                   23ae23cc-fb11-4d5f-b5f2-de93f02f7f4c
+      }
+      Branch {
+        Points                  [0, -200]
+        DstBlock                "aruco_z"
+        DstPort                 1
+        #GUID                   8936151e-2e8a-4015-90ff-3f7544d5b05d
+      }
+    }
+    Line {
+      SrcBlock                "MAV__RECV_VISION_POSITION_ESTIMATE"
+      SrcPort                 9
+      DstBlock                "LIN_R2D2"
+      DstPort                 1
+      #GUID                   2e435480-4c40-4d70-98f6-652d00aa3657
+    }
+    Line {
+      SrcBlock                "MAV__RECV_VISION_POSITION_ESTIMATE"
+      SrcPort                 10
+      DstBlock                "LIN_R2D1"
+      DstPort                 1
+      #GUID                   83ce6b32-de18-4d6c-baa0-a9573d975a19
+    }
+    Line {
+      SrcBlock                "MAV__RECV_VISION_POSITION_ESTIMATE"
+      SrcPort                 11
+      DstBlock                "LIN_R2D"
+      DstPort                 1
+      #GUID                   94c35df4-2b79-47e4-b246-122bcf8e0d64
+    }
+    Line {
+      SrcBlock                "MP"
+      SrcPort                 1
+      DstBlock                "Change_period"
+      DstPort                 1
+      #GUID                   fede2a3f-6a68-4261-943c-adf5c70bf75b
+    }
+    Line {
+      SrcBlock                "MP_RESET_SERVICE"
+      SrcPort                 1
+      DstBlock                "RESET_aruco_detector"
+      DstPort                 1
+      #GUID                   da0991a4-96fe-4e65-9e36-ae712cc08036
+    }
+    Line {
+      SrcBlock                "MP_SEND"
+      SrcPort                 1
+      Points                  [45, 0]
+      #GUID                   aa5ec7ef-ec68-4242-a60f-59309f117b53
+      Branch {
+        DstBlock                "OR_"
+        DstPort                 2
+        #GUID                   d3d861f0-2920-4046-a4ef-d91b23db2e21
+      }
+      Branch {
+        Points                  [0, 50]
+        #GUID                   cfdd0d47-e5e6-4658-bdf0-a1968fed86a3
+        Branch {
+          Points                  [0, 75]
+          DstBlock                "SSW"
+          DstPort                 3
+          #GUID                   776e5dda-e576-4bd4-9885-6109a047f3a8
+        }
+        Branch {
+          DstBlock                "SSW1"
+          DstPort                 3
+          #GUID                   c5590e9e-aed2-44bc-b35d-c89bbf0af9ab
+        }
+      }
+    }
+    Line {
+      SrcBlock                "MP_SEND1"
+      SrcPort                 1
+      Points                  [240, 0]
+      DstBlock                "ORQUAD"
+      DstPort                 1
+      #GUID                   0e53ad23-1d42-43d8-a054-b7ad78136455
+    }
+    Line {
+      SrcBlock                "ORQUAD"
+      SrcPort                 1
+      DstBlock                "SEND_COMMAND_LONG2"
+      DstPort                 1
+      #GUID                   d8b36cd6-9822-4bdb-ab06-ae5e79ed9a84
+    }
+    Line {
+      SrcBlock                "OR_"
+      SrcPort                 1
+      DstBlock                "SEND_COMMAND_LONG1"
+      DstPort                 1
+      #GUID                   40a4f417-9778-42bf-9fd7-be193f3d13ae
+    }
+    Line {
+      SrcBlock                "REL"
+      SrcPort                 1
+      DstBlock                "ORQUAD"
+      DstPort                 2
+      #GUID                   81d7c3eb-7949-431d-a4f3-26d1e613737c
+    }
+    Line {
+      SrcBlock                "REL1"
+      SrcPort                 1
+      Points                  [20, 0]
+      DstBlock                "ORQUAD"
+      DstPort                 3
+      #GUID                   038bdd49-627a-46cf-bac0-7f462cc26a08
+    }
+    Line {
+      SrcBlock                "RTOV"
+      SrcPort                 1
+      DstBlock                "TRNDV"
+      DstPort                 1
+      #GUID                   66d9fcf4-e9bc-4b33-b89b-ce52bafecc21
+    }
+    Line {
+      SrcBlock                "SSW"
+      SrcPort                 1
+      DstBlock                "SEND_COMMAND_LONG1"
+      DstPort                 6
+      #GUID                   8b3a9f5b-424e-4bcb-8077-c906fc41dbcb
+    }
+    Line {
+      SrcBlock                "SSW1"
+      SrcPort                 1
+      DstBlock                "SEND_COMMAND_LONG1"
+      DstPort                 3
+      #GUID                   eb18593d-955c-4041-a7d0-1364c1651922
+    }
+    Line {
+      SrcBlock                "aruco_ENABLE"
+      SrcPort                 1
+      DstBlock                "SSW1"
+      DstPort                 1
+      #GUID                   e8827d34-caae-4d12-814a-a1f2d20fd7bf
+    }
+    Line {
+      SrcBlock                "aruco_SEND"
+      SrcPort                 1
+      DstBlock                "OR_"
+      DstPort                 1
+      #GUID                   e3916901-98b7-4862-8f5b-d8bb10896dea
+    }
+    Line {
+      SrcBlock                "aruco_marker_id"
+      SrcPort                 1
+      DstBlock                "SSW"
+      DstPort                 1
+      #GUID                   211b7723-f235-4b42-96ea-285f656a96e6
+    }
+    Line {
+      SrcBlock                "tstamp"
+      SrcPort                 1
+      DstBlock                "Goto"
+      DstPort                 1
+      #GUID                   24da053f-e542-40fa-811e-85e5bbd66002
+    }
+  }
+}

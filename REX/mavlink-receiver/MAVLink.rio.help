@@ -1,0 +1,21 @@
+{
+	"SystemID" : 100,
+	"Endpoints" : [
+		{
+			"Type": "UDP",
+			"Mode": "listen",
+			"_Address": "<IP to where it should respond to>",
+			"_Port": "<PORT to where it should respond to>",
+			"BindAddress": "0.0.0.0",
+			"BindPort": 15550
+		},
+		{
+			"Type": "UDP",
+			"Mode": "listen",
+			"Address": "<IP of teh computer with QGround control>",
+			"Port": 14550,
+			"BindAddress": "0.0.0.0",
+			"BindPort": 14550
+		}
+	]
+}

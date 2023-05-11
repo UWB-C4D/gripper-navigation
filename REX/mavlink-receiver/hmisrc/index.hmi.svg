@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:rexsvg="http://www.rexcontrols.com/rexsvg"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="0.92.3 (604f7c89c2, 2020-03-02, custom)"
+   sodipodi:docname="index.hmi.svg"
+   id="svg8"
+   version="1.1"
+   height="800"
+   width="1246">
+  <defs
+     id="defs2">
+    <linearGradient
+       gradientTransform="translate(-2.500022,-2.5000088)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient2122"
+       id="linearGradient1294"
+       gradientUnits="userSpaceOnUse"
+       x1="12.505092"
+       y1="12.065967"
+       x2="1238.5"
+       y2="792.5" />
+    <linearGradient
+       id="linearGradient2122"
+       gradientUnits="userSpaceOnUse"
+       x1="9.2475996"
+       y1="-7.875"
+       x2="71.097"
+       y2="27.8286">
+      <stop
+         offset="0.4"
+         style="stop-color:#0074C5"
+         id="stop864-8" />
+      <stop
+         offset="0.95"
+         style="stop-color:#00C8B4"
+         id="stop866-0" />
+    </linearGradient>
+    <linearGradient
+       id="color_1_"
+       gradientUnits="userSpaceOnUse"
+       x1="145.2793"
+       y1="1264.2607"
+       x2="169.49741"
+       y2="1202.1613"
+       gradientTransform="matrix(0.9317,-0.3633,0.3633,0.9317,-542.7952,-1040.2336)">
+      <stop
+         offset="0"
+         style="stop-color:#FCFDFD"
+         id="stop2" />
+      <stop
+         offset="1"
+         style="stop-color:#CCD1D9"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="color_3_"
+       gradientUnits="userSpaceOnUse"
+       x1="149.08591"
+       y1="1252.4082"
+       x2="172.9438"
+       y2="1191.2324"
+       gradientTransform="matrix(0.9317,-0.3633,0.3633,0.9317,-542.7952,-1040.2336)">
+      <stop
+         offset="0"
+         style="stop-color:#90959D"
+         id="stop8" />
+      <stop
+         offset="0.1597"
+         style="stop-color:#999EA5"
+         id="stop10" />
+      <stop
+         offset="0.42"
+         style="stop-color:#B1B5BB"
+         id="stop12" />
+      <stop
+         offset="0.7467"
+         style="stop-color:#D9DBDE"
+         id="stop14" />
+      <stop
+         offset="1"
+         style="stop-color:#FCFDFD"
+         id="stop16" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#eef1f0"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.89862009"
+     inkscape:cx="298.94177"
+     inkscape:cy="301.86625"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="2472"
+     inkscape:window-height="1417"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+        <dc:identifier>Created in REXYGEN HMI Designer</dc:identifier>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     sodipodi:insensitive="true"
+     transform="translate(0,-85)"
+     height="80"
+     width="200"
+     id="HMIConfig"
+     rexsvg:rexversion="2.50.10-12174"
+     rexsvg:version="15"
+     rexsvg:module="HMIConfig">
+    <rect
+       y="0"
+       x="0"
+       style="fill:#ffffff;stroke:url(#lg-hmic982);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3041"
+       ry="3"
+       rx="3"
+       height="80"
+       width="200" />
+    <defs
+       id="defs35174">
+      <linearGradient
+         id="lg-hmic_7_"
+         gradientUnits="userSpaceOnUse"
+         x1="24.419901"
+         y1="-34.1563"
+         x2="86.271103"
+         y2="1.5484">
+        <stop
+           offset="0.4"
+           style="stop-color:#0074C5"
+           id="stop906" />
+        <stop
+           offset="0.95"
+           style="stop-color:#00C8B4"
+           id="stop908" />
+      </linearGradient>
+      <linearGradient
+         id="lg-hmic_6_"
+         gradientUnits="userSpaceOnUse"
+         x1="21.861799"
+         y1="-29.750999"
+         x2="83.723198"
+         y2="5.9594998">
+        <stop
+           offset="0.4"
+           style="stop-color:#0074C5"
+           id="stop899" />
+        <stop
+           offset="0.95"
+           style="stop-color:#00C8B4"
+           id="stop901" />
+      </linearGradient>
+      <linearGradient
+         id="lg-hmic_5_"
+         gradientUnits="userSpaceOnUse"
+         x1="19.434601"
+         y1="-25.5215"
+         x2="81.286201"
+         y2="10.1834">
+        <stop
+           offset="0.4"
+           style="stop-color:#0074C5"
+           id="stop892" />
+        <stop
+           offset="0.95"
+           style="stop-color:#00C8B4"
+           id="stop894" />
+      </linearGradient>
+      <linearGradient
+         id="lg-hmic_4_"
+         gradientUnits="userSpaceOnUse"
+         x1="17.3594"
+         y1="-21.935499"
+         x2="79.214401"
+         y2="13.7713">
+        <stop
+           offset="0.4"
+           style="stop-color:#0074C5"
+           id="stop885" />
+        <stop
+           offset="0.95"
+           style="stop-color:#00C8B4"
+           id="stop887" />
+      </linearGradient>
+      <linearGradient
+         id="lg-hmic_3_"
+         gradientUnits="userSpaceOnUse"
+         x1="14.4985"
+         y1="-16.971201"
+         x2="76.349602"
+         y2="18.733299">
+        <stop
+           offset="0.4"
+           style="stop-color:#0074C5"
+           id="stop878" />
+        <stop
+           offset="0.95"
+           style="stop-color:#00C8B4"
+           id="stop880" />
+      </linearGradient>
+      <linearGradient
+         id="lg-hmic_2_"
+         gradientUnits="userSpaceOnUse"
+         x1="12.0518"
+         y1="-12.7388"
+         x2="73.905602"
+         y2="22.9674">
+        <stop
+           offset="0.4"
+           style="stop-color:#0074C5"
+           id="stop871" />
+        <stop
+           offset="0.95"
+           style="stop-color:#00C8B4"
+           id="stop873" />
+      </linearGradient>
+      <linearGradient
+         id="lg-hmic_1_"
+         gradientUnits="userSpaceOnUse"
+         x1="9.2475996"
+         y1="-7.875"
+         x2="71.097"
+         y2="27.8286">
+        <stop
+           offset="0.4"
+           style="stop-color:#0074C5"
+           id="stop864" />
+        <stop
+           offset="0.95"
+           style="stop-color:#00C8B4"
+           id="stop866" />
+      </linearGradient>
+      <linearGradient
+         gradientUnits="userSpaceOnUse"
+         y2="40"
+         x2="200.177"
+         y1="40"
+         x1="-0.177"
+         id="lg-hmic982"
+         xlink:href="#lg-hmic_1_"
+         inkscape:collect="always"
+         gradientTransform="translate(0,14.5)" />
+      <linearGradient
+         y2="27.8286"
+         x2="71.097"
+         y1="-7.875"
+         x1="9.2475996"
+         gradientUnits="userSpaceOnUse"
+         id="lg-hmic984"
+         xlink:href="#lg-hmic_1_"
+         inkscape:collect="always" />
+    </defs>
+    <title
+       id="title3014">HMIConfig</title>
+    <desc
+       id="desc3016">{
+&quot;ELEMENT_DIMENSIONS&quot;:{
+&quot;browse&quot;:{
+&quot;window&quot;:{
+&quot;height&quot;:500,
+&quot;width&quot;:520
+}
+},
+&quot;tabsizes&quot;:{
+&quot;aliastab_minsize&quot;:200,
+&quot;conntab_minsize&quot;:280,
+&quot;eltab_minsize&quot;:0
+},
+&quot;window&quot;:{
+&quot;height&quot;:500,
+&quot;width&quot;:520
+}
+},
+&quot;HMIC_DIMENSIONS&quot;:{
+&quot;browse&quot;:{
+&quot;connection&quot;:{
+&quot;col0width&quot;:150
+},
+&quot;window&quot;:{
+&quot;height&quot;:500,
+&quot;width&quot;:940
+}
+},
+&quot;connection&quot;:{
+&quot;col0width&quot;:150
+},
+&quot;option&quot;:{
+&quot;col0width&quot;:88,
+&quot;col1width&quot;:100
+},
+&quot;window&quot;:{
+&quot;height&quot;:500,
+&quot;width&quot;:700
+}
+},
+&quot;HTMLexport&quot;:{
+&quot;ExcludeDefaultLibraries&quot;:false,
+&quot;ExpertMode&quot;:false,
+&quot;Header&quot;:&quot;ArUco detector&quot;,
+&quot;Libs&quot;:[],
+&quot;Target&quot;:&quot;hmi\\index.html&quot;,
+&quot;Template&quot;:&quot;&quot;,
+&quot;Title&quot;:&quot;ArUco detector&quot;,
+&quot;Tooltips&quot;:false,
+&quot;ViewBox&quot;:true,
+&quot;checkedVersion&quot;:&quot;12856&quot;
+},
+&quot;UserData&quot;:{
+&quot;auth&quot;:{
+&quot;storePass&quot;:false,
+&quot;target&quot;:&quot;ws://127.0.0.1:8008&quot;,
+&quot;token&quot;:&quot;YWRtaW46&quot;
+}
+},
+&quot;connections&quot;:[],
+&quot;metaData&quot;:{
+&quot;desc&quot;:&quot;Global REXYGEN HMI configuration component. User can change project options, configure the HTML export and define list of connections between REXYGEN target and HMI.&quot;,
+&quot;header_mode&quot;:{
+&quot;desc&quot;:&quot;Change the default size of the header (thin, packed). If packed click on the logo to show the header.&quot;,
+&quot;order&quot;:&quot;05&quot;,
+&quot;type&quot;:&quot;enum&quot;,
+&quot;values&quot;:[
+&quot;&quot;,
+&quot;thin&quot;,
+&quot;pack-top-left&quot;,
+&quot;pack-top-right&quot;,
+&quot;pack-bottom-left&quot;,
+&quot;pack-bottom-right&quot;
+]
+},
+&quot;kiosk_mode&quot;:{
+&quot;desc&quot;:&quot;If True the links from header (from logo and header) are removed and user can not change the refresh rate and target.&quot;,
+&quot;order&quot;:&quot;06&quot;,
+&quot;type&quot;:&quot;bool&quot;
+},
+&quot;log_level&quot;:{
+&quot;desc&quot;:&quot;Set the global log level for whole RexHMI. The log messages are written both to the right upper corner menu and to the web browser console. Default level is INFO.&quot;,
+&quot;order&quot;:&quot;02&quot;,
+&quot;type&quot;:&quot;enum&quot;,
+&quot;values&quot;:[
+&quot;&quot;,
+&quot;TRACE&quot;,
+&quot;DEBUG&quot;,
+&quot;INFO&quot;,
+&quot;WARN&quot;,
+&quot;ERROR&quot;
+]
+},
+&quot;refresh_rate&quot;:{
+&quot;desc&quot;:&quot;Changes the default read refresh rate of the whole HMI. Default 500ms&quot;,
+&quot;max&quot;:&quot;300000&quot;,
+&quot;min&quot;:&quot;20&quot;,
+&quot;order&quot;:&quot;01&quot;,
+&quot;type&quot;:&quot;int&quot;
+},
+&quot;show_clock&quot;:{
+&quot;desc&quot;:&quot;If True the clock are shown in the right upper corner of the template instead of blinking square. If the target is connected the clock are updated if connection get error o lost the time stops.&quot;,
+&quot;order&quot;:&quot;03&quot;,
+&quot;type&quot;:&quot;bool&quot;
+},
+&quot;target_url&quot;:{
+&quot;desc&quot;:&quot;The URL of the target device. So far only the WebSocket protocol is supported. The URL must also contain the PORT, but the protocol can be omitted. Default is empty string which means ws://127.0.0.1:8008 &lt;br /&gt; Examples: 192.168.1.100:8008 or wss://192.168.1.100:8009 &lt;br /&gt; &lt;i&gt; Note: If the HMI is hosted on the internal web server this option is ignored and HMI connects to the hostname / IP you use in the webbrowser URL.&lt;/i&gt;&quot;,
+&quot;order&quot;:&quot;07&quot;,
+&quot;prev&quot;:[
+&quot;ws_ip&quot;
+],
+&quot;type&quot;:&quot;str&quot;
+},
+&quot;use_client_time&quot;:{
+&quot;desc&quot;:&quot;If True the &lt;code&gt;show_clock&lt;/code&gt; display the time from client computer rather then target. This can be use when target device does not have NTP synchronization or RTC chip.&quot;,
+&quot;order&quot;:&quot;04&quot;,
+&quot;type&quot;:&quot;bool&quot;
+}
+},
+&quot;options&quot;:{
+&quot;header_mode&quot;:&quot;&quot;,
+&quot;kiosk_mode&quot;:&quot;False&quot;,
+&quot;log_level&quot;:&quot;&quot;,
+&quot;refresh_rate&quot;:&quot;&quot;,
+&quot;show_clock&quot;:&quot;False&quot;,
+&quot;target_url&quot;:&quot;&quot;,
+&quot;use_client_time&quot;:&quot;False&quot;
+}
+}</desc>
+    <g
+       id="g883">
+      <text
+         id="text3037"
+         y="2"
+         xml:space="preserve"><tspan
+           x="99"
+           y="65"
+           id="tspan3039"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;font-family:Montserrat;-inkscape-font-specification:Montserrat;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#545e6f;fill-opacity:1">HMI Config</tspan></text>
+      <g
+         id="rexygen-logo"
+         transform="matrix(1.6877637,0,0,1.6877637,15.611815,15.165)"
+         style="stroke-width:0.55555552">
+        <g
+           id="g913"
+           style="stroke-width:0.55555552">
+          <path
+             id="path869"
+             d="m 36.293,9.011 h -0.069 -1.87 V 11.74 H 31.889 V 2.045 h 4.334 c 2.562,0 4.03,1.219 4.03,3.379 0,1.482 -0.624,2.549 -1.759,3.116 l 2.036,3.199 H 37.732 Z M 36.224,7.072 c 1.066,0 1.69,-0.54 1.69,-1.565 0,-1.011 -0.624,-1.523 -1.69,-1.523 h -1.87 v 3.089 h 1.87 z"
+             inkscape:connector-curvature="0"
+             style="fill:url(#lg-hmic984);stroke-width:0.55555552" />
+          <path
+             id="path876"
+             d="m 44.729,3.983 v 1.926 h 4.626 V 7.847 H 44.729 V 9.8 h 5.276 v 1.939 H 42.264 V 2.045 h 7.588 v 1.938 z"
+             inkscape:connector-curvature="0"
+             style="fill:url(#lg-hmic_2_);stroke-width:0.55555552" />
+          <path
+             id="path883"
+             d="M 60.975,11.739 H 58.026 L 55.935,8.65 53.844,11.739 H 50.977 L 54.439,6.781 51.198,2.045 h 2.867 l 1.87,2.825 1.869,-2.825 h 2.895 l -3.2,4.625 z"
+             inkscape:connector-curvature="0"
+             style="fill:url(#lg-hmic_3_);stroke-width:0.55555552" />
+          <path
+             id="path890"
+             d="M 66.766,11.739 H 64.315 V 8.679 L 60.728,2.045 h 2.466 l 2.34,4.224 2.284,-4.224 h 2.466 l -3.518,6.564 z"
+             inkscape:connector-curvature="0"
+             style="fill:url(#lg-hmic_4_);stroke-width:0.55555552" />
+          <path
+             id="path897"
+             d="m 79.479,6.809 v 3.781 c -1.038,0.733 -2.673,1.26 -4.03,1.26 -2.949,0 -5.179,-2.133 -5.179,-4.958 0,-2.812 2.285,-4.931 5.346,-4.931 1.44,0 2.963,0.555 3.961,1.441 l -1.385,1.676 c -0.707,-0.651 -1.69,-1.053 -2.59,-1.053 -1.593,0 -2.812,1.246 -2.812,2.866 0,1.648 1.232,2.895 2.839,2.895 0.499,0 1.136,-0.18 1.717,-0.471 V 6.809 Z"
+             inkscape:connector-curvature="0"
+             style="fill:url(#lg-hmic_5_);stroke-width:0.55555552" />
+          <path
+             id="path904"
+             d="m 84.011,3.983 v 1.926 h 4.625 V 7.847 H 84.011 V 9.8 h 5.276 v 1.939 H 81.545 V 2.045 h 7.589 v 1.938 z"
+             inkscape:connector-curvature="0"
+             style="fill:url(#lg-hmic_6_);stroke-width:0.55555552" />
+          <path
+             id="path911"
+             d="M 97.827,11.739 93.367,5.77 v 5.969 H 91.054 V 2.045 h 2.174 l 4.474,5.982 V 2.045 H 100 v 9.694 z"
+             inkscape:connector-curvature="0"
+             style="fill:url(#lg-hmic_7_);stroke-width:0.55555552" />
+        </g>
+        <g
+           id="g925"
+           style="stroke-width:0.55555552">
+          <path
+             id="path915"
+             d="m 14.364,0.285 -2.335,1.759 c 0.158,0.241 0.314,0.483 0.466,0.727 0.683,1.093 1.309,2.21 1.869,3.284 0.563,-1.084 1.194,-2.211 1.883,-3.313 0.146,-0.234 0.298,-0.466 0.45,-0.698 z"
+             inkscape:connector-curvature="0"
+             style="fill:#0074c5;stroke-width:0.55555552" />
+          <path
+             id="path917"
+             d="M 2.712,0 0,2.044 c 1.237,1.475 2.938,3.623 4.298,5.798 0.813,1.303 1.534,2.663 2.133,3.896 h 3.747 C 9.436,10.094 8.41,8.025 7.173,6.046 5.746,3.763 4.01,1.554 2.712,0 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#0074c5;stroke-width:0.55555552" />
+          <path
+             id="path919"
+             d="m 8.871,0.006 -2.708,2.04 c 0.761,1.021 1.533,2.118 2.231,3.236 1.429,2.286 2.583,4.686 3.36,6.456 h 3.682 C 14.665,9.862 13.202,6.578 11.27,3.485 10.518,2.282 9.688,1.1 8.871,0.006 Z"
+             inkscape:connector-curvature="0"
+             style="fill:#0074c5;stroke-width:0.55555552" />
+          <path
+             id="path921"
+             d="m 26.006,0 c -1.295,1.552 -3.018,3.748 -4.436,6.017 -1.245,1.991 -2.275,4.072 -3.019,5.722 h 3.746 c 0.602,-1.241 1.328,-2.613 2.148,-3.926 1.349,-2.16 3.037,-4.294 4.272,-5.769 z"
+             inkscape:connector-curvature="0"
+             style="fill:#0074c5;stroke-width:0.55555552" />
+          <path
+             id="path923"
+             d="m 19.852,0.003 c -0.81,1.087 -1.633,2.259 -2.379,3.453 -0.876,1.401 -1.655,2.843 -2.317,4.175 0.818,1.688 1.439,3.161 1.819,4.109 0.777,-1.774 1.937,-4.188 3.373,-6.487 0.692,-1.108 1.457,-2.196 2.211,-3.21 z"
+             inkscape:connector-curvature="0"
+             style="fill:#0074c5;stroke-width:0.55555552" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="background-layer"
+     inkscape:label="background"
+     sodipodi:insensitive="true">
+    <rect
+       rx="3"
+       ry="3"
+       y="10"
+       x="10"
+       height="780"
+       width="1226"
+       id="backgroud"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient1294);stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       rexsvg:update="Partial"
+       transform="matrix(4.697318,0,0,2.6972129,10,10)"
+       id="ImageChanger"
+       rexsvg:module="ImageChanger"
+       rexsvg:version="13"
+       rexsvg:filename="ImageChanger.svg"
+       style="stroke-width:0.59660584">
+      <title
+         id="title2990">Preview</title>
+      <desc
+         id="desc3795">{
+&quot;connections&quot;:{
+&quot;disable_by&quot;:&quot;&quot;,
+&quot;hide_by&quot;:&quot;&quot;,
+&quot;refresh_from&quot;:&quot;&quot;
+},
+&quot;metaData&quot;:{
+&quot;connections&quot;:{
+&quot;disable_by&quot;:{
+&quot;default&quot;:&quot;&quot;,
+&quot;desc&quot;:&quot;If non-zero the component is disabled and data are no longer updated.&quot;,
+&quot;optional&quot;:true
+},
+&quot;hide_by&quot;:{
+&quot;default&quot;:&quot;&quot;,
+&quot;desc&quot;:&quot;If non-zero the component is hidden.&quot;,
+&quot;optional&quot;:true
+},
+&quot;refresh_from&quot;:{
+&quot;default&quot;:&quot;$T&quot;,
+&quot;desc&quot;:&quot;When the value is changed the image is updated.&quot;,
+&quot;optional&quot;:true
+}
+},
+&quot;desc&quot;:&quot;Image Changer component loads image (*.png,*.jpg,*.bmp,*.svg etc.) and displays it inside its boundaries. The image is refreshed when the &lt;code&gt;refresh_from&lt;/code&gt; datapoint changes or after given &lt;code&gt;period&lt;/code&gt;. The &lt;code&gt;imagePath&lt;/code&gt; should be relative to the root of the webserver. If the &lt;code&gt;appendKey&lt;/code&gt; property is True and the &lt;code&gt;imagePath&lt;/code&gt; contains &lt;code&gt;{0}&lt;/code&gt; sign, the sign is replaced using the read value.&lt;br /&gt; Example of the &lt;code&gt;imagePath&lt;/code&gt; &lt;code&gt;/hmi/images/img-{0}.png&lt;/code&gt; and value can change from 0 to 10, etc.&quot;,
+&quot;html&quot;:true,
+&quot;options&quot;:{
+&quot;appendKey&quot;:{
+&quot;default&quot;:&quot;False&quot;,
+&quot;desc&quot;:&quot;If True the &lt;code&gt;{0}&lt;/code&gt; is replaces with current &lt;code&gt;refresh_from&lt;/code&gt; value in the &lt;code&gt;imagePath&lt;/code&gt; property.&quot;,
+&quot;order&quot;:&quot;02&quot;,
+&quot;type&quot;:&quot;bool&quot;
+},
+&quot;imagePath&quot;:{
+&quot;default&quot;:&quot;&quot;,
+&quot;desc&quot;:&quot;Relative path from the webserver root where the image is located.&quot;,
+&quot;order&quot;:&quot;01&quot;,
+&quot;type&quot;:&quot;str&quot;
+},
+&quot;period&quot;:{
+&quot;default&quot;:&quot;-1&quot;,
+&quot;desc&quot;:&quot;If larger than zero the image will be automatically refreshed based on the given &lt;code&gt;period&lt;/code&gt; in milliseconds. The &lt;code&gt;refresh_from&lt;/code&gt; datapoint is used only for &lt;code&gt;appendKey&lt;/code&gt; mode.&quot;,
+&quot;order&quot;:&quot;03&quot;,
+&quot;type&quot;:&quot;number&quot;
+}
+},
+&quot;path&quot;:&quot;GENERAL/ImageChanger.svg&quot;,
+&quot;updateType&quot;:&quot;Partial&quot;
+},
+&quot;options&quot;:{
+&quot;appendKey&quot;:&quot;False&quot;,
+&quot;imagePath&quot;:&quot;/opencv/preview.png&quot;,
+&quot;period&quot;:1000
+}
+}</desc>
+      <image
+         y="0"
+         x="0"
+         id="image4264"
+         xlink:href="data:image/png;base64,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 AAAAAElFTkSuQmCC "
+         preserveAspectRatio="none"
+         height="261"
+         width="261"
+         rexsvg:tag="image"
+         style="stroke-width:0.59660584" />
+    </g>
+  </g>
+</svg>

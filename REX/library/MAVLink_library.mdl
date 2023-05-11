@@ -1,0 +1,4129 @@
+Library {
+  Name                    "MAVLink_library"
+  Version                 3.00
+  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
+  ShowPortLabels          on
+  #RexVersion             "2.52.0 rev. 15123 - REXCONV, Date 2023-3-29"
+  ShowPortLabels          on
+  SavedCharacterEncoding  "UTF-8"
+  MaskType                "REX sequence"
+  MaskIconFrame           on
+  MaskIconOpaque          on
+  MaskIconRotate          "none"
+  MaskIconUnits           "autoscale"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "left"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "MAVLink_library"
+    Location                [1451, 33, 1925, 347]
+    #GUID                   "383bdbd6-e5c4-41b3-a0c8-a2b814b4e001"
+    Block {
+      BlockType               SubSystem
+      Name                    "CMP_by_name"
+      Ports                   [6, 4, 0, 0, 0]
+      Position                [470, 20, 590, 80]
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      #MaskTypeString         "string"
+      MaskPromptString        ""
+      MaskStyleString         "edit"
+      MaskTunableValueString  on
+      MaskEnableString        on
+      MaskVisibilityString    on
+      MaskVariables           "name=@1"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      MaskValueString         "diag______"
+      #GUID                   "09100c46-59e8-40d3-a72d-1a568ae73f0e"
+      System {
+        Name                    "CMP_by_name"
+        __CopyByReference       off
+        Location                [796, 862, 1173, 1191]
+        #GUID                   "09100c46-59e8-40d3-a72d-1a568ae73f0e"
+        Block {
+          BlockType               Inport
+          Name                    "u_time_usec"
+          Position                [30, 18, 60, 32]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "78c4eb8a-a522-45cb-9b99-1a0a8276e0ed"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "u_x"
+          Position                [30, 68, 60, 82]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "1fa9ff9f-d75e-400e-a0a2-0912b65f9b34"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "u_y"
+          Position                [30, 118, 60, 132]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "143f31c9-28e1-4438-9db7-99a626e5f951"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "u_z"
+          Position                [30, 168, 60, 182]
+          Port                    4
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "9cc6aa11-e2fa-4aa7-8029-8b7940620b88"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "u_name"
+          Position                [30, 198, 60, 212]
+          Port                    5
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "54a0fdac-53a7-46cf-9a9e-354117c8cfde"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "R1"
+          Position                [30, 278, 60, 292]
+          Port                    6
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "9f34323e-cadd-481f-a323-14c375846cf5"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNS_name"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [35, 233, 55, 247]
+          SourceBlock             "stringlib/CNS"
+          scv                     "name"
+          nmax                    0
+          FontSize                10
+          #GUID                   "6bb1b635-6580-48e0-9ac8-3a0137b45c17"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EQ"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [85, 208, 120, 232]
+          SourceBlock             "logiclib/EQ"
+          #GUID                   "12fecdb1-08f0-4efa-8648-91b74c6937bf"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "NOT_"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [140, 213, 165, 227]
+          SourceBlock             "logiclib/NOT"
+          #GUID                   "10ab9fdc-8fcd-474d-8af5-fd0e3ae83936"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SHLD_time_usec"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [220, 18, 260, 52]
+          SourceBlock             "analoglib/SHLD"
+          y0                      0
+          mode                    "2: Hold last value"
+          FontSize                10
+          #GUID                   "316b308c-f03a-4cb3-af42-06efe241578b"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SHLD_x"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [220, 68, 260, 102]
+          SourceBlock             "analoglib/SHLD"
+          y0                      0
+          mode                    "2: Hold last value"
+          FontSize                10
+          #GUID                   "b6721275-1fc3-48d8-94c4-2727fe05b7e4"
+          #SignalWatchMask        "0f"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SHLD_y"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [220, 118, 260, 152]
+          SourceBlock             "analoglib/SHLD"
+          y0                      0
+          mode                    "2: Hold last value"
+          FontSize                10
+          #GUID                   "446fde2f-137a-4e2a-a438-5691af54f10e"
+          #SignalWatchMask        "0f"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SHLD_z"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [220, 168, 260, 202]
+          SourceBlock             "analoglib/SHLD"
+          y0                      0
+          mode                    "2: Hold last value"
+          FontSize                10
+          #GUID                   "f8f3c430-29c9-48cd-8232-292a28eb93a1"
+          #SignalWatchMask        "0f"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "time_usec"
+          Position                [320, 28, 350, 42]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "c635399b-4558-4401-ac4f-2ef73291fa37"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "x"
+          Position                [320, 78, 350, 92]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "1ae97764-c4ad-4c01-a569-995dbe039f13"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "y"
+          Position                [320, 128, 350, 142]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "6d0931bc-e3ce-40e2-97e3-f2e6b9a395c8"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "z"
+          Position                [320, 178, 350, 192]
+          Port                    4
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "9c17ae30-baa4-4f06-86e6-b094b6043a5a"
+        }
+        Line {
+          SrcBlock                "CNS_name"
+          SrcPort                 1
+          Points                  [10, 0]
+          DstBlock                "EQ"
+          DstPort                 2
+          #GUID                   "c51720d5-e7ee-41ef-b15e-43d972fd16ef"
+        }
+        Line {
+          SrcBlock                "EQ"
+          SrcPort                 1
+          DstBlock                "NOT_"
+          DstPort                 1
+          #GUID                   "08bdab6d-1186-4739-8fd0-ee73dc2d0ff1"
+        }
+        Line {
+          SrcBlock                "NOT_"
+          SrcPort                 1
+          Points                  [55, 0; 0, -35]
+          #GUID                   "86095042-f0fb-427e-82c6-e6edc5704128"
+          Branch {
+            Points                  [0, -50]
+            #GUID                   "3b4bb592-a799-4664-aa40-640b2d13b8fa"
+            Branch {
+              Points                  [0, -50]
+              #GUID                   "c3087e78-9198-4788-815a-3ab67d66133a"
+              Branch {
+                Points                  [0, -50]
+                DstBlock                "SHLD_time_usec"
+                DstPort                 2
+                #GUID                   "7518a95f-80d9-42f3-8ed6-82de724faf29"
+              }
+              Branch {
+                DstBlock                "SHLD_x"
+                DstPort                 2
+                #GUID                   "15210137-2592-43a4-bd3e-d44dce2534e5"
+              }
+            }
+            Branch {
+              DstBlock                "SHLD_y"
+              DstPort                 2
+              #GUID                   "621be918-ecf1-4db1-8d07-488f7e93e7f3"
+            }
+          }
+          Branch {
+            DstBlock                "SHLD_z"
+            DstPort                 2
+            #GUID                   "9e8081ef-a188-4535-a5e1-65bc9a85e7f1"
+          }
+        }
+        Line {
+          SrcBlock                "R1"
+          SrcPort                 1
+          Points                  [130, 0; 0, -90]
+          #GUID                   "adfdb704-1719-4268-b3de-bf69c11bc2b3"
+          Branch {
+            DstBlock                "SHLD_z"
+            DstPort                 3
+            #GUID                   "0fe590e1-7024-4ede-bea2-c603ea14029b"
+          }
+          Branch {
+            Points                  [0, -50]
+            #GUID                   "e66ae345-9e9a-40a0-acec-7292c4a04045"
+            Branch {
+              DstBlock                "SHLD_y"
+              DstPort                 3
+              #GUID                   "1964aa7f-d84b-4693-9d6f-7a99e658dd87"
+            }
+            Branch {
+              Points                  [0, -50]
+              #GUID                   "566b12f4-2142-48e4-8f6d-bd581b1a5be6"
+              Branch {
+                Points                  [0, -50]
+                DstBlock                "SHLD_time_usec"
+                DstPort                 3
+                #GUID                   "0088fe14-e3cf-4b4f-a92a-de6fed6c17d2"
+              }
+              Branch {
+                DstBlock                "SHLD_x"
+                DstPort                 3
+                #GUID                   "062c8774-233e-4933-aba9-eae9fb3163b9"
+              }
+            }
+          }
+        }
+        Line {
+          SrcBlock                "SHLD_time_usec"
+          SrcPort                 1
+          DstBlock                "time_usec"
+          DstPort                 1
+          #GUID                   "5c427e8d-fa99-4117-a239-5b9cf4daa635"
+        }
+        Line {
+          SrcBlock                "SHLD_x"
+          SrcPort                 1
+          DstBlock                "x"
+          DstPort                 1
+          #GUID                   "65b671df-21b0-4891-8f36-1cf008db86ed"
+        }
+        Line {
+          SrcBlock                "SHLD_y"
+          SrcPort                 1
+          DstBlock                "y"
+          DstPort                 1
+          #GUID                   "65669cbb-95bd-4a6e-954c-517fd39fa04d"
+        }
+        Line {
+          SrcBlock                "SHLD_z"
+          SrcPort                 1
+          DstBlock                "z"
+          DstPort                 1
+          #GUID                   "786d5871-7806-4106-bef0-8d9ec98f6b30"
+        }
+        Line {
+          SrcBlock                "u_name"
+          SrcPort                 1
+          Points                  [5, 0]
+          DstBlock                "EQ"
+          DstPort                 1
+          #GUID                   "12820963-d027-4d4a-9dd9-c559fb124eb2"
+        }
+        Line {
+          SrcBlock                "u_time_usec"
+          SrcPort                 1
+          DstBlock                "SHLD_time_usec"
+          DstPort                 1
+          #GUID                   "33178898-8a5d-4eb8-8025-4088e6b47ec6"
+        }
+        Line {
+          SrcBlock                "u_x"
+          SrcPort                 1
+          DstBlock                "SHLD_x"
+          DstPort                 1
+          #GUID                   "7e906fa7-31ed-478d-9642-5d81cf963d11"
+        }
+        Line {
+          SrcBlock                "u_y"
+          SrcPort                 1
+          DstBlock                "SHLD_y"
+          DstPort                 1
+          #GUID                   "786e759d-3419-45a3-8aeb-5e6f0663c7e8"
+        }
+        Line {
+          SrcBlock                "u_z"
+          SrcPort                 1
+          DstBlock                "SHLD_z"
+          DstPort                 1
+          #GUID                   "e76ccfb6-4992-4642-a660-391504461931"
+        }
+      }
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNE_MAV_SEVERITY"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [185, 78, 260, 92]
+      SourceBlock             "mathlib/CNE"
+      yenum                   "6: Info"
+      pupstr                  "3: Error|4: Warning|6: Info|7: Verbose"
+      FontSize                10
+      #GUID                   "0e7a590a-a354-46bc-957e-28676edf1758"
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "Change_period"
+      Ports                   [2, 1, 0, 0, 0]
+      Position                [295, 124, 395, 166]
+      FontSize                10
+      #OpenSubsysOnDblClick   on
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      #MaskTypeString         "int16,int16"
+      MaskPromptString        "|"
+      MaskStyleString         "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString        "on,on"
+      MaskVisibilityString    "on,on"
+      MaskVariables           "TgtSysID=@1;TgtCompID=@2"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      MaskValueString         "254|173"
+      #GUID                   "f743bb07-ca2e-4f93-bfe3-a9eba5698837"
+      System {
+        Name                    "Change_period"
+        __CopyByReference       off
+        Location                [442, 249, 993, 552]
+        #GUID                   "f743bb07-ca2e-4f93-bfe3-a9eba5698837"
+        Block {
+          BlockType               Inport
+          Name                    "SET"
+          Position                [75, 58, 105, 72]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "d7717d4a-3866-4d79-b15d-8c1f26e09f1b"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "period_s"
+          Position                [205, 98, 235, 112]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "9d96a686-971e-4790-b392-0a219ac09fd8"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNE_MAV_CMD"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [30, 218, 270, 232]
+          SourceBlock             "mathlib/CNE"
+          yenum                   "511: MAV_CMD_SET_MESSAGE_INTERVAL"
+          pupstr                  "511: MAV_CMD_SET_MESSAGE_INTERVAL"
+          FontSize                10
+          #GUID                   "68235360-9d9a-4bdc-8d70-ab6c4758199d"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNI_MSG_ID"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [135, 78, 155, 92]
+          SourceBlock             "mathlib/CNI"
+          icn                     0
+          FontSize                10
+          vtype                   "4: Long (I32)"
+          #GUID                   "e821c3ee-277d-4b73-8da9-4592817fa324"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EDGE_"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [230, 58, 255, 72]
+          SourceBlock             "logiclib/EDGE"
+          iedge                   "1: Rising edge"
+          #GUID                   "84543c00-2936-4bcd-8e61-76076bcdbeee"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MAV__SEND_COMMAND_LONG"
+          Ports                   [10, 1, 0, 0, 0]
+          Position                [300, 57, 440, 253]
+          SourceBlock             "mavlinklib/MAV_SEND_COMMAND_LONG"
+          TgtSysID                "TgtSysID"
+          TgtCompID               "TgtCompID"
+          FontSize                10
+          #GUID                   "8f28e5c3-ce85-483a-b1b4-ff98131c727e"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "SENT"
+          Position                [495, 148, 525, 162]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "d17781a3-de7f-4dda-bfa3-5743fce8bbed"
+        }
+        Line {
+          SrcBlock                "CNE_MAV_CMD"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 9
+          #GUID                   "250a9674-681c-4551-bb81-93abc765c60d"
+        }
+        Line {
+          SrcBlock                "CNI_MSG_ID"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 2
+          #GUID                   "53ebfd66-119f-4f6d-a86d-b33352b9e130"
+        }
+        Line {
+          SrcBlock                "EDGE_"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 1
+          #GUID                   "89b8a0cb-54d2-46a9-a223-b340da1bfcb5"
+        }
+        Line {
+          SrcBlock                "MAV__SEND_COMMAND_LONG"
+          SrcPort                 1
+          DstBlock                "SENT"
+          DstPort                 1
+          #GUID                   "4c21da43-42fe-4277-b94c-31b54ab8fa40"
+        }
+        Line {
+          SrcBlock                "SET"
+          SrcPort                 1
+          DstBlock                "EDGE_"
+          DstPort                 1
+          #GUID                   "e5d03b46-4ec2-4939-b3da-7f1b3a2b1192"
+        }
+        Line {
+          SrcBlock                "period_s"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 3
+          #GUID                   "594a4e08-b65e-46bd-892e-d4d0453b228b"
+        }
+      }
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "Diagnostics"
+      Ports                   [3, 5, 0, 0, 0]
+      Position                [295, 21, 415, 99]
+      FontSize                10
+      ShowPortLabels          on
+      #OpenSubsysOnDblClick   on
+      MaskType                "REX sequence"
+      #MaskTypeString         "int16,int16"
+      MaskPromptString        "|"
+      MaskStyleString         "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString        "on,on"
+      MaskVisibilityString    "on,on"
+      MaskVariables           "SrcSystemID=@1;SrcComponentID=@2"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      MaskValueString         "254|173"
+      #GUID                   "612bc879-a923-49de-9ea4-c0d95deb77af"
+      System {
+        Name                    "Diagnostics"
+        __CopyByReference       off
+        Location                [400, 205, 1531, 673]
+        #GUID                   "612bc879-a923-49de-9ea4-c0d95deb77af"
+        Block {
+          BlockType               Inport
+          Name                    "EN"
+          Position                [65, 233, 95, 247]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         [0.721569, 0.737255, 0.768627]
+          #GUID                   "6dac8f79-135f-4fbe-a967-549d94904c06"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "EN_LOGGING"
+          Position                [65, 293, 95, 307]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         [0.721569, 0.737255, 0.768627]
+          #GUID                   "b9453a6f-a9c7-4639-8071-592326b7a6ee"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "log_level"
+          Position                [65, 343, 95, 357]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         [0.721569, 0.737255, 0.764706]
+          #GUID                   "c8105cb3-449b-4c06-aad5-7fb5ac9f972e"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CMP_by_name"
+          Ports                   [6, 4, 0, 0, 0]
+          Position                [230, 70, 350, 130]
+          SourceBlock             "MAVLink_library/CMP_by_name"
+          FontSize                10
+          ShowPortLabels          on
+          #MaskTypeString         "string"
+          name                    "diag______"
+          #GUID                   "dfbf2e55-b4d3-4ff3-b5ab-19ce0d856ed6"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNE_command"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [60, 402, 205, 418]
+          SourceBlock             "mathlib/CNE"
+          yenum                   "31013: MAV_CMD_USER_4"
+          pupstr                  "31010: MAV_CMD_USER_1|31011: MAV_CMD_USER_2|31012: MAV_CMD_USER_3|31013: MAV_CMD_USER_4"
+          FontSize                10
+          #GUID                   "e2581d23-cf3b-4517-86bc-936cfc6698e3"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "DIF_"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [150, 358, 175, 372]
+          SourceBlock             "mathlib/DIF"
+          ISSF                    off
+          #GUID                   "03848c24-fc65-4cd9-9431-bf7be47a52d2"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EDGE_"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [265, 233, 290, 247]
+          SourceBlock             "logiclib/EDGE"
+          iedge                   "3: Both edges"
+          FontSize                10
+          #GUID                   "9c1a492a-ee75-45c0-a17f-f4a066fec32b"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EDGE_1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [260, 293, 285, 307]
+          SourceBlock             "logiclib/EDGE"
+          iedge                   "3: Both edges"
+          FontSize                10
+          #GUID                   "3e0a6e7e-a3e3-439d-b505-5ce4db4ce649"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "ITOI_MAV_SEVERITY"
+          Ports                   [5, 5, 0, 0, 0]
+          Position                [815, 302, 850, 358]
+          SourceBlock             "logiclib/ITOI"
+          BINF                    off
+          fktab                   [0 0 0 0 1 2 2 3 3 3 3 3 3 3 3 3]
+          FontSize                10
+          #GUID                   "5b0a1c09-f4ad-49a6-b653-241f3708824a"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MAV__RECV_DEBUG_VECT"
+          Ports                   [1, 9, 0, 0, 0]
+          Position                [30, 22, 170, 128]
+          SourceBlock             "mavlinklib/MAV_RECV_DEBUG_VECT"
+          SrcSystemID             254
+          SrcComponentID          173
+          TgtSystemID             -1
+          TgtComponentID          -1
+          TimeoutMS               0
+          FontSize                10
+          BackgroundColor         "yellow"
+          #GUID                   "d4242282-7c88-40b9-aac1-e34827d9d161"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MAV__RECV_STATUSTEXT"
+          Ports                   [1, 8, 0, 0, 0]
+          Position                [615, 176, 775, 299]
+          SourceBlock             "mavlinklib/MAV_RECV_STATUSTEXT"
+          SrcSystemID             "SrcSystemID"
+          SrcComponentID          "SrcComponentID"
+          TgtSystemID             -1
+          TgtComponentID          -1
+          TimeoutMS               0
+          FontSize                10
+          BackgroundColor         "yellow"
+          #GUID                   "ed8b0d98-52c2-49e7-9602-aac35cf1b358"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MAV__SEND_COMMAND_LONG"
+          Ports                   [10, 1, 0, 0, 0]
+          Position                [410, 232, 550, 428]
+          SourceBlock             "mavlinklib/MAV_SEND_COMMAND_LONG"
+          TgtSysID                "SrcSystemID"
+          TgtCompID               "SrcComponentID"
+          FontSize                10
+          BackgroundColor         "yellow"
+          SrcSysID                -1
+          SrcCompID               -1
+          #GUID                   "99117f5c-7d0a-4747-b62b-f69716eecc8c"
+          #SignalWatchMask        "ff07"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "NOT_"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [150, 243, 175, 257]
+          SourceBlock             "logiclib/NOT"
+          #GUID                   "422152df-5f27-45d2-ac76-1dcc2911b374"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "NOT_1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [145, 303, 170, 317]
+          SourceBlock             "logiclib/NOT"
+          #GUID                   "678d4825-6210-4a21-8323-51fc2ea140e7"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "ORQUAD"
+          Ports                   [4, 2, 0, 0, 0]
+          Position                [330, 233, 365, 277]
+          SourceBlock             "logiclib/ORQUAD"
+          nl                      0
+          #GUID                   "6c61ee62-266e-48a1-81e5-c4e77c95f110"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "REL"
+          Ports                   [2, 1, 0, 0, 0]
+          Position                [200, 358, 225, 382]
+          SourceBlock             "mathlib/REL"
+          irel                    "2: inequality (!=)"
+          FontSize                10
+          #GUID                   "0bf889a9-c3e4-4530-9af1-82247579180a"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "RS"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [200, 233, 235, 257]
+          SourceBlock             "logiclib/RS"
+          #GUID                   "3b3e04fb-ecd1-4167-92c7-2ddb4ef79f38"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "RS1"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [195, 293, 230, 317]
+          SourceBlock             "logiclib/RS"
+          #GUID                   "dbffbd21-f0cd-4a13-9dd9-8b0e91547e40"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SYSLOG"
+          Ports                   [3, 0, 0, 0, 0]
+          Position                [1025, 281, 1085, 339]
+          SourceBlock             "execlib/SYSLOG"
+          #GUID                   "1648f95b-c03e-442e-ac7a-ef25cb7b7425"
+          #SignalWatchMask        "07"
+        }
+        Block {
+          BlockType               SubSystem
+          Name                    "add_prefix"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [935, 282, 970, 298]
+          FontSize                10
+          ShowPortLabels          on
+          MaskType                "REX sequence"
+          #MaskTypeString         "string"
+          MaskPromptString        ""
+          MaskStyleString         "edit"
+          MaskTunableValueString  on
+          MaskEnableString        on
+          MaskVisibilityString    on
+          MaskVariables           "prefix=@1"
+          MaskIconFrame           on
+          MaskIconOpaque          on
+          MaskIconRotate          "none"
+          MaskIconUnits           "autoscale"
+          MaskValueString         "[MAV]: "
+          #GUID                   "1fb46f93-9acd-4b9f-bf47-651f0a37b31d"
+          System {
+            Name                    "add_prefix"
+            __CopyByReference       off
+            Location                [708, 392, 1003, 527]
+            #GUID                   "1fb46f93-9acd-4b9f-bf47-651f0a37b31d"
+            Block {
+              BlockType               Inport
+              Name                    "su"
+              Position                [40, 53, 70, 67]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "be51fd8f-dbf0-4500-bc9c-95e3a23b24dd"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [50, 23, 70, 37]
+              SourceBlock             "stringlib/CNS"
+              scv                     "prefix"
+              nmax                    0
+              FontSize                10
+              #GUID                   "4a25226b-4260-492f-b3f1-c82af88a372d"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CONCAT"
+              Ports                   [8, 1, 0, 0, 0]
+              Position                [125, 20, 185, 110]
+              SourceBlock             "stringlib/CONCAT"
+              ptrn                    "%1%2"
+              nmax                    0
+              FontSize                10
+              #GUID                   "d99969c2-876b-41a3-bd66-8abff257402e"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "sy"
+              Position                [230, 58, 260, 72]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "d3fa0c31-e632-44c5-b225-1addb655e889"
+            }
+            Line {
+              SrcBlock                "CNS"
+              SrcPort                 1
+              DstBlock                "CONCAT"
+              DstPort                 1
+              #GUID                   "5bb0b464-ba65-42bb-83cf-454b681012f9"
+            }
+            Line {
+              SrcBlock                "CONCAT"
+              SrcPort                 1
+              DstBlock                "sy"
+              DstPort                 1
+              #GUID                   "5bd98c64-d2aa-4e4f-9972-fb065210cb0a"
+            }
+            Line {
+              SrcBlock                "su"
+              SrcPort                 1
+              Points                  [35, 0]
+              DstBlock                "CONCAT"
+              DstPort                 2
+              #GUID                   "0eeeb61e-0f58-4f92-b0b5-7b6996e439c9"
+            }
+          }
+        }
+        Block {
+          BlockType               SubSystem
+          Name                    "severity_prefix"
+          Ports                   [2, 1, 0, 0, 0]
+          Position                [935, 238, 995, 262]
+          FontSize                10
+          ShowPortLabels          on
+          MaskType                "REX sequence"
+          MaskIconFrame           on
+          MaskIconOpaque          on
+          MaskIconRotate          "none"
+          MaskIconUnits           "autoscale"
+          #GUID                   "68e4acf0-3c07-490a-bfb4-8468a681b87a"
+          System {
+            Name                    "severity_prefix"
+            __CopyByReference       off
+            Location                [218, 241, 694, 453]
+            #GUID                   "68e4acf0-3c07-490a-bfb4-8468a681b87a"
+            Block {
+              BlockType               Inport
+              Name                    "severity"
+              Position                [15, 103, 45, 117]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "a7529538-3618-42bd-aa4e-2041b9c48443"
+            }
+            Block {
+              BlockType               Inport
+              Name                    "text"
+              Position                [250, 87, 280, 103]
+              Port                    2
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "75bec360-f7b0-441d-aad6-333b64711113"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS_ERR"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [20, 53, 40, 67]
+              SourceBlock             "stringlib/CNS"
+              scv                     "[ERR]: "
+              nmax                    0
+              FontSize                10
+              #GUID                   "5b0ea35b-fbcc-417b-9281-f62a5febe2ac"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS_INFO"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [105, 83, 125, 97]
+              SourceBlock             "stringlib/CNS"
+              scv                     "[INFO]: "
+              nmax                    0
+              FontSize                10
+              #GUID                   "d4ccf93e-c62c-4afa-80e3-f955f6e2f654"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS_WARN"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [60, 63, 80, 77]
+              SourceBlock             "stringlib/CNS"
+              scv                     "[WARN]: "
+              nmax                    0
+              FontSize                10
+              #GUID                   "6c68cafc-7f12-4bd4-b9a1-b5653ea551a8"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CONCAT"
+              Ports                   [8, 1, 0, 0, 0]
+              Position                [330, 75, 390, 165]
+              SourceBlock             "stringlib/CONCAT"
+              ptrn                    "%1%2"
+              nmax                    0
+              FontSize                10
+              #GUID                   "d5a07c93-6137-4249-9a4b-fac8fe837ecb"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "SELSOCT"
+              Ports                   [12, 1, 0, 0, 0]
+              Position                [185, 20, 225, 150]
+              SourceBlock             "stringlib/SELSOCT"
+              BINF                    off
+              nmax                    0
+              #GUID                   "6c6b4f70-b480-482a-abef-20630718a5e6"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "sy"
+              Position                [415, 113, 445, 127]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "d47e2562-227e-42c4-8e4b-52cf60dfe6de"
+            }
+            Line {
+              SrcBlock                "CNS_ERR"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 4
+              #GUID                   "5e64985d-14b4-4ae1-8dca-28a1a589cba2"
+            }
+            Line {
+              SrcBlock                "CNS_INFO"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 7
+              #GUID                   "a5f07d7b-33f5-43fc-88a6-00cb7091ea58"
+            }
+            Line {
+              SrcBlock                "CNS_WARN"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 5
+              #GUID                   "020570ed-8807-4d51-aa36-be2d0797ac2f"
+            }
+            Line {
+              SrcBlock                "CONCAT"
+              SrcPort                 1
+              DstBlock                "sy"
+              DstPort                 1
+              #GUID                   "f8c0e0c5-d0d4-4097-88e4-bd5a918347c2"
+            }
+            Line {
+              SrcBlock                "SELSOCT"
+              SrcPort                 1
+              DstBlock                "CONCAT"
+              DstPort                 1
+              #GUID                   "9de41c50-c81d-4499-be59-dcb4ddbbe313"
+            }
+            Line {
+              SrcBlock                "severity"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 9
+              #GUID                   "37cb3b02-7423-4d75-a118-801c8e162d90"
+            }
+            Line {
+              SrcBlock                "text"
+              SrcPort                 1
+              DstBlock                "CONCAT"
+              DstPort                 2
+              #GUID                   "fb578c37-f901-4d41-8563-567255ed9fcc"
+            }
+          }
+        }
+        Block {
+          BlockType               Outport
+          Name                    "usec"
+          Position                [570, 73, 600, 87]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         [0.721569, 0.737255, 0.768627]
+          #GUID                   "59d095fd-b6bb-4774-9756-50226f13fa4d"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "last_time"
+          Position                [525, 88, 555, 102]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         [0.721569, 0.737255, 0.768627]
+          #GUID                   "a8fab2d0-230b-42f8-807c-ef5dc671a654"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "avg_time"
+          Position                [470, 103, 500, 117]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         [0.721569, 0.737255, 0.768627]
+          #GUID                   "6ed23b0e-1d34-469c-9d95-18205a8ed400"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "max_time"
+          Position                [420, 118, 450, 132]
+          Port                    4
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         [0.721569, 0.737255, 0.768627]
+          #GUID                   "4da5ddc7-c53a-4fd6-a0a5-8a8519c19493"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "status"
+          Position                [1025, 243, 1055, 257]
+          Port                    5
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          BackgroundColor         [0.721569, 0.737255, 0.764706]
+          #GUID                   "e18eaec6-2d84-446b-8cc7-245ac3a0ae14"
+        }
+        Line {
+          SrcBlock                "CMP_by_name"
+          SrcPort                 1
+          DstBlock                "usec"
+          DstPort                 1
+          #GUID                   "4582b523-2a1a-4209-940e-81b8622c1bca"
+        }
+        Line {
+          SrcBlock                "CMP_by_name"
+          SrcPort                 2
+          DstBlock                "last_time"
+          DstPort                 1
+          #GUID                   "037b23fd-919f-460d-a4a8-605c9f0c9772"
+        }
+        Line {
+          SrcBlock                "CMP_by_name"
+          SrcPort                 3
+          DstBlock                "avg_time"
+          DstPort                 1
+          #GUID                   "8f21095c-0411-4150-a133-215e50d3ea35"
+        }
+        Line {
+          SrcBlock                "CMP_by_name"
+          SrcPort                 4
+          DstBlock                "max_time"
+          DstPort                 1
+          #GUID                   "e52f3edc-191f-484d-af4b-81fd3c80313c"
+        }
+        Line {
+          SrcBlock                "CNE_command"
+          SrcPort                 1
+          Points                  [185, 0]
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 9
+          #GUID                   "e199d22b-9320-4f29-994a-1660da83547d"
+        }
+        Line {
+          SrcBlock                "DIF_"
+          SrcPort                 1
+          DstBlock                "REL"
+          DstPort                 1
+          #GUID                   "76ddf00d-6167-4fa6-ab5c-835548a127f9"
+        }
+        Line {
+          SrcBlock                "EDGE_"
+          SrcPort                 1
+          DstBlock                "ORQUAD"
+          DstPort                 1
+          #GUID                   "4cd6485d-c468-4407-b15a-a5c1dc6d56b4"
+        }
+        Line {
+          SrcBlock                "EDGE_1"
+          SrcPort                 1
+          Points                  [15, 0; 0, -50]
+          DstBlock                "ORQUAD"
+          DstPort                 2
+          #GUID                   "d4830601-3031-41e5-915b-cda66209c826"
+        }
+        Line {
+          SrcBlock                "EN"
+          SrcPort                 1
+          Points                  [35, 0]
+          #GUID                   "cca56243-d4e8-4004-a956-973188626e86"
+          Branch {
+            DstBlock                "NOT_"
+            DstPort                 1
+            #GUID                   "525ae1c7-6de1-4faa-bdfe-ed804e850ac1"
+          }
+          Branch {
+            DstBlock                "RS"
+            DstPort                 1
+            #GUID                   "9eaded93-63dd-483a-aff5-72c6dd249730"
+          }
+        }
+        Line {
+          SrcBlock                "EN_LOGGING"
+          SrcPort                 1
+          Points                  [30, 0]
+          #GUID                   "431bd282-441d-47a9-a60c-e4246ec9c559"
+          Branch {
+            DstBlock                "NOT_1"
+            DstPort                 1
+            #GUID                   "53f644b5-a28a-437a-b53c-c8e503ccccb2"
+          }
+          Branch {
+            DstBlock                "RS1"
+            DstPort                 1
+            #GUID                   "5e89a738-1352-4ab9-a849-0b93a6264493"
+          }
+        }
+        Line {
+          SrcBlock                "ITOI_MAV_SEVERITY"
+          SrcPort                 1
+          DstBlock                "SYSLOG"
+          DstPort                 2
+          #GUID                   "6812e670-50b2-44c3-b308-e30e476376b2"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_DEBUG_VECT"
+          SrcPort                 5
+          DstBlock                "CMP_by_name"
+          DstPort                 1
+          #GUID                   "7ac89e3c-a94c-44e5-bfea-20117896fbf0"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_DEBUG_VECT"
+          SrcPort                 6
+          DstBlock                "CMP_by_name"
+          DstPort                 2
+          #GUID                   "ad9912e5-092c-4dea-8d36-1e3cdebe94e0"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_DEBUG_VECT"
+          SrcPort                 7
+          DstBlock                "CMP_by_name"
+          DstPort                 3
+          #GUID                   "72753614-426f-433e-a280-8fccc814566d"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_DEBUG_VECT"
+          SrcPort                 8
+          DstBlock                "CMP_by_name"
+          DstPort                 4
+          #GUID                   "80aefce4-0ab9-4aa8-93ff-48be47878a40"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_DEBUG_VECT"
+          SrcPort                 9
+          DstBlock                "CMP_by_name"
+          DstPort                 5
+          #GUID                   "169666bf-16f1-453d-b89a-aa3e753ee97f"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_STATUSTEXT"
+          SrcPort                 2
+          Points                  [90, 0; 0, 130]
+          DstBlock                "SYSLOG"
+          DstPort                 3
+          #GUID                   "089f8c5f-f3f7-4741-98e3-75373827859d"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_STATUSTEXT"
+          SrcPort                 5
+          Points                  [20, 0]
+          #GUID                   "ddc5e242-e42f-4637-9874-d5d7c159e67f"
+          Branch {
+            DstBlock                "ITOI_MAV_SEVERITY"
+            DstPort                 1
+            #GUID                   "de0e68e5-c634-4afe-9cc8-5168e91bd071"
+          }
+          Branch {
+            DstBlock                "severity_prefix"
+            DstPort                 1
+            #GUID                   "004509c4-588a-4019-8de4-2e84d77c87d7"
+          }
+        }
+        Line {
+          SrcBlock                "MAV__RECV_STATUSTEXT"
+          SrcPort                 6
+          Points                  [125, 0]
+          #GUID                   "03741a43-c7bf-4863-9664-3e24b9750b92"
+          Branch {
+            Points                  [0, 30]
+            DstBlock                "add_prefix"
+            DstPort                 1
+            #GUID                   "e40acb9d-7c23-4142-b7be-ab3d1117c1f5"
+          }
+          Branch {
+            Points                  [0, -5]
+            DstBlock                "severity_prefix"
+            DstPort                 2
+            #GUID                   "eb54b5f3-22ef-4226-829f-0bcd0f595c0a"
+          }
+        }
+        Line {
+          SrcBlock                "NOT_"
+          SrcPort                 1
+          DstBlock                "RS"
+          DstPort                 2
+          #GUID                   "73d0b7bc-7cc7-44c2-ae57-a4f437bd31c2"
+        }
+        Line {
+          SrcBlock                "NOT_1"
+          SrcPort                 1
+          DstBlock                "RS1"
+          DstPort                 2
+          #GUID                   "316e9d56-be07-45fc-9a13-c67cc34f1a02"
+        }
+        Line {
+          SrcBlock                "ORQUAD"
+          SrcPort                 1
+          Points                  [0, -5]
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 1
+          #GUID                   "64fd59be-6c95-4eb8-b47d-dc445719943a"
+        }
+        Line {
+          SrcBlock                "REL"
+          SrcPort                 1
+          Points                  [85, 0]
+          DstBlock                "ORQUAD"
+          DstPort                 3
+          #GUID                   "bbc5f8ef-9900-4aa5-a324-16afa880bab0"
+        }
+        Line {
+          SrcBlock                "RS"
+          SrcPort                 1
+          Points                  [5, 0]
+          #GUID                   "1417d6ec-b088-4161-bb04-8b1f798b8913"
+          Branch {
+            DstBlock                "EDGE_"
+            DstPort                 1
+            #GUID                   "41d1814e-2222-4edf-80c1-eb9fcca67837"
+          }
+          Branch {
+            Points                  [0, 35; 150, 0]
+            DstBlock                "MAV__SEND_COMMAND_LONG"
+            DstPort                 2
+            #GUID                   "f24368f9-e84c-486d-af03-f7f4dd31f0b4"
+          }
+        }
+        Line {
+          SrcBlock                "RS1"
+          SrcPort                 1
+          Points                  [10, 0]
+          #GUID                   "c9060856-ec32-4e46-baa7-fd418ed18f84"
+          Branch {
+            DstBlock                "EDGE_1"
+            DstPort                 1
+            #GUID                   "670ffa8d-d65e-47e4-a81b-88df5feac522"
+          }
+          Branch {
+            Points                  [0, -20]
+            DstBlock                "MAV__SEND_COMMAND_LONG"
+            DstPort                 3
+            #GUID                   "54ca1311-030b-444f-adc5-f9067027e3e7"
+          }
+        }
+        Line {
+          SrcBlock                "add_prefix"
+          SrcPort                 1
+          DstBlock                "SYSLOG"
+          DstPort                 1
+          #GUID                   "d8c8ae54-172a-471b-8aef-2666ef9c1f8d"
+        }
+        Line {
+          SrcBlock                "log_level"
+          SrcPort                 1
+          Points                  [35, 0]
+          #GUID                   "615fb52d-a9dd-4e6b-ad59-ad494e3b9b0f"
+          Branch {
+            DstBlock                "DIF_"
+            DstPort                 1
+            #GUID                   "50be63ac-b753-480c-93d4-bfc32a8a6907"
+          }
+          Branch {
+            Points                  [260, 0]
+            DstBlock                "MAV__SEND_COMMAND_LONG"
+            DstPort                 4
+            #GUID                   "15180917-4bfb-4838-8556-c7320efd38a5"
+          }
+        }
+        Line {
+          SrcBlock                "severity_prefix"
+          SrcPort                 1
+          DstBlock                "status"
+          DstPort                 1
+          #GUID                   "38bd2a7d-3b32-438a-b5a4-ed4cc8a75f5f"
+        }
+        Annotation {
+          Position                [635, 325]
+          Text                    "LEVEL    REX MAV\nError        0      3\nWarning  1      4\nInfo         2      6\nVerbose   3      7\n"
+          HorizontalAlignment     "left"
+          VerticalAlignment       "top"
+          FontSize                10
+          #GUID                   "51e18160-7dc1-4a72-9b5c-fb1487d11da9"
+        }
+        Annotation {
+          Position                [225, 45]
+          Text                    "Text v name je potreba zmenit na 'diag' az bude vyreseny FS#3369"
+          HorizontalAlignment     "left"
+          VerticalAlignment       "top"
+          BackgroundColor         "white"
+          ForegroundColor         "black"
+          FontName                "Arial"
+          FontWeight              "normal"
+          FontAngle               "normal"
+          FontSize                10
+          #GUID                   "1c5ea51d-08ab-46ce-a165-70da746e501a"
+        }
+      }
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "HEARTBEAT"
+      Ports                   [1, 0, 0, 0, 0]
+      Position                [300, 195, 360, 225]
+      FontSize                10
+      ShowPortLabels          on
+      #OpenSubsysOnDblClick   off
+      MaskType                "REX sequence"
+      #MaskTypeString         "int16,int16"
+      MaskPromptString        "Target SysID|MAV_TYPE 0:GENERIC 18:ON_BOARD 31:CHARGING_STATION"
+      MaskStyleString         "edit,edit"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString        "on,on"
+      MaskVisibilityString    "on,on"
+      MaskVariables           "TgtSysID=@1;MAV_TYPE=@2"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      MaskValueString         "-1|0"
+      #GUID                   "063e67a6-b905-47ea-92aa-1888d4ac57f5"
+      System {
+        Name                    "HEARTBEAT"
+        __CopyByReference       off
+        Location                [317, 279, 869, 551]
+        #GUID                   "063e67a6-b905-47ea-92aa-1888d4ac57f5"
+        Block {
+          BlockType               Inport
+          Name                    "EN"
+          Position                [20, 13, 50, 27]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "1f919386-cae7-40e1-92f6-c7c52eb88591"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "AND_"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [300, 48, 335, 72]
+          SourceBlock             "logiclib/AND"
+          #GUID                   "bde262eb-f85f-45e0-aa83-bf0476d5ee84"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "BIS"
+          Ports                   [0, 2, 0, 0, 0]
+          Position                [180, 23, 195, 47]
+          SourceBlock             "genlib/BIS"
+          Y0                      off
+          t1                      "0.5"
+          t2                      1
+          t3                      0
+          t4                      4
+          t5                      5
+          t6                      6
+          t7                      7
+          t8                      8
+          RPT                     on
+          FontSize                10
+          #GUID                   "80810fa6-5d13-4a66-9907-f29a4b90881e"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNE_MAV_AUTOPILOT"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [70, 138, 145, 152]
+          SourceBlock             "mathlib/CNE"
+          yenum                   "0:MAV_AUTOPILOT_GENERIC "
+          pupstr                  "0:MAV_AUTOPILOT_GENERIC |8: MAV_AUTOPILOT_INVALID"
+          FontSize                10
+          #GUID                   "06cd6aed-212a-42a2-910d-46e1e674c7b4"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNE_MAV_STATE"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [70, 198, 145, 212]
+          SourceBlock             "mathlib/CNE"
+          yenum                   "4: MAV_STATE_ACTIVE"
+          pupstr                  "4: MAV_STATE_ACTIVE"
+          FontSize                10
+          #GUID                   "a330ddb6-7a8c-4109-b342-c217ae394c15"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNI_MAV_TYPE"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [95, 108, 115, 122]
+          SourceBlock             "mathlib/CNI"
+          icn                     "MAV_TYPE"
+          FontSize                10
+          vtype                   "4: Long (I32)"
+          #GUID                   "8c17a20e-a4ad-4279-901b-d60b64bbfe61"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNI_MAV_VERSION"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [100, 228, 120, 242]
+          SourceBlock             "mathlib/CNI"
+          icn                     3
+          FontSize                10
+          vtype                   "4: Long (I32)"
+          #GUID                   "861048fb-54c3-4ff3-88ab-efbbd4dabccb"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EDGE_"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [235, 23, 260, 37]
+          SourceBlock             "logiclib/EDGE"
+          iedge                   "1: Rising edge"
+          #GUID                   "cb01bb03-26ba-4fbd-bf40-16c3c7793fc6"
+        }
+        Block {
+          BlockType               SubSystem
+          Name                    "MAV_MODE_FLAG"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [70, 168, 115, 182]
+          FontSize                10
+          ShowPortLabels          on
+          MaskType                "REX sequence"
+          MaskIconFrame           on
+          MaskIconOpaque          on
+          MaskIconRotate          "none"
+          MaskIconUnits           "autoscale"
+          #GUID                   "2889dfba-f573-45e6-b28e-858d15e22966"
+          System {
+            Name                    "MAV_MODE_FLAG"
+            __CopyByReference       off
+            Location                [185, 207, 565, 519]
+            #GUID                   "2889dfba-f573-45e6-b28e-858d15e22966"
+            Block {
+              BlockType               Reference
+              Name                    "BMOCT"
+              Ports                   [8, 1, 0, 0, 0]
+              Position                [260, 52, 290, 278]
+              SourceBlock             "logiclib/BMOCT"
+              shift                   0
+              vtype                   "4: Long (I32)"
+              #GUID                   "18c54385-6980-4e41-b6de-f34af2c87e93"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNB_AUTO_ENABLED"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [75, 113, 95, 127]
+              SourceBlock             "mathlib/CNB"
+              YCN                     off
+              FontSize                10
+              #GUID                   "79fcc454-80a1-4131-92d8-8f109d1dab82"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNB_CUSTOM_MODE_ENABLED"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [75, 53, 95, 67]
+              SourceBlock             "mathlib/CNB"
+              YCN                     off
+              FontSize                10
+              #GUID                   "cbcc3be4-b4c1-4179-ae95-84946ceea53e"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNB_GUIDED_ENABLED"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [75, 143, 95, 157]
+              SourceBlock             "mathlib/CNB"
+              YCN                     off
+              FontSize                10
+              #GUID                   "b4415141-e2d6-472b-9b80-342ef77eb505"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNB_HIL_ENABLED"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [75, 203, 95, 217]
+              SourceBlock             "mathlib/CNB"
+              YCN                     off
+              FontSize                10
+              #GUID                   "49baa185-4371-49de-a2a8-bda2ebb1f3c5"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNB_MANUAL_INPUT_ENABLED"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [75, 233, 95, 247]
+              SourceBlock             "mathlib/CNB"
+              YCN                     on
+              FontSize                10
+              #GUID                   "99688e51-6105-4ff5-9618-e307d148bf06"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNB_SAFETY_ARMED"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [75, 263, 95, 277]
+              SourceBlock             "mathlib/CNB"
+              YCN                     on
+              FontSize                10
+              #GUID                   "2657b6cc-b6ae-47bc-aa67-e3df64cb8a68"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNB_STABILIZE_ENABLED"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [75, 173, 95, 187]
+              SourceBlock             "mathlib/CNB"
+              YCN                     off
+              FontSize                10
+              #GUID                   "3b87a38f-646d-468f-b83f-39d3e8f2bfca"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNB_TEST_ENABLED"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [75, 83, 95, 97]
+              SourceBlock             "mathlib/CNB"
+              YCN                     off
+              FontSize                10
+              #GUID                   "fe6deca8-b067-4fef-a24c-6e6c8ac9fa3f"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "iy"
+              Position                [325, 158, 355, 172]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "1728b2ab-f80c-4d01-866f-0beb024cc55a"
+            }
+            Line {
+              SrcBlock                "BMOCT"
+              SrcPort                 1
+              DstBlock                "iy"
+              DstPort                 1
+              #GUID                   "65b62029-cbca-47c0-a519-10de67d22165"
+            }
+            Line {
+              SrcBlock                "CNB_AUTO_ENABLED"
+              SrcPort                 1
+              DstBlock                "BMOCT"
+              DstPort                 3
+              #GUID                   "92c7de84-8d82-4b51-8039-48e0badaadbc"
+            }
+            Line {
+              SrcBlock                "CNB_CUSTOM_MODE_ENABLED"
+              SrcPort                 1
+              DstBlock                "BMOCT"
+              DstPort                 1
+              #GUID                   "703dea07-66ee-40b6-b617-fe3d5db4ea9b"
+            }
+            Line {
+              SrcBlock                "CNB_GUIDED_ENABLED"
+              SrcPort                 1
+              DstBlock                "BMOCT"
+              DstPort                 4
+              #GUID                   "0c85eb6a-c664-4628-b4c1-e369a9762ccd"
+            }
+            Line {
+              SrcBlock                "CNB_HIL_ENABLED"
+              SrcPort                 1
+              DstBlock                "BMOCT"
+              DstPort                 6
+              #GUID                   "dd608180-de52-4bfa-a0a7-b2a6fc6fea49"
+            }
+            Line {
+              SrcBlock                "CNB_MANUAL_INPUT_ENABLED"
+              SrcPort                 1
+              DstBlock                "BMOCT"
+              DstPort                 7
+              #GUID                   "ad55436a-5836-4eef-afd4-8c319646cc96"
+            }
+            Line {
+              SrcBlock                "CNB_SAFETY_ARMED"
+              SrcPort                 1
+              DstBlock                "BMOCT"
+              DstPort                 8
+              #GUID                   "44f5af3f-eb0f-49c6-ba50-cd44fc0ddda4"
+            }
+            Line {
+              SrcBlock                "CNB_STABILIZE_ENABLED"
+              SrcPort                 1
+              DstBlock                "BMOCT"
+              DstPort                 5
+              #GUID                   "9a0718a5-49a8-48bf-8eab-94edb1215720"
+            }
+            Line {
+              SrcBlock                "CNB_TEST_ENABLED"
+              SrcPort                 1
+              DstBlock                "BMOCT"
+              DstPort                 2
+              #GUID                   "f9d3fe66-21a8-41bd-ac4d-1db0e1d87e4b"
+            }
+            Annotation {
+              Position                [20, 20]
+              Text                    "MAV_MODE_FLAG"
+              HorizontalAlignment     "left"
+              VerticalAlignment       "top"
+              BackgroundColor         "white"
+              ForegroundColor         "black"
+              FontName                "Roboto"
+              FontWeight              "normal"
+              FontAngle               "normal"
+              FontSize                16
+              #GUID                   "7b8d41bb-5226-48d0-badd-33d6cc288ffd"
+            }
+          }
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MAV__SEND_HEARTBEAT"
+          Ports                   [7, 1, 0, 0, 0]
+          Position                [365, 85, 505, 205]
+          SourceBlock             "mavlinklib/MAV_SEND_HEARTBEAT"
+          TgtSysID                "TgtSysID"
+          TgtCompID               -1
+          FontSize                10
+          BackgroundColor         "yellow"
+          SrcSysID                -1
+          SrcCompID               -1
+          #GUID                   "fd121f08-0720-4922-809e-c1c36eb34689"
+        }
+        Line {
+          SrcBlock                "AND_"
+          SrcPort                 1
+          Points                  [10, 0]
+          DstBlock                "MAV__SEND_HEARTBEAT"
+          DstPort                 1
+          #GUID                   "fa77b6ec-fc7c-4efe-8934-81ced1959c9e"
+        }
+        Line {
+          SrcBlock                "BIS"
+          SrcPort                 1
+          DstBlock                "EDGE_"
+          DstPort                 1
+          #GUID                   "449796f1-a1b0-4e75-b524-93b13896a18d"
+        }
+        Line {
+          SrcBlock                "CNE_MAV_AUTOPILOT"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_HEARTBEAT"
+          DstPort                 4
+          #GUID                   "5b7d7228-5209-4548-9d55-3f15f13125ab"
+        }
+        Line {
+          SrcBlock                "CNE_MAV_STATE"
+          SrcPort                 1
+          Points                  [30, 0; 0, -30]
+          DstBlock                "MAV__SEND_HEARTBEAT"
+          DstPort                 6
+          #GUID                   "1acfe293-1f89-44ca-8106-5826df3b121e"
+        }
+        Line {
+          SrcBlock                "CNI_MAV_TYPE"
+          SrcPort                 1
+          Points                  [180, 0; 0, 15]
+          DstBlock                "MAV__SEND_HEARTBEAT"
+          DstPort                 3
+          #GUID                   "2e27d13e-b8ea-4f1c-92b5-4e07f680c07a"
+        }
+        Line {
+          SrcBlock                "CNI_MAV_VERSION"
+          SrcPort                 1
+          Points                  [65, 0; 0, -45]
+          DstBlock                "MAV__SEND_HEARTBEAT"
+          DstPort                 7
+          #GUID                   "f43246c4-d714-4b52-b059-24959ad536b7"
+        }
+        Line {
+          SrcBlock                "EDGE_"
+          SrcPort                 1
+          Points                  [20, 0]
+          DstBlock                "AND_"
+          DstPort                 1
+          #GUID                   "f3fe48cb-13c3-4d24-84a3-15f7476925f6"
+        }
+        Line {
+          SrcBlock                "EN"
+          SrcPort                 1
+          Points                  [0, 45]
+          DstBlock                "AND_"
+          DstPort                 2
+          #GUID                   "ef00e909-890f-4f44-8f1a-7a0547ac406b"
+        }
+        Line {
+          SrcBlock                "MAV_MODE_FLAG"
+          SrcPort                 1
+          Points                  [50, 0; 0, -15]
+          DstBlock                "MAV__SEND_HEARTBEAT"
+          DstPort                 5
+          #GUID                   "aef273f6-bfa7-4bbe-8d55-8246940bcddc"
+        }
+      }
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "RECV_HEARTBEAT"
+      Ports                   [0, 5, 0, 0, 0]
+      Position                [300, 266, 360, 374]
+      FontSize                10
+      ShowPortLabels          on
+      BackgroundColor         "yellow"
+      #OpenSubsysOnDblClick   off
+      MaskType                "REX sequence"
+      #MaskTypeString         "int16"
+      MaskPromptString        "System ID of the MAVLink device"
+      MaskStyleString         "edit"
+      MaskTunableValueString  on
+      MaskEnableString        on
+      MaskVisibilityString    on
+      MaskVariables           "SysID=@1"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      MaskValueString         1
+      #GUID                   "e175be09-931f-4969-a4f3-f296f7e2e3da"
+      System {
+        Name                    "RECV_HEARTBEAT"
+        __CopyByReference       off
+        Location                [48, 209, 587, 624]
+        #GUID                   "e175be09-931f-4969-a4f3-f296f7e2e3da"
+        Block {
+          BlockType               SubSystem
+          Name                    "HB_custom_command"
+          Ports                   [1, 4, 0, 0, 0]
+          Position                [245, 57, 430, 133]
+          FontSize                10
+          ShowPortLabels          on
+          MaskType                "REX sequence"
+          MaskIconFrame           on
+          MaskIconOpaque          on
+          MaskIconRotate          "none"
+          MaskIconUnits           "autoscale"
+          #GUID                   "78249c83-9ffc-43ac-ab1a-563d1d4b4d35"
+          System {
+            Name                    "HB_custom_command"
+            __CopyByReference       off
+            Location                [56, 148, 951, 869]
+            #GUID                   "78249c83-9ffc-43ac-ab1a-563d1d4b4d35"
+            Block {
+              BlockType               Inport
+              Name                    "custom_mode"
+              Position                [20, 93, 50, 107]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "fc982043-d487-4cb1-894c-1a2b93cb7df0"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNE_MAIN_MODE"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [670, 103, 745, 117]
+              SourceBlock             "mathlib/CNE"
+              yenum                   "0: NOT SET"
+              pupstr                  "0: NOT SET|1: MANUAL|2: ALTCTL|3: POSCTL|4: AUTO|5: ACRO|6: OFFBOARD|7: STABILIZED|8: RATTITUDE|9: SIMPLE"
+              FontSize                10
+              #GUID                   "d7d81913-568d-47b5-aeda-f5bae6d37509"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNE_SUB_MODE_AUTO"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [670, 153, 745, 167]
+              SourceBlock             "mathlib/CNE"
+              yenum                   "0:"
+              pupstr                  "0:|1: READY|2: TAKEOFF|3: LOITER|4: MISSION|5: RTL|6: LAND|7: RTGS|8: FOLLOW_TARGET|9: PRECLAND"
+              FontSize                10
+              #GUID                   "8a2f279f-03e2-4d6a-82a2-7929112b07d2"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNE_SUB_MODE_POSCTL"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [660, 203, 780, 217]
+              SourceBlock             "mathlib/CNE"
+              yenum                   "0: POSCTL"
+              pupstr                  "0: POSCTL| 1: ORBIT"
+              FontSize                10
+              #GUID                   "4c4123ad-e6d4-48df-8c01-54cbfa41b236"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNI"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [255, 583, 275, 597]
+              SourceBlock             "mathlib/CNI"
+              icn                     8
+              FontSize                10
+              vtype                   "4: Long (I32)"
+              #GUID                   "1128e4f3-48a6-4655-90a2-23bbcb4fd83f"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNI1"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [480, 583, 500, 597]
+              SourceBlock             "mathlib/CNI"
+              icn                     16
+              FontSize                10
+              vtype                   "4: Long (I32)"
+              #GUID                   "448f98bf-3a58-47e6-845d-05d873a59e56"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNI_MODE_AUTO"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [250, 163, 270, 177]
+              SourceBlock             "mathlib/CNI"
+              icn                     4
+              FontSize                10
+              vtype                   "4: Long (I32)"
+              #GUID                   "8d080ac1-c4bd-4c97-b4e6-24e15dc5ff06"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNI_MODE_AUTO_offset"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [105, 263, 125, 277]
+              SourceBlock             "mathlib/CNI"
+              icn                     12
+              FontSize                10
+              vtype                   "4: Long (I32)"
+              #GUID                   "12e26008-0274-44b4-9bb8-9918100e8795"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNI_MODE_POSCTL"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [250, 203, 270, 217]
+              SourceBlock             "mathlib/CNI"
+              icn                     3
+              FontSize                10
+              vtype                   "4: Long (I32)"
+              #GUID                   "c4fc0343-3ebb-4066-856c-7dee2e22c938"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNI_MODE_POSCTL_offset"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [100, 313, 120, 327]
+              SourceBlock             "mathlib/CNI"
+              icn                     10
+              FontSize                10
+              vtype                   "4: Long (I32)"
+              #GUID                   "788c9c4f-f0c7-4206-84a9-6705bc38271c"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [15, 432, 105, 448]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Manual"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "c61b2284-e8c6-432a-8d48-2c022cf3cef5"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS1"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [15, 552, 105, 568]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Stabilized"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "c93f8e4d-ad6c-459f-ab10-8d787a704bed"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS10"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [465, 412, 555, 428]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Mission"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "6bd7eee7-8a0c-4c55-a78c-4fbd2db8c824"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS11"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [465, 432, 555, 448]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Return"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "3c3d6b6b-9565-4a0f-8ea9-98054127d0fa"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS12"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [465, 492, 555, 508]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Follow Me"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "f45068e7-f335-48de-8e00-ef7317da6efe"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS13"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [465, 452, 555, 468]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Land"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "9bb79eec-7d01-4003-b32e-41e103258492"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS14"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [465, 512, 555, 528]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Precision Land"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "17349398-e314-4c8c-ada7-8ab13217aa47"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS15"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [245, 512, 335, 528]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Ready"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "01cf2108-9e2c-4cbc-ae8a-2078883e553f"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS2"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [15, 512, 105, 528]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Acro"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "949fa390-535c-4171-bac6-93bf78adb03e"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS22"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [435, 472, 555, 488]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Return to Groundstation"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "c7c43a2d-291f-4325-8774-41064e48904a"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS23"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [245, 532, 335, 548]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Takeoff"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "ba6ef75c-9e0e-47ff-9d8d-7a4b16b39a80"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS3"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [245, 412, 335, 428]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Rattitude"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "6ac6ffac-8114-4133-904c-ac7757792be7"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS4"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [15, 452, 105, 468]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Altitude"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "c6ab4aa0-a621-4e2b-a22a-c53eaa46b23d"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS5"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [15, 532, 105, 548]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Offboard"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "abbc081c-b081-4ce1-bafa-635fe5fb5107"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS6"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [245, 432, 335, 448]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Simple"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "9398c993-c4d0-4c6a-81e8-6f7ce1f72819"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS7"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [245, 452, 335, 468]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Position"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "81f4350f-2512-4a17-9ac7-cfce70b570c8"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS8"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [245, 472, 335, 488]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Orbit"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "42d4ce6f-b712-42bf-ba53-546a42a8e332"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CNS9"
+              Ports                   [0, 1, 0, 0, 0]
+              Position                [245, 552, 335, 568]
+              SourceBlock             "stringlib/CNS"
+              scv                     "Hold"
+              nmax                    0
+              FontSize                10
+              ShowName                off
+              #GUID                   "fd05b183-e6f0-4672-a4c0-2ba9116ff65f"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "CONCAT"
+              Ports                   [8, 1, 0, 0, 0]
+              Position                [690, 520, 750, 610]
+              SourceBlock             "stringlib/CONCAT"
+              ptrn                    "%1%2%3%4"
+              nmax                    0
+              FontSize                10
+              #GUID                   "adacbd30-d972-477b-8b0b-4fc7052ce2df"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "EQ"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [315, 153, 350, 177]
+              SourceBlock             "logiclib/EQ"
+              #GUID                   "d012a9b4-005e-4440-ba9b-d3f748af3071"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "EQ1"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [315, 193, 350, 217]
+              SourceBlock             "logiclib/EQ"
+              #GUID                   "6b9d5ea9-eb0c-4166-b6f7-32cbd77f8454"
+            }
+            Block {
+              BlockType               From
+              Name                    "From"
+              Position                [55, 573, 105, 587]
+              ShowName                off
+              GotoTag                 "imode"
+              FontSize                10
+              #GUID                   "4a5175c9-2932-4e9e-8a5c-7b6978f322e4"
+            }
+            Block {
+              BlockType               From
+              Name                    "From1"
+              Position                [205, 573, 255, 587]
+              ShowName                off
+              GotoTag                 "imode"
+              FontSize                10
+              #GUID                   "2af3a86f-e5aa-4e75-b602-2d39be5ef801"
+            }
+            Block {
+              BlockType               From
+              Name                    "From2"
+              Position                [430, 573, 480, 587]
+              ShowName                off
+              GotoTag                 "imode"
+              FontSize                10
+              #GUID                   "4341161d-04fc-4b33-96a3-04ac881bfd9d"
+            }
+            Block {
+              BlockType               Goto
+              Name                    "Goto"
+              Position                [585, 253, 635, 267]
+              ShowName                off
+              GotoTag                 "imode"
+              TagVisibility           "local"
+              FontSize                10
+              #GUID                   "8ba708d1-048a-4289-b5c9-62b895a948d2"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "IADD"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [220, 253, 245, 277]
+              SourceBlock             "mathlib/IADD"
+              vtype                   "4: Long (I32)"
+              SAT                     off
+              #GUID                   "db36b35a-558f-4a5b-a906-cf2f0e1f6d85"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "IADD1"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [220, 303, 245, 327]
+              SourceBlock             "mathlib/IADD"
+              vtype                   "4: Long (I32)"
+              SAT                     off
+              #GUID                   "77df4d5c-f1be-4026-880d-c838763adcdc"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "IADD2"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [445, 253, 470, 277]
+              SourceBlock             "mathlib/IADD"
+              vtype                   "4: Long (I32)"
+              SAT                     off
+              #GUID                   "6c60f7a4-17a0-4902-b4a4-a394a7e695d3"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "INTSM_MAIN_MODE"
+              Ports                   [1, 1, 0, 0, 0]
+              Position                [130, 93, 155, 107]
+              SourceBlock             "logiclib/INTSM"
+              shift                   16
+              mask                    255
+              FontSize                10
+              vtype                   "10: Large (I64)"
+              #GUID                   "310c9909-aa63-4b3e-a017-32581b789bd6"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "INTSM_SUB_MODE"
+              Ports                   [1, 1, 0, 0, 0]
+              Position                [130, 138, 155, 152]
+              SourceBlock             "logiclib/INTSM"
+              shift                   24
+              mask                    255
+              FontSize                10
+              vtype                   "10: Large (I64)"
+              #GUID                   "4a260ebb-65b7-49be-8614-985d63b82368"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "ISSW"
+              Ports                   [3, 1, 0, 0, 0]
+              Position                [440, 128, 470, 162]
+              SourceBlock             "logiclib/ISSW"
+              #GUID                   "7fa66fab-47e7-4fc3-ac6d-664a7b3d5016"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "ISSW1"
+              Ports                   [3, 1, 0, 0, 0]
+              Position                [440, 178, 470, 212]
+              SourceBlock             "logiclib/ISSW"
+              #GUID                   "fd556de9-e23f-49a5-baad-ec61e1bffcec"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "ISSW2"
+              Ports                   [3, 1, 0, 0, 0]
+              Position                [390, 243, 420, 277]
+              SourceBlock             "logiclib/ISSW"
+              #GUID                   "787d085d-e26a-4b23-b082-48ef66d0d713"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "ISSW3"
+              Ports                   [3, 1, 0, 0, 0]
+              Position                [390, 293, 420, 327]
+              SourceBlock             "logiclib/ISSW"
+              #GUID                   "779e969c-eba2-410d-a01b-1955d625c435"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "ISSW4"
+              Ports                   [3, 1, 0, 0, 0]
+              Position                [530, 243, 560, 277]
+              SourceBlock             "logiclib/ISSW"
+              #GUID                   "9ea2c5ac-0d87-4af1-b1c0-541a8d8c939d"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "ISUB"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [300, 573, 325, 597]
+              SourceBlock             "mathlib/ISUB"
+              vtype                   "4: Long (I32)"
+              SAT                     off
+              #GUID                   "e6af4024-dafa-4ca0-8041-3803e3553783"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "ISUB1"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [525, 573, 550, 597]
+              SourceBlock             "mathlib/ISUB"
+              vtype                   "4: Long (I32)"
+              SAT                     off
+              #GUID                   "47c055f7-d332-41ad-95d2-1532c13cb481"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "OR_"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [390, 343, 425, 367]
+              SourceBlock             "logiclib/OR"
+              #GUID                   "eaa56625-4677-408c-84b9-9f44196ef17b"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "SELSOCT"
+              Ports                   [12, 1, 0, 0, 0]
+              Position                [145, 407, 185, 653]
+              SourceBlock             "stringlib/SELSOCT"
+              BINF                    off
+              nmax                    0
+              #GUID                   "f6f98534-5710-4f13-91cb-0e3558af8edc"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "SELSOCT1"
+              Ports                   [12, 1, 0, 0, 0]
+              Position                [365, 407, 405, 653]
+              SourceBlock             "stringlib/SELSOCT"
+              BINF                    off
+              nmax                    0
+              #GUID                   "cd9a9ec6-408c-4c1a-af55-6e2b915607fd"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "SELSOCT2"
+              Ports                   [12, 1, 0, 0, 0]
+              Position                [590, 407, 630, 653]
+              SourceBlock             "stringlib/SELSOCT"
+              BINF                    off
+              nmax                    0
+              #GUID                   "a04196db-3549-4d01-b316-810b53939b5c"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "SETPI_MAIN_MODE"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [530, 93, 565, 117]
+              SourceBlock             "paramlib/SETPI"
+              sc                      ".CNE_MAIN_MODE:yenum"
+              SETF                    off
+              FontSize                10
+              #GUID                   "ed985103-2eac-4d33-8a94-56773b3f1639"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "SETPI_SUB_MODE_AUTO"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [530, 138, 565, 162]
+              SourceBlock             "paramlib/SETPI"
+              sc                      ".CNE_SUB_MODE_AUTO:yenum"
+              SETF                    off
+              FontSize                10
+              #GUID                   "e6753de7-e453-4392-a4ac-3af2aedfe47c"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "SETPI_SUB_MODE_POSCTL"
+              Ports                   [2, 2, 0, 0, 0]
+              Position                [530, 188, 565, 212]
+              SourceBlock             "paramlib/SETPI"
+              sc                      ".CNE_SUB_MODE_POSCTL:yenum"
+              SETF                    off
+              FontSize                10
+              #GUID                   "4faf709e-fbe1-4e0b-a421-6dbe6105ace0"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "smode"
+              Position                [830, 558, 860, 572]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "a037e24d-206c-4dbc-9524-204ad9a3ea15"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "main_mode"
+              Position                [825, 103, 855, 117]
+              Port                    2
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "ae07deab-e75f-4235-b179-edd6610dbed4"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "sub_mode_auto"
+              Position                [825, 153, 855, 167]
+              Port                    3
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "aab3bdbf-a195-44e0-a043-a7583b1da32c"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "sub_mode_posctl"
+              Position                [825, 203, 855, 217]
+              Port                    4
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "1bb70fb0-431a-457d-a58b-31c7630b5e6b"
+            }
+            Line {
+              SrcBlock                "CNE_MAIN_MODE"
+              SrcPort                 1
+              DstBlock                "main_mode"
+              DstPort                 1
+              #GUID                   "7d5ad3a4-e8b8-42af-9ac1-e00cab652b17"
+            }
+            Line {
+              SrcBlock                "CNE_SUB_MODE_AUTO"
+              SrcPort                 1
+              DstBlock                "sub_mode_auto"
+              DstPort                 1
+              #GUID                   "bcf4e9a7-4389-4f5f-bf9b-19902f6bb11e"
+            }
+            Line {
+              SrcBlock                "CNE_SUB_MODE_POSCTL"
+              SrcPort                 1
+              DstBlock                "sub_mode_posctl"
+              DstPort                 1
+              #GUID                   "508fd20d-88e8-4456-bcbe-14523b31559f"
+            }
+            Line {
+              SrcBlock                "CNI"
+              SrcPort                 1
+              DstBlock                "ISUB"
+              DstPort                 2
+              #GUID                   "b02b4fca-44c9-4703-9304-6b0bdf509256"
+            }
+            Line {
+              SrcBlock                "CNI1"
+              SrcPort                 1
+              DstBlock                "ISUB1"
+              DstPort                 2
+              #GUID                   "1649e0db-dc44-4be2-a25f-cb9b1d34a9f3"
+            }
+            Line {
+              SrcBlock                "CNI_MODE_AUTO"
+              SrcPort                 1
+              DstBlock                "EQ"
+              DstPort                 2
+              #GUID                   "eb6e09de-011b-450c-9130-01e753ec3e3a"
+            }
+            Line {
+              SrcBlock                "CNI_MODE_AUTO_offset"
+              SrcPort                 1
+              DstBlock                "IADD"
+              DstPort                 2
+              #GUID                   "71dba37c-8505-49b7-81aa-ca5e8a1b15ec"
+            }
+            Line {
+              SrcBlock                "CNI_MODE_POSCTL"
+              SrcPort                 1
+              DstBlock                "EQ1"
+              DstPort                 2
+              #GUID                   "1d32ab41-9820-4ab1-bc72-d225fb127f94"
+            }
+            Line {
+              SrcBlock                "CNI_MODE_POSCTL_offset"
+              SrcPort                 1
+              DstBlock                "IADD1"
+              DstPort                 2
+              #GUID                   "bc502faf-b71b-4c1e-a8f2-e6d755d9f060"
+            }
+            Line {
+              SrcBlock                "CNS"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 2
+              #GUID                   "c9525a1b-4856-4679-ad8a-ad661d03244c"
+            }
+            Line {
+              SrcBlock                "CNS1"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 8
+              #GUID                   "2861634a-fa55-421c-b1b4-3cb0b0ca64e4"
+            }
+            Line {
+              SrcBlock                "CNS10"
+              SrcPort                 1
+              DstBlock                "SELSOCT2"
+              DstPort                 1
+              #GUID                   "7bfb3cc3-e383-4b78-8ae7-fa8f43f3e434"
+            }
+            Line {
+              SrcBlock                "CNS11"
+              SrcPort                 1
+              DstBlock                "SELSOCT2"
+              DstPort                 2
+              #GUID                   "c61e48d9-9bd3-4a03-9d67-128edda2c936"
+            }
+            Line {
+              SrcBlock                "CNS12"
+              SrcPort                 1
+              DstBlock                "SELSOCT2"
+              DstPort                 5
+              #GUID                   "fde1ecb5-0836-4724-b659-ef357a845318"
+            }
+            Line {
+              SrcBlock                "CNS13"
+              SrcPort                 1
+              DstBlock                "SELSOCT2"
+              DstPort                 3
+              #GUID                   "becef9a5-027b-436e-8f3f-b236ae6f2aae"
+            }
+            Line {
+              SrcBlock                "CNS14"
+              SrcPort                 1
+              DstBlock                "SELSOCT2"
+              DstPort                 6
+              #GUID                   "cfe1f91b-c8ee-44a4-8be6-6105acfd1204"
+            }
+            Line {
+              SrcBlock                "CNS15"
+              SrcPort                 1
+              DstBlock                "SELSOCT1"
+              DstPort                 6
+              #GUID                   "013a5b9f-d82e-4602-94c7-d8c97bfacf6d"
+            }
+            Line {
+              SrcBlock                "CNS2"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 6
+              #GUID                   "ab01d484-4d13-4be1-b92f-a93d9d1c40f3"
+            }
+            Line {
+              SrcBlock                "CNS22"
+              SrcPort                 1
+              DstBlock                "SELSOCT2"
+              DstPort                 4
+              #GUID                   "90f4a6a6-5cd1-4b14-9e67-039626dbc7ac"
+            }
+            Line {
+              SrcBlock                "CNS23"
+              SrcPort                 1
+              DstBlock                "SELSOCT1"
+              DstPort                 7
+              #GUID                   "0dbbfd22-9707-4fa4-b4e8-3de8e7db56a5"
+            }
+            Line {
+              SrcBlock                "CNS3"
+              SrcPort                 1
+              DstBlock                "SELSOCT1"
+              DstPort                 1
+              #GUID                   "6a6c863e-6a54-4449-bf36-b9cbd70834ef"
+            }
+            Line {
+              SrcBlock                "CNS4"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 3
+              #GUID                   "6ffab372-af55-407d-a1d1-57df8ed67b4b"
+            }
+            Line {
+              SrcBlock                "CNS5"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 7
+              #GUID                   "1a6fc8db-b94b-4afa-84df-4f0f080c034d"
+            }
+            Line {
+              SrcBlock                "CNS6"
+              SrcPort                 1
+              DstBlock                "SELSOCT1"
+              DstPort                 2
+              #GUID                   "5cd6fa36-86a6-4191-8f15-ac9877aba88c"
+            }
+            Line {
+              SrcBlock                "CNS7"
+              SrcPort                 1
+              DstBlock                "SELSOCT1"
+              DstPort                 3
+              #GUID                   "5e6074da-8a06-4c2a-999d-d5cc2861358c"
+            }
+            Line {
+              SrcBlock                "CNS8"
+              SrcPort                 1
+              DstBlock                "SELSOCT1"
+              DstPort                 4
+              #GUID                   "de884a4a-71bb-48e1-9c8c-87da6e12e39d"
+            }
+            Line {
+              SrcBlock                "CNS9"
+              SrcPort                 1
+              DstBlock                "SELSOCT1"
+              DstPort                 8
+              #GUID                   "0688f609-e06a-4ebb-a018-784c86b9aae0"
+            }
+            Line {
+              SrcBlock                "CONCAT"
+              SrcPort                 1
+              DstBlock                "smode"
+              DstPort                 1
+              #GUID                   "a5e6af37-8466-4c19-956b-bf9eed2b8cd5"
+            }
+            Line {
+              SrcBlock                "EQ"
+              SrcPort                 1
+              Points                  [0, -10; 15, 0]
+              #GUID                   "47c68946-e009-414c-a61a-b03832a00f4a"
+              Branch {
+                DstBlock                "ISSW"
+                DstPort                 3
+                #GUID                   "7fda41de-cb5c-448f-925d-28d9343ec5f6"
+              }
+              Branch {
+                Points                  [0, 115]
+                #GUID                   "49b00247-7b3d-43ae-b109-4bf9faff4069"
+                Branch {
+                  DstBlock                "ISSW2"
+                  DstPort                 3
+                  #GUID                   "6d57c00c-fb0d-40b9-8a24-9b1425f14e05"
+                }
+                Branch {
+                  Points                  [0, 80]
+                  DstBlock                "OR_"
+                  DstPort                 1
+                  #GUID                   "0fb0b492-083d-4eaf-ac31-6937407629d9"
+                }
+              }
+            }
+            Line {
+              SrcBlock                "EQ1"
+              SrcPort                 1
+              Points                  [5, 0]
+              #GUID                   "c5e8c0e6-e22b-43db-a24d-6b666ca8f68b"
+              Branch {
+                DstBlock                "ISSW1"
+                DstPort                 3
+                #GUID                   "a432a72d-12e8-49aa-bf3b-f2d316f71fc2"
+              }
+              Branch {
+                Points                  [0, 115]
+                #GUID                   "23794d77-74d5-4c51-ac02-89365d43674b"
+                Branch {
+                  DstBlock                "ISSW3"
+                  DstPort                 3
+                  #GUID                   "495db9a2-9649-471c-9c0f-05006d648b38"
+                }
+                Branch {
+                  Points                  [0, 40]
+                  DstBlock                "OR_"
+                  DstPort                 2
+                  #GUID                   "0a1248b7-ba36-470e-a1c2-81386e1c0bc5"
+                }
+              }
+            }
+            Line {
+              SrcBlock                "From"
+              SrcPort                 1
+              DstBlock                "SELSOCT"
+              DstPort                 9
+              #GUID                   "029961ac-51de-4927-8985-de09cf2f0a14"
+            }
+            Line {
+              SrcBlock                "From1"
+              SrcPort                 1
+              DstBlock                "ISUB"
+              DstPort                 1
+              #GUID                   "e7e0cd7c-c8e5-4bc1-8cee-0ac80face95e"
+            }
+            Line {
+              SrcBlock                "From2"
+              SrcPort                 1
+              DstBlock                "ISUB1"
+              DstPort                 1
+              #GUID                   "14e47d44-b86d-4845-b332-e74fa3aa715f"
+            }
+            Line {
+              SrcBlock                "IADD"
+              SrcPort                 1
+              DstBlock                "ISSW2"
+              DstPort                 2
+              #GUID                   "fae016d9-f25f-4722-a18e-1a52c11f9c6c"
+            }
+            Line {
+              SrcBlock                "IADD1"
+              SrcPort                 1
+              DstBlock                "ISSW3"
+              DstPort                 2
+              #GUID                   "11c79add-b295-4eb7-8a6b-7f59d41e7cf1"
+            }
+            Line {
+              SrcBlock                "IADD2"
+              SrcPort                 1
+              DstBlock                "ISSW4"
+              DstPort                 2
+              #GUID                   "aab824f8-d02e-44c6-ad13-cf1cb9d2c225"
+            }
+            Line {
+              SrcBlock                "INTSM_MAIN_MODE"
+              SrcPort                 1
+              Points                  [45, 0]
+              #GUID                   "b660a7e5-3f32-481c-a8ec-22260fb71673"
+              Branch {
+                DstBlock                "SETPI_MAIN_MODE"
+                DstPort                 1
+                #GUID                   "63328972-f0e0-4173-a0f9-b36c868bbece"
+              }
+              Branch {
+                Points                  [0, 60]
+                #GUID                   "16db0d42-c2ae-4cd9-85f5-fa4616beceb4"
+                Branch {
+                  DstBlock                "EQ"
+                  DstPort                 1
+                  #GUID                   "a788a092-7784-484f-888c-e6e73e5d21fa"
+                }
+                Branch {
+                  Points                  [0, 40]
+                  #GUID                   "9917d901-d920-4cbc-b47b-4fca482300eb"
+                  Branch {
+                    DstBlock                "EQ1"
+                    DstPort                 1
+                    #GUID                   "9afe4c8e-1940-4e31-8a9a-66b7e1d69eca"
+                  }
+                  Branch {
+                    Points                  [0, 35; 285, 0; 0, 15]
+                    DstBlock                "ISSW4"
+                    DstPort                 1
+                    #GUID                   "65a1e0f2-4019-490c-b19e-3792355cf80c"
+                  }
+                }
+              }
+            }
+            Line {
+              SrcBlock                "INTSM_SUB_MODE"
+              SrcPort                 1
+              Points                  [35, 0]
+              #GUID                   "89cd8687-e7bc-491d-8877-4e2bf2817a87"
+              Branch {
+                Points                  [185, 0]
+                #GUID                   "b6f215ca-ac59-4480-9952-b05a06fd599b"
+                Branch {
+                  DstBlock                "ISSW"
+                  DstPort                 2
+                  #GUID                   "0f041133-c55b-401b-85a1-7ec5eaaa7060"
+                }
+                Branch {
+                  Points                  [0, 50]
+                  DstBlock                "ISSW1"
+                  DstPort                 2
+                  #GUID                   "7ac02c16-0a23-487f-82f4-026843a5041c"
+                }
+              }
+              Branch {
+                Points                  [0, 115]
+                #GUID                   "c0b278d7-5bba-4d77-833a-76dc03c2a3db"
+                Branch {
+                  DstBlock                "IADD"
+                  DstPort                 1
+                  #GUID                   "bc463398-18b4-4810-a32d-05adc546173c"
+                }
+                Branch {
+                  Points                  [0, 50]
+                  DstBlock                "IADD1"
+                  DstPort                 1
+                  #GUID                   "97ba2514-f914-4b9b-b412-e35363571c21"
+                }
+              }
+            }
+            Line {
+              SrcBlock                "ISSW"
+              SrcPort                 1
+              DstBlock                "SETPI_SUB_MODE_AUTO"
+              DstPort                 1
+              #GUID                   "a77b9aac-a241-4ee1-b6ef-644fda6aaeb5"
+            }
+            Line {
+              SrcBlock                "ISSW1"
+              SrcPort                 1
+              DstBlock                "SETPI_SUB_MODE_POSCTL"
+              DstPort                 1
+              #GUID                   "67b1dd08-bfcc-4fa9-a73b-3856f90ad7a0"
+            }
+            Line {
+              SrcBlock                "ISSW2"
+              SrcPort                 1
+              DstBlock                "IADD2"
+              DstPort                 1
+              #GUID                   "9304d13b-5bd6-4483-9f40-49eb87fa1899"
+            }
+            Line {
+              SrcBlock                "ISSW3"
+              SrcPort                 1
+              Points                  [5, 0]
+              DstBlock                "IADD2"
+              DstPort                 2
+              #GUID                   "63f53ea9-42a5-4759-9665-95751e2f285c"
+            }
+            Line {
+              SrcBlock                "ISSW4"
+              SrcPort                 1
+              DstBlock                "Goto"
+              DstPort                 1
+              #GUID                   "c9b85fe2-257e-4ce5-954f-d2f06bc11f96"
+            }
+            Line {
+              SrcBlock                "ISUB"
+              SrcPort                 1
+              DstBlock                "SELSOCT1"
+              DstPort                 9
+              #GUID                   "711d1587-f5e3-41c6-b1a2-b17cc5bcc99d"
+            }
+            Line {
+              SrcBlock                "ISUB1"
+              SrcPort                 1
+              DstBlock                "SELSOCT2"
+              DstPort                 9
+              #GUID                   "1edc73fc-2520-4b31-9038-97abc33edceb"
+            }
+            Line {
+              SrcBlock                "OR_"
+              SrcPort                 1
+              Points                  [85, 0]
+              DstBlock                "ISSW4"
+              DstPort                 3
+              #GUID                   "d3e95e46-55fd-454e-bb47-0b95875f4d45"
+            }
+            Line {
+              SrcBlock                "SELSOCT"
+              SrcPort                 1
+              Points                  [10, 0; 0, 160; 475, 0]
+              DstBlock                "CONCAT"
+              DstPort                 3
+              #GUID                   "ceead0ad-4f3e-4dde-8c68-1d16f85a1470"
+            }
+            Line {
+              SrcBlock                "SELSOCT1"
+              SrcPort                 1
+              Points                  [10, 0; 0, 150; 250, 0; 0, -140]
+              DstBlock                "CONCAT"
+              DstPort                 2
+              #GUID                   "13f7115b-1877-4e41-9202-c6084dee8b6d"
+            }
+            Line {
+              SrcBlock                "SELSOCT2"
+              SrcPort                 1
+              DstBlock                "CONCAT"
+              DstPort                 1
+              #GUID                   "fce72a64-d7fe-4b73-9384-950cdc446c45"
+            }
+            Line {
+              SrcBlock                "custom_mode"
+              SrcPort                 1
+              Points                  [20, 0]
+              #GUID                   "cb3f1d72-275f-4038-85a4-91b45cd3011d"
+              Branch {
+                DstBlock                "INTSM_MAIN_MODE"
+                DstPort                 1
+                #GUID                   "2f7cdd7c-d48b-400a-9320-a3e4627b894b"
+              }
+              Branch {
+                Points                  [0, 45]
+                DstBlock                "INTSM_SUB_MODE"
+                DstPort                 1
+                #GUID                   "ee8a56be-f1a9-4f5d-8bcc-97c019eb8d2f"
+              }
+            }
+            Annotation {
+              Position                [350, 405]
+              Text                    "8"
+              HorizontalAlignment     "left"
+              VerticalAlignment       "top"
+              BackgroundColor         "white"
+              ForegroundColor         "black"
+              FontName                "Arial"
+              FontWeight              "normal"
+              FontAngle               "normal"
+              FontSize                10
+              #GUID                   "c1254f43-90ac-4a5c-bec6-33b47a7ec39a"
+            }
+            Annotation {
+              Position                [575, 405]
+              Text                    "16"
+              HorizontalAlignment     "left"
+              VerticalAlignment       "top"
+              BackgroundColor         "white"
+              ForegroundColor         "black"
+              FontName                "Arial"
+              FontWeight              "normal"
+              FontAngle               "normal"
+              FontSize                10
+              #GUID                   "1600097a-4e19-472e-bb48-398e43246ee9"
+            }
+            Annotation {
+              Position                [345, 445]
+              Text                    "10"
+              HorizontalAlignment     "left"
+              VerticalAlignment       "top"
+              BackgroundColor         "white"
+              ForegroundColor         "black"
+              FontName                "Arial"
+              FontWeight              "normal"
+              FontAngle               "normal"
+              FontSize                10
+              #GUID                   "10e51e03-ad30-4e8f-aeea-c198247faa00"
+            }
+            Annotation {
+              Position                [345, 485]
+              Text                    "12"
+              HorizontalAlignment     "left"
+              VerticalAlignment       "top"
+              BackgroundColor         "white"
+              ForegroundColor         "black"
+              FontName                "Arial"
+              FontWeight              "normal"
+              FontAngle               "normal"
+              FontSize                10
+              #GUID                   "25c98128-27ce-4cc0-822b-a9f69e4013cf"
+            }
+            Annotation {
+              Position                [15, 40]
+              Text                    "https://github.com/PX4/Firmware/blob/master/src/modules/commander/px4_custom_mode.h\n\nhttps://github.com/mavlink/qgroundcontrol/blob/master/src/FirmwarePlugin/PX4/PX4FirmwarePlugin.cc"
+              HorizontalAlignment     "left"
+              VerticalAlignment       "top"
+              FontSize                10
+              #GUID                   "9bb127ea-0edd-425f-a310-cbdff6974044"
+            }
+            Annotation {
+              Position                [15, 5]
+              Text                    "HB CUSTOM COMMAND\nImplemented with respect to px4_custom_mode.h and PX4FirmwarePlugin.cc"
+              HorizontalAlignment     "left"
+              VerticalAlignment       "top"
+              FontWeight              "bold"
+              FontSize                12
+              #GUID                   "2f8ed9e8-0d99-4f66-8281-a8067b633c52"
+            }
+          }
+        }
+        Block {
+          BlockType               SubSystem
+          Name                    "MAV_MODE_FLAG"
+          Ports                   [1, 8, 0, 0, 0]
+          Position                [245, 153, 430, 317]
+          FontSize                10
+          ShowPortLabels          on
+          MaskType                "REX sequence"
+          MaskIconFrame           on
+          MaskIconOpaque          on
+          MaskIconRotate          "none"
+          MaskIconUnits           "autoscale"
+          #GUID                   "6263b0d3-4821-4ade-b26f-51a93bb1c121"
+          System {
+            Name                    "MAV_MODE_FLAG"
+            __CopyByReference       off
+            Location                [202, 339, 503, 674]
+            #GUID                   "6263b0d3-4821-4ade-b26f-51a93bb1c121"
+            Block {
+              BlockType               Inport
+              Name                    "base_mode"
+              Position                [10, 163, 40, 177]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "b135fbb4-783c-40f2-bf3a-c6a9cca83eea"
+            }
+            Block {
+              BlockType               Reference
+              Name                    "BDOCT"
+              Ports                   [1, 8, 0, 0, 0]
+              Position                [90, 55, 120, 285]
+              SourceBlock             "logiclib/BDOCT"
+              shift                   0
+              vtype                   "4: Long (I32)"
+              #GUID                   "be7684fc-0e7e-4e08-b33d-08f66babcf38"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "CUSTOM_MODE_ENABLED"
+              Position                [200, 58, 230, 72]
+              Port                    1
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "07885b3e-e2cc-45fd-ba05-3967bb3350d7"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "TEST_ENABLED"
+              Position                [200, 88, 230, 102]
+              Port                    2
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "d0d78037-b6ef-420a-bff2-5cf4f99ff157"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "AUTO_ENABLED"
+              Position                [200, 118, 230, 132]
+              Port                    3
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "d1d215dc-658b-4346-8878-13d941b75a8e"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "GUIDED_ENABLED"
+              Position                [200, 148, 230, 162]
+              Port                    4
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "68b232c3-e872-4aa0-8a5b-299bc7850311"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "STABILIZE_ENABLED"
+              Position                [200, 178, 230, 192]
+              Port                    5
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "500f1282-8ef3-4711-89db-59561a8f84a6"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "HIL_ENABLED"
+              Position                [200, 208, 230, 222]
+              Port                    6
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "289d0b80-e939-4aec-ab9e-4026fa93bd09"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "MANUAL_INPUT_ENABLED"
+              Position                [200, 238, 230, 252]
+              Port                    7
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "657d41c2-085d-456d-bd4f-4528906896b3"
+            }
+            Block {
+              BlockType               Outport
+              Name                    "SAFETY_ARMED"
+              Position                [200, 268, 230, 282]
+              Port                    8
+              OutDataTypeStr          "Inherit: auto"
+              FontSize                10
+              #GUID                   "d85dba5d-e313-4e00-8470-dc9c9c0816db"
+            }
+            Line {
+              SrcBlock                "BDOCT"
+              SrcPort                 1
+              DstBlock                "CUSTOM_MODE_ENABLED"
+              DstPort                 1
+              #GUID                   "45a29ee8-d434-4377-baa7-3abaf7f7fd8d"
+            }
+            Line {
+              SrcBlock                "BDOCT"
+              SrcPort                 2
+              DstBlock                "TEST_ENABLED"
+              DstPort                 1
+              #GUID                   "84b6b4bf-bfd9-4fd7-aa98-b84e88639bab"
+            }
+            Line {
+              SrcBlock                "BDOCT"
+              SrcPort                 3
+              DstBlock                "AUTO_ENABLED"
+              DstPort                 1
+              #GUID                   "25a98966-fbb7-4591-b14c-3edb49ba8c22"
+            }
+            Line {
+              SrcBlock                "BDOCT"
+              SrcPort                 4
+              DstBlock                "GUIDED_ENABLED"
+              DstPort                 1
+              #GUID                   "f3465f28-d756-40db-8001-8bffb467c140"
+            }
+            Line {
+              SrcBlock                "BDOCT"
+              SrcPort                 5
+              DstBlock                "STABILIZE_ENABLED"
+              DstPort                 1
+              #GUID                   "7633d082-1c92-4951-8da5-19958680a1f6"
+            }
+            Line {
+              SrcBlock                "BDOCT"
+              SrcPort                 6
+              DstBlock                "HIL_ENABLED"
+              DstPort                 1
+              #GUID                   "83d71e45-255e-4e0c-84c0-6274ea72dc6a"
+            }
+            Line {
+              SrcBlock                "BDOCT"
+              SrcPort                 7
+              DstBlock                "MANUAL_INPUT_ENABLED"
+              DstPort                 1
+              #GUID                   "e01ecabe-60b5-4bff-934c-35907ea05370"
+            }
+            Line {
+              SrcBlock                "BDOCT"
+              SrcPort                 8
+              DstBlock                "SAFETY_ARMED"
+              DstPort                 1
+              #GUID                   "0e9093b2-15fc-40c6-a4cc-f2d4718a6253"
+            }
+            Line {
+              SrcBlock                "base_mode"
+              SrcPort                 1
+              DstBlock                "BDOCT"
+              DstPort                 1
+              #GUID                   "93963d5c-5a68-4ae6-8891-074c5df0920f"
+            }
+            Annotation {
+              Position                [20, 20]
+              Text                    "MAV_MODE_FLAG"
+              HorizontalAlignment     "left"
+              VerticalAlignment       "top"
+              BackgroundColor         "white"
+              ForegroundColor         "black"
+              FontName                "Roboto"
+              FontWeight              "normal"
+              FontAngle               "normal"
+              FontSize                16
+              #GUID                   "b3887ce0-6fae-4c92-84af-ffe54ad6297b"
+            }
+          }
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MAV__RECV_HEARTBEAT"
+          Ports                   [1, 10, 0, 0, 0]
+          Position                [20, 23, 160, 182]
+          SourceBlock             "mavlinklib/MAV_RECV_HEARTBEAT"
+          SrcSystemID             "SysID"
+          SrcComponentID          1
+          TgtSystemID             -1
+          TgtComponentID          -1
+          TimeoutMS               2000
+          FontSize                10
+          BackgroundColor         "yellow"
+          #GUID                   "08b49a2c-685e-414f-839c-d12f42d0ae8c"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "PARE_MAV_STATE"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [245, 348, 280, 372]
+          SourceBlock             "paramlib/PARE"
+          ipar                    "1: BOOT"
+          pupstr                  "0: UNINIT|1: BOOT|2: CALIBRATING|3: STANDBY|4: ACTIVE|5: CRITICAL|6: EMERGENCY|7: POWEROFF|8: FLIGHT_TERMINATION"
+          NUM                     off
+          LIST                    off
+          SATF                    off
+          FontSize                10
+          #GUID                   "e6e70acd-91b4-45aa-91c4-7b5538fce87b"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "VALID"
+          Position                [475, 28, 505, 42]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "2ab988cf-2588-42ed-925e-463b0449001f"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "state"
+          Position                [475, 348, 505, 362]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "f8a70fcc-59f3-4cf5-8f4e-f4757308255a"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "sstate"
+          Position                [475, 388, 505, 402]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "6eeec78f-0499-43bc-9789-e2cbd6632330"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "smode"
+          Position                [475, 58, 505, 72]
+          Port                    4
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "b4b0ce8e-4286-420f-8bbc-26efaa1d6a92"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "ARMED"
+          Position                [475, 298, 505, 312]
+          Port                    5
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "1e19dde3-7799-40cd-8f62-0927c445fb2c"
+        }
+        Line {
+          SrcBlock                "HB_custom_command"
+          SrcPort                 1
+          DstBlock                "smode"
+          DstPort                 1
+          #GUID                   "28cbc8b4-7383-4265-98e1-83573b05db4b"
+        }
+        Line {
+          SrcBlock                "MAV_MODE_FLAG"
+          SrcPort                 8
+          DstBlock                "ARMED"
+          DstPort                 1
+          #GUID                   "1f63b7ef-a103-46f8-a6fe-6137a95db3ce"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_HEARTBEAT"
+          SrcPort                 1
+          DstBlock                "VALID"
+          DstPort                 1
+          #GUID                   "6aff22c9-0c0d-4940-a5d3-8d0d2e11d9e1"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_HEARTBEAT"
+          SrcPort                 5
+          DstBlock                "HB_custom_command"
+          DstPort                 1
+          #GUID                   "1eeee453-4a69-486c-92ee-dbdd42b46711"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_HEARTBEAT"
+          SrcPort                 8
+          Points                  [65, 0]
+          DstBlock                "MAV_MODE_FLAG"
+          DstPort                 1
+          #GUID                   "a7335664-e753-49ea-9133-5c91dff38ed7"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_HEARTBEAT"
+          SrcPort                 9
+          Points                  [55, 0; 0, 200]
+          DstBlock                "PARE_MAV_STATE"
+          DstPort                 1
+          #GUID                   "140ce7de-0310-4aaa-929e-b074ec96a2a1"
+        }
+        Line {
+          SrcBlock                "PARE_MAV_STATE"
+          SrcPort                 1
+          DstBlock                "state"
+          DstPort                 1
+          #GUID                   "61054491-18f8-4cec-8b4a-fa29a6bbd485"
+        }
+        Line {
+          SrcBlock                "PARE_MAV_STATE"
+          SrcPort                 2
+          Points                  [175, 0]
+          DstBlock                "sstate"
+          DstPort                 1
+          #GUID                   "a2bb2e36-4e69-4006-8698-f3736e379895"
+        }
+      }
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "SEND_COMMAND_LONG"
+      Ports                   [9, 3, 0, 0, 0]
+      Position                [20, 20, 150, 260]
+      ShowPortLabels          on
+      FontSize                10
+      #OpenSubsysOnDblClick   off
+      MaskType                "REX sequence"
+      #MaskTypeString         "int16,int16,double"
+      MaskPromptString        "Target system ID|Target component ID|Timeout in secods when command will be repeated"
+      MaskStyleString         "edit,edit,edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "||"
+      MaskEnableString        "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskVariables           "TgtSysID=@1;TgtCompID=@2;Timeout=@3"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      MaskValueString         "||1"
+      #GUID                   "f11d59bb-327a-4abf-9205-fc62f88aa81e"
+      System {
+        Name                    "SEND_COMMAND_LONG"
+        __CopyByReference       off
+        Location                [209, 224, 1370, 722]
+        #GUID                   "f11d59bb-327a-4abf-9205-fc62f88aa81e"
+        Block {
+          BlockType               Inport
+          Name                    "SEND"
+          Position                [25, 83, 55, 97]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "400ccd7e-2166-470b-b354-e160b65ab559"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "command"
+          Position                [25, 243, 55, 257]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "1319bdd5-6cb9-4a73-95a4-c9cc746db127"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "param1"
+          Position                [325, 103, 355, 117]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "4cc91b15-7ac3-457b-9c13-a2dde7c7aa92"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "param2"
+          Position                [360, 123, 390, 137]
+          Port                    4
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "35d55666-a506-4f0c-8bd7-a344378d9119"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "param3"
+          Position                [320, 143, 350, 157]
+          Port                    5
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "98c88b46-24ee-43e1-944d-4de03cf4ff0a"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "param4"
+          Position                [355, 163, 385, 177]
+          Port                    6
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "3a89a56b-8228-4a32-bddf-e4daf5a2ec64"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "param5"
+          Position                [320, 183, 350, 197]
+          Port                    7
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "b22f2e5e-ac66-45d0-a41a-61fb36585e56"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "param6"
+          Position                [355, 203, 385, 217]
+          Port                    8
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "82e9685a-200b-4111-948b-5a9b10931e18"
+        }
+        Block {
+          BlockType               Inport
+          Name                    "param7"
+          Position                [315, 223, 345, 237]
+          Port                    9
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "ff93e5b5-a5f4-4f04-82f4-1e365d03d04e"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "AND_"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [700, 23, 735, 47]
+          SourceBlock             "logiclib/AND"
+          #GUID                   "856100be-9130-47d5-b0c9-0099682c73ab"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "AND_1"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [820, 298, 855, 322]
+          SourceBlock             "logiclib/AND"
+          #GUID                   "34816ac5-a213-4d0b-b7eb-6d39f50b6210"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "COUNT"
+          Ports                   [7, 4, 0, 0, 0]
+          Position                [285, 262, 340, 338]
+          SourceBlock             "logiclib/COUNT"
+          #GUID                   "610c4176-fcc2-4cdc-86a4-de9b9fd3f4c0"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EDGE_"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [75, 83, 100, 97]
+          SourceBlock             "logiclib/EDGE"
+          iedge                   "1: Rising edge"
+          #GUID                   "2d19e321-5e28-456a-9e2c-b0b23d200e31"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EDGE_1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [385, 83, 410, 97]
+          SourceBlock             "logiclib/EDGE"
+          iedge                   "1: Rising edge"
+          FontSize                10
+          #GUID                   "fa8c9f0d-eb20-490c-bcda-77666e8f672e"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EDGE_2"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [545, 23, 570, 37]
+          SourceBlock             "logiclib/EDGE"
+          iedge                   "2: Falling edge"
+          FontSize                10
+          #GUID                   "fbd4f2c7-450f-4bee-93cc-9afc2b791213"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "EQ"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [655, 293, 690, 317]
+          SourceBlock             "logiclib/EQ"
+          #GUID                   "0bc22362-fbec-4e10-b478-057161d9d3be"
+        }
+        Block {
+          BlockType               From
+          Name                    "From"
+          Position                [885, 393, 920, 407]
+          ShowName                off
+          GotoTag                 "SEND"
+          BackgroundColor         "yellow"
+          FontSize                10
+          #GUID                   "538c14cb-d229-4567-ad99-d121aebb54dc"
+        }
+        Block {
+          BlockType               From
+          Name                    "From1"
+          Position                [885, 443, 920, 457]
+          ShowName                off
+          GotoTag                 "SEND"
+          BackgroundColor         "yellow"
+          FontSize                10
+          #GUID                   "f5c57512-b94f-4f45-afe7-6089fabb42af"
+        }
+        Block {
+          BlockType               From
+          Name                    "From2"
+          Position                [885, 318, 920, 332]
+          ShowName                off
+          GotoTag                 "SEND"
+          BackgroundColor         "yellow"
+          FontSize                10
+          #GUID                   "32fae17c-b8d1-4b5e-9bf4-16d66a3c6a5a"
+        }
+        Block {
+          BlockType               Goto
+          Name                    "Goto"
+          Position                [170, 103, 205, 117]
+          ShowName                off
+          GotoTag                 "SEND"
+          TagVisibility           "local"
+          FontSize                10
+          BackgroundColor         "yellow"
+          #GUID                   "0c1c76ab-9b06-4eb7-baef-4a54d8381fe8"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "LPBRK"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [830, 70, 840, 80]
+          Orientation             left
+          SourceBlock             "execlib/LPBRK"
+          ShowName                off
+          #GUID                   "4c823c28-34c4-4531-951e-f2e65e6c6213"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "LPBRK1"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [335, 5, 345, 15]
+          Orientation             left
+          SourceBlock             "execlib/LPBRK"
+          ShowName                off
+          #GUID                   "0e45b8e2-c20b-451f-982f-0c62a6b6a581"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MAV__RECV_COMMAND_ACK"
+          Ports                   [1, 10, 0, 0, 0]
+          Position                [440, 315, 580, 435]
+          SourceBlock             "mavlinklib/MAV_RECV_COMMAND_ACK"
+          SrcSystemID             "TgtSysID"
+          SrcComponentID          "TgtCompID"
+          TgtSystemID             -1
+          TgtComponentID          -1
+          TimeoutMS               0
+          FontSize                10
+          #GUID                   "604e3890-d0dd-4ccd-aaaf-29849aed434c"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "MAV__SEND_COMMAND_LONG"
+          Ports                   [10, 1, 0, 0, 0]
+          Position                [440, 82, 580, 278]
+          SourceBlock             "mavlinklib/MAV_SEND_COMMAND_LONG"
+          TgtSysID                "TgtSysID"
+          TgtCompID               "TgtCompID"
+          FontSize                10
+          SrcSysID                -1
+          SrcCompID               -1
+          #GUID                   "478cf318-3de6-4859-bbb3-49c1bc026684"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "NOT_"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [655, 33, 680, 47]
+          SourceBlock             "logiclib/NOT"
+          #GUID                   "f4162a50-594f-4794-beb3-35cd544677af"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "OR_"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [275, 83, 310, 107]
+          SourceBlock             "logiclib/OR"
+          #GUID                   "f9724fa1-3733-44ff-8f5b-77ef18e133b7"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "RTOI"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [930, 58, 955, 72]
+          Orientation             left
+          SourceBlock             "mathlib/RTOI"
+          vtype                   "4: Long (I32)"
+          SAT                     on
+          #GUID                   "f23bb20a-91ce-49b4-b156-1efa52f478a2"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SHLD_1"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [955, 373, 995, 407]
+          SourceBlock             "analoglib/SHLD"
+          y0                      0
+          mode                    "1: Triggered sampling"
+          FontSize                10
+          #GUID                   "2320b923-b848-4081-9a4a-8ee6d47630b0"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SHLD_2"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [955, 423, 995, 457]
+          SourceBlock             "analoglib/SHLD"
+          y0                      0
+          mode                    "1: Triggered sampling"
+          FontSize                10
+          #GUID                   "ab2f7a2b-0b16-463e-8b83-ce88db85c45d"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SHLD_3"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [950, 298, 990, 332]
+          SourceBlock             "analoglib/SHLD"
+          y0                      0
+          mode                    "1: Triggered sampling"
+          FontSize                10
+          #GUID                   "58af7ace-6f18-4cf4-86ce-4c26a5037f91"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "TIMER_timeout"
+          Ports                   [3, 3, 0, 0, 0]
+          Position                [455, 23, 495, 57]
+          SourceBlock             "logiclib/TIMER"
+          mode                    "1: Pulse generator"
+          pt                      "Timeout"
+          FontSize                10
+          #GUID                   "024c18cf-a180-4248-a757-e5580d6a1241"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "DN"
+          Position                [1030, 308, 1060, 322]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "12152c04-c155-44b9-890c-47ce49b518d2"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "result"
+          Position                [1030, 383, 1060, 397]
+          Port                    2
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "7fac7933-df57-4246-bd1c-1e31d61f46f9"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "progress"
+          Position                [1030, 433, 1060, 447]
+          Port                    3
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "9dc27cae-366d-454b-b4b6-3e40070ae03e"
+        }
+        Line {
+          SrcBlock                "AND_"
+          SrcPort                 1
+          Points                  [0, -20]
+          DstBlock                "LPBRK1"
+          DstPort                 1
+          #GUID                   "67a97c72-14fe-40f4-9668-d00bab01a915"
+        }
+        Line {
+          SrcBlock                "AND_1"
+          SrcPort                 1
+          Points                  [20, 0]
+          #GUID                   "fbec5fda-481c-44bc-9d00-3db4d6da3e52"
+          Branch {
+            Points                  [0, 10]
+            #GUID                   "18b2a7a8-c29a-4fe9-bb08-ab58dfd9b3e8"
+            Branch {
+              Points                  [0, 75]
+              #GUID                   "d54cc089-2357-4989-bbdb-a6ae3b1b2958"
+              Branch {
+                DstBlock                "SHLD_1"
+                DstPort                 2
+                #GUID                   "57b11660-70e8-41ff-b801-5b2f8f250ea9"
+              }
+              Branch {
+                Points                  [0, 50]
+                DstBlock                "SHLD_2"
+                DstPort                 2
+                #GUID                   "0e70e18e-f930-4938-beb3-a5565be68519"
+              }
+            }
+            Branch {
+              DstBlock                "SHLD_3"
+              DstPort                 2
+              #GUID                   "bb3ef2f9-4379-4f1b-be83-ba3e74f4aae8"
+            }
+          }
+          Branch {
+            Points                  [0, -230]
+            DstBlock                "LPBRK"
+            DstPort                 1
+            #GUID                   "05f9d236-328b-494b-a696-eebf9676f16d"
+          }
+          Branch {
+            DstBlock                "SHLD_3"
+            DstPort                 1
+            #GUID                   "0ad87971-ab71-4158-a4b0-e5402e6ce4a7"
+          }
+        }
+        Line {
+          SrcBlock                "COUNT"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 10
+          #GUID                   "b45a45a2-ec97-4daf-bfee-f2fd63842953"
+        }
+        Line {
+          SrcBlock                "EDGE_"
+          SrcPort                 1
+          Points                  [40, 0]
+          #GUID                   "4228a94c-5ff9-478d-971f-5f4d9778cbc3"
+          Branch {
+            Points                  [95, 0]
+            #GUID                   "bb1a7505-839a-4d1b-949e-5e136d5f4f3a"
+            Branch {
+              Points                  [0, 180]
+              DstBlock                "COUNT"
+              DstPort                 1
+              #GUID                   "d749a6b2-78e6-477f-8fca-56d77236b682"
+            }
+            Branch {
+              DstBlock                "OR_"
+              DstPort                 1
+              #GUID                   "b58aab00-a077-4691-a8bf-f6f1f1d4dba9"
+            }
+          }
+          Branch {
+            Points                  [0, 20]
+            DstBlock                "Goto"
+            DstPort                 1
+            #GUID                   "bfedf7ad-4f4f-43c1-a134-8d41ab3fdd79"
+          }
+        }
+        Line {
+          SrcBlock                "EDGE_1"
+          SrcPort                 1
+          Points                  [5, 0]
+          #GUID                   "814d4f04-a135-4907-94e2-f076ae22a191"
+          Branch {
+            DstBlock                "MAV__SEND_COMMAND_LONG"
+            DstPort                 1
+            #GUID                   "a78fd420-5d81-49e7-83d9-67f9166bf76c"
+          }
+          Branch {
+            Points                  [0, -60]
+            DstBlock                "TIMER_timeout"
+            DstPort                 1
+            #GUID                   "970cc187-f7bc-4573-aeb1-686579f2debb"
+          }
+        }
+        Line {
+          SrcBlock                "EDGE_2"
+          SrcPort                 1
+          DstBlock                "AND_"
+          DstPort                 1
+          #GUID                   "1de3731c-c64a-4da8-905a-8e0d06708cb3"
+        }
+        Line {
+          SrcBlock                "EQ"
+          SrcPort                 1
+          DstBlock                "AND_1"
+          DstPort                 1
+          #GUID                   "59589353-005b-4ff6-a290-480209e6147f"
+        }
+        Line {
+          SrcBlock                "From"
+          SrcPort                 1
+          DstBlock                "SHLD_1"
+          DstPort                 3
+          #GUID                   "9d42f1b2-40d8-4891-b558-b75619d1fd19"
+        }
+        Line {
+          SrcBlock                "From1"
+          SrcPort                 1
+          DstBlock                "SHLD_2"
+          DstPort                 3
+          #GUID                   "8ee67c40-c59b-42bc-95d3-5a5d96a904a2"
+        }
+        Line {
+          SrcBlock                "From2"
+          SrcPort                 1
+          DstBlock                "SHLD_3"
+          DstPort                 3
+          #GUID                   "beb34794-074d-44bd-9f9f-b19a5561a7b1"
+        }
+        Line {
+          SrcBlock                "LPBRK"
+          SrcPort                 1
+          Points                  [-445, 0; 0, -25]
+          DstBlock                "TIMER_timeout"
+          DstPort                 3
+          #GUID                   "f5bc6205-740d-4cbf-aba4-56b427d533ca"
+        }
+        Line {
+          SrcBlock                "LPBRK1"
+          SrcPort                 1
+          Points                  [-75, 0; 0, 90]
+          #GUID                   "1a71ff54-39a0-4159-b6da-7179c211dcc3"
+          Branch {
+            Points                  [0, 200]
+            DstBlock                "COUNT"
+            DstPort                 4
+            #GUID                   "40fe0603-356d-4dda-9774-bac72155f187"
+          }
+          Branch {
+            DstBlock                "OR_"
+            DstPort                 2
+            #GUID                   "86b7fff8-39a0-4d9c-864c-ba97868eeea3"
+          }
+        }
+        Line {
+          SrcBlock                "MAV__RECV_COMMAND_ACK"
+          SrcPort                 1
+          Points                  [215, 0; 0, -15]
+          DstBlock                "AND_1"
+          DstPort                 2
+          #GUID                   "008a9f86-5849-49ac-b5ea-7e7911ae0800"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_COMMAND_ACK"
+          SrcPort                 5
+          Points                  [55, 0]
+          DstBlock                "EQ"
+          DstPort                 2
+          #GUID                   "97f215e0-54dc-42cf-bc19-1d5062547e88"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_COMMAND_ACK"
+          SrcPort                 6
+          DstBlock                "SHLD_1"
+          DstPort                 1
+          #GUID                   "8008e283-a208-44eb-9880-c849775dbd4e"
+        }
+        Line {
+          SrcBlock                "MAV__RECV_COMMAND_ACK"
+          SrcPort                 7
+          Points                  [275, 0; 0, 40]
+          DstBlock                "SHLD_2"
+          DstPort                 1
+          #GUID                   "83e0c527-4e2f-4ccc-905e-c611644dc3ab"
+        }
+        Line {
+          SrcBlock                "NOT_"
+          SrcPort                 1
+          DstBlock                "AND_"
+          DstPort                 2
+          #GUID                   "63520e12-1180-4d54-80f9-370328901149"
+        }
+        Line {
+          SrcBlock                "OR_"
+          SrcPort                 1
+          DstBlock                "EDGE_1"
+          DstPort                 1
+          #GUID                   "848f7d00-9410-466a-b937-47e7241988ed"
+        }
+        Line {
+          SrcBlock                "RTOI"
+          SrcPort                 1
+          Points                  [-285, 0]
+          DstBlock                "NOT_"
+          DstPort                 1
+          #GUID                   "e8e4e98f-a981-47fc-a022-03f918f8e1f6"
+        }
+        Line {
+          SrcBlock                "SEND"
+          SrcPort                 1
+          DstBlock                "EDGE_"
+          DstPort                 1
+          #GUID                   "77738bbd-22e8-4245-9f66-a9ee9381601f"
+        }
+        Line {
+          SrcBlock                "SHLD_1"
+          SrcPort                 1
+          DstBlock                "result"
+          DstPort                 1
+          #GUID                   "62cc8d9d-fc1a-41d1-8445-8cbd36dfb6aa"
+        }
+        Line {
+          SrcBlock                "SHLD_2"
+          SrcPort                 1
+          DstBlock                "progress"
+          DstPort                 1
+          #GUID                   "8333237f-4860-4581-929e-cc5ad2b50474"
+        }
+        Line {
+          SrcBlock                "SHLD_3"
+          SrcPort                 1
+          Points                  [5, 0]
+          #GUID                   "333090e7-e986-4cfb-8408-aa160dda012c"
+          Branch {
+            DstBlock                "DN"
+            DstPort                 1
+            #GUID                   "22a4d9cd-fdaa-4a09-b8bf-a13df3684909"
+          }
+          Branch {
+            Points                  [0, -250]
+            DstBlock                "RTOI"
+            DstPort                 1
+            #GUID                   "eefb00c8-02d6-4914-b86e-8eafdf58c9b7"
+          }
+        }
+        Line {
+          SrcBlock                "TIMER_timeout"
+          SrcPort                 1
+          DstBlock                "EDGE_2"
+          DstPort                 1
+          #GUID                   "9f17b4ef-df5e-40f0-8807-daa783f57f38"
+        }
+        Line {
+          SrcBlock                "command"
+          SrcPort                 1
+          Points                  [350, 0]
+          #GUID                   "ff84106b-aa5e-4c07-bb1a-53306b5304b4"
+          Branch {
+            Points                  [0, 50]
+            DstBlock                "EQ"
+            DstPort                 1
+            #GUID                   "913c3252-5e99-4664-90a4-8d863593a1ea"
+          }
+          Branch {
+            DstBlock                "MAV__SEND_COMMAND_LONG"
+            DstPort                 9
+            #GUID                   "166f0f79-131a-4731-9ebe-6631b3f9cf58"
+          }
+        }
+        Line {
+          SrcBlock                "param1"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 2
+          #GUID                   "031660dc-c7ae-4fca-bb9b-1879197064ba"
+        }
+        Line {
+          SrcBlock                "param2"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 3
+          #GUID                   "a640cffe-17f2-4da1-b7aa-b7b1afc909c7"
+        }
+        Line {
+          SrcBlock                "param3"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 4
+          #GUID                   "227ea147-bbc7-4dd5-937b-c7236597bac5"
+        }
+        Line {
+          SrcBlock                "param4"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 5
+          #GUID                   "a88babd1-66b0-47d2-9a14-6cc337b98d80"
+        }
+        Line {
+          SrcBlock                "param5"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 6
+          #GUID                   "b74c1d63-b8e5-4f3c-a494-0ce719e5031b"
+        }
+        Line {
+          SrcBlock                "param6"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 7
+          #GUID                   "809b16dd-b071-4bc3-a73f-159718a08ab1"
+        }
+        Line {
+          SrcBlock                "param7"
+          SrcPort                 1
+          DstBlock                "MAV__SEND_COMMAND_LONG"
+          DstPort                 8
+          #GUID                   "f7e9f09d-a2dc-45f8-bd6c-d336ae027054"
+        }
+        Annotation {
+          Position                [525, 50]
+          Text                    "Resend after timeout"
+          HorizontalAlignment     "left"
+          VerticalAlignment       "top"
+          BackgroundColor         "white"
+          ForegroundColor         "black"
+          FontName                "Arial"
+          FontWeight              "normal"
+          FontAngle               "normal"
+          FontSize                10
+          #GUID                   "92bb106d-af2a-4d37-b106-8a3e74937a06"
+        }
+      }
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "tstamp"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [195, 19, 220, 31]
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      #GUID                   "0cda72c6-2fd2-483e-9f6b-f8f59ea5353c"
+      System {
+        Name                    "tstamp"
+        __CopyByReference       off
+        Location                [80, 535, 536, 723]
+        #GUID                   "0cda72c6-2fd2-483e-9f6b-f8f59ea5353c"
+        Block {
+          BlockType               Reference
+          Name                    "BIS"
+          Ports                   [0, 2, 0, 0, 0]
+          Position                [120, 123, 135, 147]
+          SourceBlock             "genlib/BIS"
+          Y0                      off
+          t1                      "0.1"
+          t2                      1
+          t3                      0
+          t4                      4
+          t5                      5
+          t6                      6
+          t7                      7
+          t8                      8
+          RPT                     off
+          FontSize                10
+          #GUID                   "97790787-25da-4931-8035-78e04802f956"
+          #SignalWatchMask        "0300"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "CNI"
+          Ports                   [0, 1, 0, 0, 0]
+          Position                [20, 88, 40, 102]
+          SourceBlock             "mathlib/CNI"
+          icn                     1000000
+          FontSize                10
+          vtype                   "4: Long (I32)"
+          #GUID                   "04bbd713-0ee0-49ed-8d98-98d308efb725"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "IDIV"
+          Ports                   [2, 2, 0, 0, 0]
+          Position                [75, 43, 100, 67]
+          SourceBlock             "mathlib/IDIV"
+          vtype                   "10: Large (I64)"
+          nerr                    1
+          FontSize                10
+          #GUID                   "2084ca87-ebab-4b2e-8803-0e74e6899b3d"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "RTOI"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [345, 48, 370, 62]
+          SourceBlock             "mathlib/RTOI"
+          vtype                   "4: Long (I32)"
+          SAT                     on
+          #GUID                   "587c58b0-e9df-4df8-a7f3-1f246fdf4f73"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SHLD"
+          Ports                   [3, 1, 0, 0, 0]
+          Position                [180, 113, 220, 147]
+          SourceBlock             "analoglib/SHLD"
+          y0                      0
+          mode                    "1: Triggered sampling"
+          FontSize                10
+          #GUID                   "bf61675e-b6c2-4dc5-85e7-0c6e52852a01"
+          #SignalWatchMask        "0f"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "SUB"
+          Ports                   [2, 1, 0, 0, 0]
+          Position                [295, 43, 320, 67]
+          SourceBlock             "mathlib/SUB"
+          #GUID                   "1a549ce6-1055-455e-853c-a894c8fa009e"
+          #SignalWatchMask        "07"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "TS"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [20, 43, 50, 57]
+          SourceBlock             "timelib/TS"
+          source                  1
+          #GUID                   "86290e17-cb2f-4ed4-bc58-0c98f3c0ce45"
+          #SignalWatchMask        "03"
+        }
+        Block {
+          BlockType               Outport
+          Name                    "iy"
+          Position                [400, 48, 430, 62]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   "6e91fd2b-c683-4430-8df7-a4b697ce2c46"
+        }
+        Line {
+          SrcBlock                "BIS"
+          SrcPort                 1
+          DstBlock                "SHLD"
+          DstPort                 2
+          #GUID                   "09b20833-c27d-4a5a-9cf1-e1ff02f523aa"
+        }
+        Line {
+          SrcBlock                "CNI"
+          SrcPort                 1
+          Points                  [15, 0]
+          DstBlock                "IDIV"
+          DstPort                 2
+          #GUID                   "e681f24e-6c70-4afc-9adf-2a53005d516f"
+        }
+        Line {
+          SrcBlock                "IDIV"
+          SrcPort                 1
+          Points                  [45, 0]
+          #GUID                   "190ecaa4-cca4-45ba-9466-12ac450fd52f"
+          Branch {
+            Points                  [0, 70]
+            DstBlock                "SHLD"
+            DstPort                 1
+            #GUID                   "9f6553fe-9b31-40cb-8002-1594597874d3"
+          }
+          Branch {
+            DstBlock                "SUB"
+            DstPort                 1
+            #GUID                   "29bb3aca-dba4-4702-9527-433c0dd04e39"
+          }
+        }
+        Line {
+          SrcBlock                "RTOI"
+          SrcPort                 1
+          DstBlock                "iy"
+          DstPort                 1
+          #GUID                   "2969cd89-a462-4284-83eb-8eafa69573bd"
+        }
+        Line {
+          SrcBlock                "SHLD"
+          SrcPort                 1
+          Points                  [55, 0]
+          DstBlock                "SUB"
+          DstPort                 2
+          #GUID                   "7d9af3fc-90e2-44d2-ad99-013865831ad0"
+        }
+        Line {
+          SrcBlock                "SUB"
+          SrcPort                 1
+          DstBlock                "RTOI"
+          DstPort                 1
+          #GUID                   "afcbc935-2aa1-4c26-a5c8-0c26bdc3fe8b"
+        }
+        Line {
+          SrcBlock                "TS"
+          SrcPort                 1
+          DstBlock                "IDIV"
+          DstPort                 1
+          #GUID                   "9dfb19f6-5ead-45c9-8fbf-d6e5004825c8"
+        }
+      }
+    }
+    Line {
+      SrcBlock                "CNE_MAV_SEVERITY"
+      SrcPort                 1
+      DstBlock                "Diagnostics"
+      DstPort                 3
+      #GUID                   "6d75324b-f14d-4906-88d2-5ff86c1f2567"
+    }
+  }
+}

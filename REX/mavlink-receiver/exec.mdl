@@ -1,0 +1,162 @@
+Model {
+  Name                    "exec"
+  Version                 3.00
+  #RexVersion             "2.52.0 rev. 15123, Date 2023-03-29"
+  ShowPortLabels          on
+  #RexVersion             "2.52.0 rev. 15123 - REXCONV, Date 2023-3-29"
+  ShowPortLabels          on
+  SavedCharacterEncoding  "UTF-8"
+  MaskType                "REX sequence"
+  MaskIconFrame           on
+  MaskIconOpaque          on
+  MaskIconRotate          "none"
+  MaskIconUnits           "autoscale"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "center"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "exec"
+    Location                [15, 33, 276, 376]
+    __ProjectState          "{\"runtime_mode\":0,\"simstepsinput_ticks\":1000,\"simstepsinput_time\":\"00:00:00.000\",\"simstepsinput_unit\":0,\"tabs\":{\"windows\":[{\"id\":\"tabs11\",\"tabs\":[{\"class\":\"mdl\",\"id\":\"exec.mdl\"},{\"class\":\"mdl\",\"id\":\"mavlink_task.mdl\"}]}]},\"watch_panel\":{\"signals\":[]}}"
+    #GUID                   "f5ffee10-7913-470f-b666-c0336984f207"
+    Block {
+      BlockType               Reference
+      Name                    "EXEC"
+      Ports                   [0, 8, 0, 0, 0]
+      Position                [20, 18, 65, 307]
+      SourceBlock             "execlib/EXEC"
+      target                  "Generic target device"
+      tick                    "0.001"
+      ntick0                  50
+      ntick1                  50
+      ntick2                  100
+      ntick3                  1200
+      pri0                    5
+      pri1                    9
+      pri2                    13
+      pri3                    18
+      FontSize                10
+      cpu0                    -1
+      cpu1                    -1
+      cpu2                    -1
+      cpu3                    -1
+      #GUID                   "e88142d9-7671-4c96-918e-1bb0de78c747"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "HMI"
+      Ports                   [0, 0, 0, 0, 0]
+      Position                [155, 288, 200, 307]
+      SourceBlock             "execlib/HMI"
+      IncludeHMI              on
+      HmiDir                  "hmi"
+      SourceDir               "hmisrc"
+      GenerateWebWatch        off
+      GenerateRexHMI          on
+      RedirectToHMI           on
+      Compression             on
+      FontSize                10
+      #GUID                   "f58855f6-4100-4d61-b9b9-e3af4915c029"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "INFO"
+      Ports                   [0, 0, 0, 0, 0]
+      Position                [95, 288, 140, 307]
+      SourceBlock             "execlib/INFO"
+      Title                   "MAVLink interface for program.py"
+      Author                  "UWB"
+      Description             ""
+      Customer                ""
+      FontSize                10
+      #GUID                   "0aefc810-2a74-4a49-91ff-910d213c9361"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MAV"
+      Ports                   [1, 2, 0, 0, 0]
+      Position                [105, 63, 155, 87]
+      SourceBlock             "execlib/TIODRV"
+      module                  "MAVLinkDrv"
+      classname               "MAVLinkDrv"
+      cfgname                 "MAVLink.rio"
+      factor                  1
+      stack                   10240
+      pri                     3
+      timer                   off
+      FontSize                10
+      cpu                     -1
+      #GUID                   "b5ae06e2-c2f8-4fd9-8bc0-b369097afaaf"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "PROJECT"
+      Ports                   [0, 0, 0, 0, 0]
+      Position                [215, 288, 260, 307]
+      SourceBlock             "execlib/PROJECT"
+      CompileParams           ""
+      SourcesOnTarget         off
+      TargetURL               "147.228.113.63"
+      LibraryPath             "../library"
+      PreBuild                ""
+      PostBuild               ""
+      FontSize                10
+      #GUID                   "dc42259b-b3fd-4d17-b5f8-fa4a350d6267"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "mavlink_task"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [110, 173, 160, 187]
+      SourceBlock             "execlib/TASK"
+      factor                  1
+      start                   0
+      stop                    1
+      stack                   10240
+      filename                ""
+      MDLOPEN                 on
+      FontSize                10
+      #GUID                   "21a473d0-a1e0-4d2b-abee-97f43c3a847a"
+    }
+    Line {
+      SrcBlock                "EXEC"
+      SrcPort                 2
+      DstBlock                "MAV"
+      DstPort                 1
+      #GUID                   "978caf82-d34a-45a3-8368-85a05016a172"
+    }
+    Line {
+      SrcBlock                "EXEC"
+      SrcPort                 5
+      DstBlock                "mavlink_task"
+      DstPort                 1
+      #GUID                   "5e5d094a-a6a9-4aab-8818-fa12bce77004"
+    }
+  }
+}
