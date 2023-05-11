@@ -22,7 +22,7 @@ pip3 install rx
 ```
 
 ** REXYGEN **
-Follow the guideline https://www.rexygen.com/getting-started-with-industrial-pc/)
+Follow the guideline https://www.rexygen.com/getting-started-with-industrial-pc/
 
 ** Optional dependencies **
 ```bash
@@ -51,7 +51,7 @@ Copy the `scripts/aruco-detector.service` file to `/etc/systemd/system`
 ```bash
 ln -s /rex/scripts/drone-port/scripts/aruco-detector.service /etc/systemd/
 ```
-See (https://github.com/torfsen/python-systemd-tutorial)
+See https://github.com/torfsen/python-systemd-tutorial
 
 
 Start the service
