@@ -1,0 +1,59 @@
+/* GENERAL
+* Version 2.52.0-15123
+* Created 2023-03-29 19:03
+*/
+/*Fix for Slim Select component for RPi browser*/
+.rex__select .ss-single-selected{
+    height: 100%;
+}
+.rex__div--datetime{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.rex__div--datetime input{
+    flex: 1;
+}
+
+.rex__div--datetime input:first-child{
+    flex: 2;
+}
+
+.rex__module-input.ui-keyboard-preview{
+    text-align: left !important; 
+}
+
+.rex__module-input.ui-keyboard-preview-clone{
+    height: unset;
+}
+
+
+.rexhmi-ui-svg-simplelogger .logger-value{
+    margin-right: .2em;
+}
+.rexhmi-ui-svg-simplelogger .logger-timestamp{
+    font-weight: 700;
+    margin-right: .2em;
+}
+
+/* Zmena velikosti klikaciho pole */
+.SwitchOnOff2 .mdc-switch__knob::before {
+    height: 24px;
+    width: 24px;
+    top: -2px;
+    left: -2px;
+}
+
+.SwitchOnOff2 .mdc-switch__native-control:focus ~ .mdc-switch__background .mdc-switch__knob::before {
+    height: 24px;
+    width: 24px;
+    top: -2px;
+    left: -2px;
+}
+
+.SwitchOnOff2 .mdc-switch__native-control{
+    height: 24px;
+    width: 24px;
+    top: -2px;
+    left: -2px;
+}

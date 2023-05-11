@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!-- REX HMI Template version=2.52.0-15123 -->
+
+<html class="mdc-typography">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate" />
+
+    <meta name="viewport" content="width=device-width">
+    <!-- Allow fullscreen on mobile platforms -->
+    <meta name="mobile-web-app-capable" content="yes"><!-- Chrome -->
+    <meta name="apple-mobile-web-app-capable" content="yes"><!-- iOS -->
+
+    <link rel="icon shortcut" sizes="any" href="images/favicon.ico">
+
+    <link rel="apple-touch-icon" href="/resources/images/homescreen-icon.png">
+    <link rel="icon" sizes="192x192" href="/resources/images/homescreen-icon.png">
+
+
+    <title>Camera calibration</title>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui/jquery-ui-1.12.1-custom.min.css">
+    <link rel="stylesheet" type="text/css" href="css/rex-hmi.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/rex-ui-svg-general.css">
+
+    <script type="text/javascript" src="js/rexhmi-vendor.min.js?version=2.52.0-15123"></script>
+    <script type="text/javascript" src="js/rexhmi.min.js?version=2.52.0-15123"></script>
+
+    <script type="text/javascript" src="js/rex-ui-svg-general.js"></script>
+
+</head>
+
+<body>
+    <script>
+        window.startTime = new Date();
+    </script>
+    <header id="header">
+        <a id="logo" href="/"></a>
+        <div id="header-title" class="header-title-with-info-and-hearth-beat">Camera calibration</div>
+        <time id="heart-beat-clock" class="current-time" style="display:none">XX:XX:XX</time>
+        <div id="heart-beat"></div>
+        <div id="info-btn" class="">
+            <div id="log-error-counter" class="">0</div>
+            <div id="alarms-error-counter" class="">0</div>
+        </div>
+    </header>
+    <div id="main-block">
+        <aside id="info" class="">
+            <div id="controls">
+                <table class="table-list">
+                    <tr>
+                        <td>User</td>
+                        <td class='info-whoami'>
+                            <span class="whoami">XXXXX</span>&nbsp;
+                            <form id="info-logout" action="/logout" method="POST">
+                                (<button type="submit">logout</button>)
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Version</td>
+                        <td class="info-version">X.X.X-XXXX</td>
+                    </tr>
+                    <tr>
+                        <td>Target time</td>
+                        <td class="current-time">XX:XX:XX</td>
+                    </tr>
+                    <tr>
+                        <td>Refresh rate</td>
+                        <td>
+                            <div class="mdc-text-field mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                                <input type="text" id="target-refresh-rate" class="mdc-text-field__input">
+                                <div class="mdc-text-field__bottom-line"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>
+                            <div class="mdc-text-field mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                                <input type="text" id="target-url" class="mdc-text-field__input">
+                                <div class="mdc-text-field__bottom-line"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Virtual keyboard</td>
+                        <td>
+                            <div class="mdc-checkbox mdc-checkbox--primary">
+                                <input type="checkbox" id="virtual-keyboard" name="virtual-keyboard"
+                                    class="mdc-checkbox__native-control">
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark__path" fill="none" stroke="white"
+                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="log">
+                <table></table>
+            </div>
+        </aside>
+        <main id="content" class="">
+            <div class="rex__loading-screen">
+                <div class="spinner"></div>
+            </div>
+            <!-- BEGIN OF CUSTOM CONTENT -->
+			<div class="rexsvg-wrapper">
+			<!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:rexsvg="http://www.rexcontrols.com/rexsvg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="0.92.3 (604f7c89c2, 2020-03-02, custom)" sodipodi:docname="index.hmi.svg" id="svg8-ad4a8" version="1.1" viewBox="0 0 1246 800" class="rexsvg" rexsvg:module="REXSVG"><defs id="defs2-ad4a8"><linearGradient gradientTransform="translate(-2.500022,-2.5000088)" inkscape:collect="always" xlink:href="#linearGradient2122-ad4a8" id="linearGradient1294-ad4a8" gradientUnits="userSpaceOnUse" x1="12.505092" y1="12.065967" x2="1238.5" y2="792.5"/><linearGradient id="linearGradient2122-ad4a8" gradientUnits="userSpaceOnUse" x1="9.2475996" y1="-7.875" x2="71.097" y2="27.8286"><stop offset="0.4" style="stop-color:#0074C5" id="stop864-8-ad4a8"/><stop offset="0.95" style="stop-color:#00C8B4" id="stop866-0-ad4a8"/></linearGradient><linearGradient id="color_1_-ad4a8" gradientUnits="userSpaceOnUse" x1="145.2793" y1="1264.2607" x2="169.49741" y2="1202.1613" gradientTransform="matrix(0.9317,-0.3633,0.3633,0.9317,-542.7952,-1040.2336)"><stop offset="0" style="stop-color:#FCFDFD" id="stop2-ad4a8"/><stop offset="1" style="stop-color:#CCD1D9" id="stop4-ad4a8"/></linearGradient><linearGradient id="color_3_-ad4a8" gradientUnits="userSpaceOnUse" x1="149.08591" y1="1252.4082" x2="172.9438" y2="1191.2324" gradientTransform="matrix(0.9317,-0.3633,0.3633,0.9317,-542.7952,-1040.2336)"><stop offset="0" style="stop-color:#90959D" id="stop8-ad4a8"/><stop offset="0.1597" style="stop-color:#999EA5" id="stop10-ad4a8"/><stop offset="0.42" style="stop-color:#B1B5BB" id="stop12-ad4a8"/><stop offset="0.7467" style="stop-color:#D9DBDE" id="stop14-ad4a8"/><stop offset="1" style="stop-color:#FCFDFD" id="stop16-ad4a8"/></linearGradient></defs><sodipodi:namedview id="base-ad4a8" pagecolor="#eef1f0" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:zoom="2.0238583" inkscape:cx="321.54619" inkscape:cy="393.58565" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" units="px" inkscape:window-width="2472" inkscape:window-height="1417" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1"/><metadata id="metadata5-ad4a8"><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/><dc:identifier>Created in REXYGEN HMI Designer</dc:identifier></cc:Work></rdf:RDF></metadata><g sodipodi:insensitive="true" transform="translate(0,-85)" height="80" width="200" id="HMIConfig-ad4a8" rexsvg:rexversion="2.50.10-12174" rexsvg:version="15" rexsvg:module="HMIConfig" rexsvg:title="HMIConfig"><rect y="0" x="0" style="fill:#ffffff;stroke:url(#lg-hmic982-ad4a8);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect3041-ad4a8" ry="3" rx="3" height="80" width="200"/><defs id="defs35174-ad4a8"><linearGradient id="lg-hmic_7_-ad4a8" gradientUnits="userSpaceOnUse" x1="24.419901" y1="-34.1563" x2="86.271103" y2="1.5484"><stop offset="0.4" style="stop-color:#0074C5" id="stop906-ad4a8"/><stop offset="0.95" style="stop-color:#00C8B4" id="stop908-ad4a8"/></linearGradient><linearGradient id="lg-hmic_6_-ad4a8" gradientUnits="userSpaceOnUse" x1="21.861799" y1="-29.750999" x2="83.723198" y2="5.9594998"><stop offset="0.4" style="stop-color:#0074C5" id="stop899-ad4a8"/><stop offset="0.95" style="stop-color:#00C8B4" id="stop901-ad4a8"/></linearGradient><linearGradient id="lg-hmic_5_-ad4a8" gradientUnits="userSpaceOnUse" x1="19.434601" y1="-25.5215" x2="81.286201" y2="10.1834"><stop offset="0.4" style="stop-color:#0074C5" id="stop892-ad4a8"/><stop offset="0.95" style="stop-color:#00C8B4" id="stop894-ad4a8"/></linearGradient><linearGradient id="lg-hmic_4_-ad4a8" gradientUnits="userSpaceOnUse" x1="17.3594" y1="-21.935499" x2="79.214401" y2="13.7713"><stop offset="0.4" style="stop-color:#0074C5" id="stop885-ad4a8"/><stop offset="0.95" style="stop-color:#00C8B4" id="stop887-ad4a8"/></linearGradient><linearGradient id="lg-hmic_3_-ad4a8" gradientUnits="userSpaceOnUse" x1="14.4985" y1="-16.971201" x2="76.349602" y2="18.733299"><stop offset="0.4" style="stop-color:#0074C5" id="stop878-ad4a8"/><stop offset="0.95" style="stop-color:#00C8B4" id="stop880-ad4a8"/></linearGradient><linearGradient id="lg-hmic_2_-ad4a8" gradientUnits="userSpaceOnUse" x1="12.0518" y1="-12.7388" x2="73.905602" y2="22.9674"><stop offset="0.4" style="stop-color:#0074C5" id="stop871-ad4a8"/><stop offset="0.95" style="stop-color:#00C8B4" id="stop873-ad4a8"/></linearGradient><linearGradient id="lg-hmic_1_-ad4a8" gradientUnits="userSpaceOnUse" x1="9.2475996" y1="-7.875" x2="71.097" y2="27.8286"><stop offset="0.4" style="stop-color:#0074C5" id="stop864-ad4a8"/><stop offset="0.95" style="stop-color:#00C8B4" id="stop866-ad4a8"/></linearGradient><linearGradient gradientUnits="userSpaceOnUse" y2="40" x2="200.177" y1="40" x1="-0.177" id="lg-hmic982-ad4a8" xlink:href="#lg-hmic_1_-ad4a8" inkscape:collect="always" gradientTransform="translate(0,14.5)"/><linearGradient y2="27.8286" x2="71.097" y1="-7.875" x1="9.2475996" gradientUnits="userSpaceOnUse" id="lg-hmic984-ad4a8" xlink:href="#lg-hmic_1_-ad4a8" inkscape:collect="always"/></defs><desc id="desc3016-ad4a8">{
+			"connections":[
+			{
+			"alias":"no_of_images",
+			"cstring":"python_out_task:y1",
+			"type":"R"
+			},
+			{
+			"alias":"state",
+			"cstring":"python_out_task:y0",
+			"type":"R"
+			},
+			{
+			"alias":"CALIBRATE",
+			"cstring":"python_in_task.MP_CALIBRATE:BSTATE",
+			"type":"W"
+			},
+			{
+			"alias":"ENABLE",
+			"cstring":"python_in_task.CNB_ENABLE:YCN",
+			"type":"W"
+			},
+			{
+			"alias":"RESET",
+			"cstring":"python_in_task.MP_RESET:BSTATE",
+			"type":"W"
+			},
+			{
+			"alias":"SAVE",
+			"cstring":"python_in_task.MP_SAVE:BSTATE",
+			"type":"W"
+			}
+			],
+			"options":{
+			"header_mode":"",
+			"kiosk_mode":"False",
+			"log_level":"",
+			"refresh_rate":"",
+			"show_clock":"False",
+			"target_url":"",
+			"use_client_time":"False"
+			}
+			}</desc><g id="g883-ad4a8"><text id="text3037-ad4a8" y="2" xml:space="preserve"><tspan x="99" y="65" id="tspan3039-ad4a8" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18px;font-family:Montserrat;-inkscape-font-specification:Montserrat;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#545e6f;fill-opacity:1">HMI Config</tspan></text><g id="rexygen-logo-ad4a8" transform="matrix(1.6877637,0,0,1.6877637,15.611815,15.165)" style="stroke-width:0.55555552"><g id="g913-ad4a8" style="stroke-width:0.55555552"><path id="path869-ad4a8" d="m 36.293,9.011 h -0.069 -1.87 V 11.74 H 31.889 V 2.045 h 4.334 c 2.562,0 4.03,1.219 4.03,3.379 0,1.482 -0.624,2.549 -1.759,3.116 l 2.036,3.199 H 37.732 Z M 36.224,7.072 c 1.066,0 1.69,-0.54 1.69,-1.565 0,-1.011 -0.624,-1.523 -1.69,-1.523 h -1.87 v 3.089 h 1.87 z" inkscape:connector-curvature="0" style="fill:url(#lg-hmic984-ad4a8);stroke-width:0.55555552"/><path id="path876-ad4a8" d="m 44.729,3.983 v 1.926 h 4.626 V 7.847 H 44.729 V 9.8 h 5.276 v 1.939 H 42.264 V 2.045 h 7.588 v 1.938 z" inkscape:connector-curvature="0" style="fill:url(#lg-hmic_2_-ad4a8);stroke-width:0.55555552"/><path id="path883-ad4a8" d="M 60.975,11.739 H 58.026 L 55.935,8.65 53.844,11.739 H 50.977 L 54.439,6.781 51.198,2.045 h 2.867 l 1.87,2.825 1.869,-2.825 h 2.895 l -3.2,4.625 z" inkscape:connector-curvature="0" style="fill:url(#lg-hmic_3_-ad4a8);stroke-width:0.55555552"/><path id="path890-ad4a8" d="M 66.766,11.739 H 64.315 V 8.679 L 60.728,2.045 h 2.466 l 2.34,4.224 2.284,-4.224 h 2.466 l -3.518,6.564 z" inkscape:connector-curvature="0" style="fill:url(#lg-hmic_4_-ad4a8);stroke-width:0.55555552"/><path id="path897-ad4a8" d="m 79.479,6.809 v 3.781 c -1.038,0.733 -2.673,1.26 -4.03,1.26 -2.949,0 -5.179,-2.133 -5.179,-4.958 0,-2.812 2.285,-4.931 5.346,-4.931 1.44,0 2.963,0.555 3.961,1.441 l -1.385,1.676 c -0.707,-0.651 -1.69,-1.053 -2.59,-1.053 -1.593,0 -2.812,1.246 -2.812,2.866 0,1.648 1.232,2.895 2.839,2.895 0.499,0 1.136,-0.18 1.717,-0.471 V 6.809 Z" inkscape:connector-curvature="0" style="fill:url(#lg-hmic_5_-ad4a8);stroke-width:0.55555552"/><path id="path904-ad4a8" d="m 84.011,3.983 v 1.926 h 4.625 V 7.847 H 84.011 V 9.8 h 5.276 v 1.939 H 81.545 V 2.045 h 7.589 v 1.938 z" inkscape:connector-curvature="0" style="fill:url(#lg-hmic_6_-ad4a8);stroke-width:0.55555552"/><path id="path911-ad4a8" d="M 97.827,11.739 93.367,5.77 v 5.969 H 91.054 V 2.045 h 2.174 l 4.474,5.982 V 2.045 H 100 v 9.694 z" inkscape:connector-curvature="0" style="fill:url(#lg-hmic_7_-ad4a8);stroke-width:0.55555552"/></g><g id="g925-ad4a8" style="stroke-width:0.55555552"><path id="path915-ad4a8" d="m 14.364,0.285 -2.335,1.759 c 0.158,0.241 0.314,0.483 0.466,0.727 0.683,1.093 1.309,2.21 1.869,3.284 0.563,-1.084 1.194,-2.211 1.883,-3.313 0.146,-0.234 0.298,-0.466 0.45,-0.698 z" inkscape:connector-curvature="0" style="fill:#0074c5;stroke-width:0.55555552"/><path id="path917-ad4a8" d="M 2.712,0 0,2.044 c 1.237,1.475 2.938,3.623 4.298,5.798 0.813,1.303 1.534,2.663 2.133,3.896 h 3.747 C 9.436,10.094 8.41,8.025 7.173,6.046 5.746,3.763 4.01,1.554 2.712,0 Z" inkscape:connector-curvature="0" style="fill:#0074c5;stroke-width:0.55555552"/><path id="path919-ad4a8" d="m 8.871,0.006 -2.708,2.04 c 0.761,1.021 1.533,2.118 2.231,3.236 1.429,2.286 2.583,4.686 3.36,6.456 h 3.682 C 14.665,9.862 13.202,6.578 11.27,3.485 10.518,2.282 9.688,1.1 8.871,0.006 Z" inkscape:connector-curvature="0" style="fill:#0074c5;stroke-width:0.55555552"/><path id="path921-ad4a8" d="m 26.006,0 c -1.295,1.552 -3.018,3.748 -4.436,6.017 -1.245,1.991 -2.275,4.072 -3.019,5.722 h 3.746 c 0.602,-1.241 1.328,-2.613 2.148,-3.926 1.349,-2.16 3.037,-4.294 4.272,-5.769 z" inkscape:connector-curvature="0" style="fill:#0074c5;stroke-width:0.55555552"/><path id="path923-ad4a8" d="m 19.852,0.003 c -0.81,1.087 -1.633,2.259 -2.379,3.453 -0.876,1.401 -1.655,2.843 -2.317,4.175 0.818,1.688 1.439,3.161 1.819,4.109 0.777,-1.774 1.937,-4.188 3.373,-6.487 0.692,-1.108 1.457,-2.196 2.211,-3.21 z" inkscape:connector-curvature="0" style="fill:#0074c5;stroke-width:0.55555552"/></g></g></g></g><g inkscape:groupmode="layer" id="background-layer-ad4a8" inkscape:label="background" sodipodi:insensitive="true"><rect rx="3" ry="3" y="10" x="10" height="780" width="1226" id="backgroud-ad4a8" style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient1294-ad4a8);stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"/></g><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1-ad4a8"><g rexsvg:update="Partial" transform="matrix(4.697318,0,0,2.6972129,10,10)" id="ImageChanger-ad4a8" rexsvg:module="ImageChanger" rexsvg:version="13" rexsvg:filename="ImageChanger.svg" style="stroke-width:0.59660584" rexsvg:title="Preview"><desc id="desc3795-ad4a8">{
+			"connections":{},
+			"options":{
+			"$T":"Preview",
+			"appendKey":"False",
+			"imagePath":"/opencv/preview.png",
+			"period":1000
+			}
+			}</desc><image y="0" x="0" id="image4264-ad4a8" xlink:href="data:image/png;base64,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 AAAAAElFTkSuQmCC " preserveAspectRatio="none" height="261" width="261" rexsvg:tag="image" style="stroke-width:0.59660584"/></g><g rexsvg:filename="Button.svg" rexsvg:version="15" rexsvg:module="Button" transform="matrix(1.3966131,0,0,1.3966131,21.395463,722.07672)" id="Button-ad4a8" rexsvg:title="ENABLE"><desc id="desc3795-5-ad4a8">{
+			"connections":{
+			"value":"ENABLE"
+			},
+			"options":{
+			"$T":"ENABLE",
+			"colorFalse":"#FFFFFF",
+			"colorTrue":"#00C8B4",
+			"fontScale":1,
+			"labelColorFalse":"#000000",
+			"labelColorTrue":"#FFFFFF",
+			"labelFalse":"ENABLE",
+			"labelTrue":"",
+			"reverseMeaning":"False",
+			"type":"ToggleButton",
+			"writePerm":[]
+			}
+			}</desc><rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect3010-ad4a8" width="92.869949" height="42.276619" x="0.00084454822" y="0"/><text style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:15.27504921px;font-family:Roboto;-inkscape-font-specification:'Roboto, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#0000ff" inkscape:label="#text3012" xml:space="preserve" x="46.150532" y="25.128874" id="Text-1-ad4a8"><tspan sodipodi:role="line" id="tspan3014-ad4a8" x="46.150532" y="25.128874">ENABLE</tspan></text></g><g rexsvg:filename="Button.svg" rexsvg:version="15" rexsvg:module="Button" transform="matrix(1.3966131,0,0,1.3966131,175.09885,722.07672)" id="Button-7-ad4a8" rexsvg:title="RESET"><desc id="desc3795-5-2-ad4a8">{
+			"connections":{
+			"value":"RESET"
+			},
+			"options":{
+			"$T":"RESET",
+			"colorFalse":"#FFFFFF",
+			"colorTrue":"#ffffff",
+			"fontScale":1,
+			"labelColorFalse":"#000000",
+			"labelColorTrue":"#FFFFFF",
+			"labelFalse":"RESET",
+			"labelTrue":"",
+			"reverseMeaning":"False",
+			"type":"ManualPulse",
+			"writePerm":[]
+			}
+			}</desc><rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect3010-2-ad4a8" width="92.869949" height="42.276619" x="0.00084454822" y="0"/><text style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:15.27504921px;font-family:Roboto;-inkscape-font-specification:'Roboto, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#0000ff" inkscape:label="#text3012" xml:space="preserve" x="46.150532" y="25.128874" id="Text-1-2-ad4a8"><tspan sodipodi:role="line" id="tspan3014-3-ad4a8" x="46.150532" y="25.128874">RESET</tspan></text></g><g rexsvg:filename="Button.svg" rexsvg:version="15" rexsvg:module="Button" transform="matrix(1.3966131,0,0,1.3966131,471.95089,722.07672)" id="Button-7-8-ad4a8" rexsvg:title="SAVE"><desc id="desc3795-5-2-2-ad4a8">{
+			"connections":{
+			"value":"SAVE"
+			},
+			"options":{
+			"$T":"SAVE",
+			"colorFalse":"#FFFFFF",
+			"colorTrue":"#ffffff",
+			"fontScale":1,
+			"labelColorFalse":"#000000",
+			"labelColorTrue":"#FFFFFF",
+			"labelFalse":"SAVE",
+			"labelTrue":"",
+			"reverseMeaning":"False",
+			"type":"ManualPulse",
+			"writePerm":[]
+			}
+			}</desc><rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect3010-2-6-ad4a8" width="92.869949" height="42.276619" x="0.00084454822" y="0"/><text style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:15.27504921px;font-family:Roboto;-inkscape-font-specification:'Roboto, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#0000ff" inkscape:label="#text3012" xml:space="preserve" x="46.150532" y="25.128874" id="Text-1-2-6-ad4a8"><tspan sodipodi:role="line" id="tspan3014-3-8-ad4a8" x="46.150532" y="25.128874">SAVE</tspan></text></g><g rexsvg:filename="Button.svg" rexsvg:version="15" rexsvg:module="Button" transform="matrix(1.3966131,0,0,1.3966131,935.72014,722.07672)" id="Button-7-8-9-ad4a8" rexsvg:title="CALIBRATE"><desc id="desc3795-5-2-2-9-ad4a8">{
+			"connections":{
+			"value":"CALIBRATE"
+			},
+			"options":{
+			"$T":"CALIBRATE",
+			"colorFalse":"#FFFFFF",
+			"colorTrue":"#ffffff",
+			"fontScale":1,
+			"labelColorFalse":"#000000",
+			"labelColorTrue":"#FFFFFF",
+			"labelFalse":"CALIBRATE",
+			"labelTrue":"",
+			"reverseMeaning":"False",
+			"type":"ManualPulse",
+			"writePerm":[]
+			}
+			}</desc><rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect3010-2-6-7-ad4a8" width="92.869949" height="42.276619" x="0.00084454822" y="0"/><text style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:15.27504921px;font-family:Roboto;-inkscape-font-specification:'Roboto, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#0000ff" inkscape:label="#text3012" xml:space="preserve" x="46.150532" y="25.128874" id="Text-1-2-6-2-ad4a8"><tspan sodipodi:role="line" id="tspan3014-3-8-1-ad4a8" x="46.150532" y="25.128874">CALIBRATE</tspan></text></g><g rexsvg:filename="LedLabel.svg" id="LedLabel-ad4a8" rexsvg:version="14" rexsvg:module="LedLabel" transform="matrix(2.3618011,0,0,1.9811112,1089.6982,720.89153)" style="stroke-width:0.46230003" rexsvg:title="state"><desc id="desc9-ad4a8">{
+			"connections":{
+			"value":"state"
+			},
+			"options":{
+			"$T":"state",
+			"values":[
+			{
+			"color":"",
+			"fill":"#f6a312",
+			"label":"NOT READY",
+			"stroke":"",
+			"value":0
+			},
+			{
+			"color":"",
+			"fill":"#46B281",
+			"label":"DONE",
+			"stroke":"",
+			"value":1
+			},
+			{
+			"color":"",
+			"fill":"#df2626",
+			"label":"ERROR",
+			"stroke":"",
+			"value":-1.0
+			}
+			]
+			}
+			}</desc><rect rx="1.2702171" rexsvg:tag="led" ry="1.5143017" y="0.5" x="0.5" height="30" width="55" id="rect4037-ad4a8" style="fill:#b6bab7;fill-opacity:1;stroke:#000000;stroke-width:0.46230003;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/><text id="text4039-ad4a8" y="18.567553" x="27.975586" style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.46230003" xml:space="preserve"><tspan rexsvg:tag="label" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.62960052px;line-height:100%;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.46230003" y="18.567553" x="27.975586" sodipodi:role="line" id="tspan4041-ad4a8">NOT READY</tspan></text></g><g id="g957-ad4a8" transform="translate(0,4)"><g transform="matrix(0.62428573,0,0,0.62428573,804.50513,715.74071)" rexsvg:module="Display" rexsvg:version="12" id="Display-ad4a8" rexsvg:filename="Display.svg" rexsvg:title="no_of_images"><desc id="desc3186-ad4a8">{
+			"connections":{
+			"value":"no_of_images"
+			},
+			"options":{
+			"$T":"no_of_images",
+			"color":"#000000",
+			"colorAbove":"#ff0000",
+			"colorBelow":"#0000ff",
+			"decimals":0,
+			"format":"number",
+			"offset":0,
+			"rangeMax":100000.0,
+			"rangeMin":0.0,
+			"scale":1,
+			"text_format":"",
+			"units":""
+			}
+			}</desc><text rexsvg:tag="display" y="65" x="110" id="display-ad4a8" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.85125732px;line-height:0%;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle"><tspan id="tspan2986-ad4a8">XXX</tspan></text></g><text id="text841-ad4a8" y="754.96204" x="835.11743" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66666698px;line-height:25px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve"><tspan style="font-size:26.66666603px;text-align:end;text-anchor:end" y="754.96204" x="835.11743" id="tspan839-ad4a8" sodipodi:role="line">No of saved images:</tspan></text></g><a id="a118-ad4a8" xlink:href="/hmi/mobile.html"><text id="text114-ad4a8" y="746.96857" x="321.41565" style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.66666698px;line-height:25px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" xml:space="preserve"><tspan style="font-size:26.66666603px" y="746.96857" x="321.41565" id="tspan112-ad4a8" sodipodi:role="line">Go to mobile</tspan><tspan id="tspan116-ad4a8" style="font-size:26.66666603px" y="775.96857" x="321.41565" sodipodi:role="line">site ...</tspan></text></a></g></svg>
+			</div>
+
+            <!-- END OF CUSTOM CONTENT -->
+        </main>
+        <script type="text/javascript" data-mdc="MDC init script">
+            window.mdc.autoInit();
+        </script>
+    </div>
+</body>
+
+</html>

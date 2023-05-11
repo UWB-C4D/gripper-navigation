@@ -1,0 +1,80 @@
+Model {
+  Name                    "python_out_task"
+  Version                 3.00
+  #RexVersion             "2.52.0 rev. 15123 - REXCONV, Date 2023-3-29"
+  SavedCharacterEncoding  "UTF-8"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "left"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "python_out_task"
+    ZoomFactor              90
+    Location                [258, 570, 470, 725]
+    #GUID                   39f76f42-6e8d-4e59-a416-00b29e002066
+    Block {
+      BlockType               Inport
+      Name                    "y0"
+      Position                [20, 18, 50, 32]
+      Port                    1
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   ba8fd567-051d-4e65-8bcf-5c45e573def0
+    }
+    Block {
+      BlockType               Inport
+      Name                    "y1"
+      Position                [20, 53, 50, 67]
+      Port                    2
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   7d983354-dab9-4590-8b8a-60168a577c8d
+    }
+    Block {
+      BlockType               Reference
+      Name                    "GAIN"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [75, 18, 100, 32]
+      SourceBlock             "mathlib/GAIN"
+      k                       1
+      #GUID                   2adac77b-997d-4035-a626-8c7bd01dd216
+    }
+    Annotation {
+      Position                [20, 95]
+      Text                    "The internal webserver will not be blocked\nif "
+"data are written from HMI inside this task and\nafter communicated to long las"
+"ti task\nsuch as python_navigation_task"
+      HorizontalAlignment     "left"
+      VerticalAlignment       "top"
+      FontSize                10
+      #GUID                   3bd39623-6088-4308-9cf6-fde659270a30
+    }
+  }
+}

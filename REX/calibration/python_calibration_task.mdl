@@ -1,0 +1,417 @@
+Model {
+  Name                    "python_calibration_task"
+  Version                 3.00
+  #RexVersion             "2.52.0 rev. 15123 - REXCONV, Date 2023-3-29"
+  ShowPortLabels          on
+  SavedCharacterEncoding  "UTF-8"
+  MaskType                "REX sequence"
+  MaskIconFrame           on
+  MaskIconOpaque          on
+  MaskIconRotate          "none"
+  MaskIconUnits           "autoscale"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "left"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "python_calibration_task"
+    Location                [418, 37, 1322, 516]
+    #GUID                   39f76f42-6e8d-4e59-a416-00b29e002066
+    Block {
+      BlockType               Inport
+      Name                    "RESET"
+      Position                [115, 83, 145, 97]
+      Port                    1
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   b594d7a2-a22f-4686-8922-bbc5d11ba9c9
+    }
+    Block {
+      BlockType               Inport
+      Name                    "ENABLE"
+      Position                [590, 78, 620, 92]
+      Port                    2
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   36a17e23-1fb4-48c0-a869-ac8cd3511174
+    }
+    Block {
+      BlockType               Inport
+      Name                    "SAVE"
+      Position                [540, 198, 570, 212]
+      Port                    3
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   eeedde80-c696-40db-9a6b-68ffe74df7c7
+    }
+    Block {
+      BlockType               Inport
+      Name                    "CALIBRATE"
+      Position                [590, 218, 620, 232]
+      Port                    4
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   a9cf1221-d4e7-46a5-bd52-f56372c46469
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNE_resolution"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [40, 178, 115, 192]
+      SourceBlock             "mathlib/CNE"
+      yenum                   "4: 1920x1080"
+      pupstr                  "0: 640x480|1: 800x600|2: 1280x720|3: 1280x960|4: 1920x1080|5: 2592x1944"
+      FontSize                10
+      #GUID                   f4ba7089-2de4-4fc7-8cfb-289248e5bf19
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNI_squaresX"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [370, 98, 390, 112]
+      SourceBlock             "mathlib/CNI"
+      icn                     6
+      FontSize                10
+      #GUID                   64558963-e7f7-46b8-891d-5c671f0a40b7
+       vtype    "4: Long (I32)"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNI_squaresY"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [425, 118, 445, 132]
+      SourceBlock             "mathlib/CNI"
+      icn                     6
+      FontSize                10
+      #GUID                   47791eff-fc0f-43cc-973b-9add7777e358
+       vtype    "4: Long (I32)"
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNR_markerLength_m"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [555, 158, 590, 172]
+      SourceBlock             "mathlib/CNR"
+      ycn                     "0.055"
+      FontSize                10
+      #GUID                   dad7be02-34be-4d06-a696-57e9b932019b
+    }
+    Block {
+      BlockType               Reference
+      Name                    "CNR_squareLength_m"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [475, 138, 510, 152]
+      SourceBlock             "mathlib/CNR"
+      ycn                     "0.075"
+      FontSize                10
+      #GUID                   b4cc68e9-8148-4702-81c7-26650ab36fd4
+    }
+    Block {
+      BlockType               SubSystem
+      Name                    "DIF_pulse"
+      Ports                   [1, 1, 0, 0, 0]
+      Position                [210, 106, 245, 124]
+      FontSize                10
+      ShowPortLabels          on
+      MaskType                "REX sequence"
+      #MaskTypeString         "double"
+      MaskPromptString        ""
+      MaskStyleString         "edit"
+      MaskTunableValueString  on
+      MaskEnableString        on
+      MaskVisibilityString    on
+      MaskVariables           "pwidth=@1"
+      MaskIconFrame           on
+      MaskIconOpaque          on
+      MaskIconRotate          "none"
+      MaskIconUnits           "autoscale"
+      MaskValueString         2
+      #GUID                   d51670c1-eacf-4d31-941a-7931f2f577af
+      System {
+        Name                    "DIF_pulse"
+        __CopyByReference       off
+        Location                [296, 319, 583, 430]
+        #GUID                   d51670c1-eacf-4d31-941a-7931f2f577af
+        Block {
+          BlockType               Inport
+          Name                    "u"
+          Position                [20, 23, 50, 37]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   ab99e2d1-19d9-4123-a5b5-787b956f6602
+        }
+        Block {
+          BlockType               Reference
+          Name                    "DIF_"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [70, 23, 95, 37]
+          SourceBlock             "mathlib/DIF"
+          ISSF                    on
+          FontSize                10
+          #GUID                   d3dd3d95-088b-4ed7-969c-83fa194aa81b
+        }
+        Block {
+          BlockType               Reference
+          Name                    "RTOI"
+          Ports                   [1, 1, 0, 0, 0]
+          Position                [120, 23, 145, 37]
+          SourceBlock             "mathlib/RTOI"
+          #GUID                   abadfd8c-03eb-4669-be42-f47c0aff7f7a
+       vtype    "4: Long (I32)"
+       SAT    "on"
+        }
+        Block {
+          BlockType               Reference
+          Name                    "TIMER_"
+          Ports                   [3, 3, 0, 0, 0]
+          Position                [170, 23, 210, 57]
+          SourceBlock             "logiclib/TIMER"
+          mode                    "1: Pulse generator"
+          pt                      "pwidth"
+          FontSize                10
+          #GUID                   9fdfb31d-3e04-43f9-aa31-5aa6cafc070a
+        }
+        Block {
+          BlockType               Outport
+          Name                    "Y"
+          Position                [235, 23, 265, 37]
+          Port                    1
+          OutDataTypeStr          "Inherit: auto"
+          FontSize                10
+          #GUID                   bd54600f-95d9-4bb3-833d-570311052607
+        }
+        Line {
+          SrcBlock                "DIF_"
+          SrcPort                 1
+          DstBlock                "RTOI"
+          DstPort                 1
+          #GUID                   015ea7a8-e084-4dbd-89f6-457ea723464e
+        }
+        Line {
+          SrcBlock                "RTOI"
+          SrcPort                 1
+          DstBlock                "TIMER_"
+          DstPort                 1
+          #GUID                   5c115453-3ebd-4dbb-b410-f09d9ea56800
+        }
+        Line {
+          SrcBlock                "TIMER_"
+          SrcPort                 1
+          DstBlock                "Y"
+          DstPort                 1
+          #GUID                   ff4732e7-7cbc-4967-b255-4f42c34f7ffb
+        }
+        Line {
+          SrcBlock                "u"
+          SrcPort                 1
+          DstBlock                "DIF_"
+          DstPort                 1
+          #GUID                   e73b491e-552d-4783-97d4-451328544446
+        }
+        Annotation {
+          Position                [20, 80]
+          Text                    "Pri zmene vstupu se vygeneruje puls o delce pwidth"
+          HorizontalAlignment     "left"
+          VerticalAlignment       "top"
+          BackgroundColor         "white"
+          ForegroundColor         "black"
+          FontName                "Arial"
+          FontWeight              "normal"
+          FontAngle               "normal"
+          FontSize                10
+          #GUID                   1b970f3d-9891-44be-8f10-521b6e65c936
+        }
+      }
+    }
+    Block {
+      BlockType               Reference
+      Name                    "OR_"
+      Ports                   [2, 2, 0, 0, 0]
+      Position                [285, 98, 320, 122]
+      SourceBlock             "logiclib/OR"
+      #GUID                   4667aefa-bb4b-4ed6-b4fd-22efba57f683
+    }
+    Block {
+      BlockType               Reference
+      Name                    "PYTHON_CALIBRATION"
+      Ports                   [18, 18, 0, 0, 0]
+      Position                [670, 30, 750, 400]
+      SourceBlock             "langlib/PYTHON"
+      srcname                 "calibration.py"
+      p0                      "acA1920-40um_23512408.pfs"
+      p1                      ""
+      p2                      ""
+      p3                      ""
+      p4                      ""
+      p5                      ""
+      p6                      ""
+      p7                      ""
+      p8                      ""
+      p9                      ""
+      p10                     ""
+      p11                     ""
+      p12                     ""
+      p13                     ""
+      p14                     ""
+      p15                     ""
+      FontSize                10
+      #RTFlags                1025
+      embedded                on
+      BackgroundColor         "lightBlue"
+      #GUID                   750b8790-e1f4-48ae-ad84-8cebd4e4c806
+    }
+    Block {
+      BlockType               Outport
+      Name                    "y0"
+      Position                [840, 78, 870, 92]
+      Port                    1
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   92ff1095-6562-466e-b7fd-8251f2d0417a
+    }
+    Block {
+      BlockType               Outport
+      Name                    "y1"
+      Position                [795, 98, 825, 112]
+      Port                    2
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   c6d4bdf0-2f90-4af0-919a-4ca56e4e4fe5
+    }
+    Line {
+      SrcBlock                "CALIBRATE"
+      SrcPort                 1
+      DstBlock                "PYTHON_CALIBRATION"
+      DstPort                 10
+      #GUID                   bac8b290-7f78-427e-a97c-6b6a80551b7e
+    }
+    Line {
+      SrcBlock                "CNE_resolution"
+      SrcPort                 1
+      Points                  [55, 0]
+      #GUID                   ad603fc1-4f31-434c-a56b-5698273227d3
+      Branch {
+        Points                  [0, -70]
+        DstBlock                "DIF_pulse"
+        DstPort                 1
+        #GUID                   4c0ea440-095a-4abb-bff1-9176dc3a497f
+      }
+      Branch {
+        DstBlock                "PYTHON_CALIBRATION"
+        DstPort                 8
+        #GUID                   472f7ba5-ffcd-419a-9cc6-ad6edb1ab19f
+      }
+    }
+    Line {
+      SrcBlock                "CNI_squaresX"
+      SrcPort                 1
+      DstBlock                "PYTHON_CALIBRATION"
+      DstPort                 4
+      #GUID                   315fd0de-fe9f-47b0-a0d3-ca0796362095
+    }
+    Line {
+      SrcBlock                "CNI_squaresY"
+      SrcPort                 1
+      DstBlock                "PYTHON_CALIBRATION"
+      DstPort                 5
+      #GUID                   5ceb5df9-bf1e-463b-b73a-2083019c5f38
+    }
+    Line {
+      SrcBlock                "CNR_markerLength_m"
+      SrcPort                 1
+      DstBlock                "PYTHON_CALIBRATION"
+      DstPort                 7
+      #GUID                   7c252f70-c172-406a-bdbb-d9aec8034c32
+    }
+    Line {
+      SrcBlock                "CNR_squareLength_m"
+      SrcPort                 1
+      DstBlock                "PYTHON_CALIBRATION"
+      DstPort                 6
+      #GUID                   c7beb563-3a6f-4c4f-af87-5def2ef41b71
+    }
+    Line {
+      SrcBlock                "DIF_pulse"
+      SrcPort                 1
+      DstBlock                "OR_"
+      DstPort                 2
+      #GUID                   35dcfe98-7144-4c70-838a-a9dbea0a3e3e
+    }
+    Line {
+      SrcBlock                "ENABLE"
+      SrcPort                 1
+      DstBlock                "PYTHON_CALIBRATION"
+      DstPort                 3
+      #GUID                   7dd1b1cb-cc08-4eab-a26f-c5f1d5cbd257
+    }
+    Line {
+      SrcBlock                "OR_"
+      SrcPort                 1
+      Points                  [0, -40]
+      DstBlock                "PYTHON_CALIBRATION"
+      DstPort                 2
+      #GUID                   c3e2e925-c97f-4023-989a-88cd0aac2ad1
+    }
+    Line {
+      SrcBlock                "PYTHON_CALIBRATION"
+      SrcPort                 3
+      DstBlock                "y0"
+      DstPort                 1
+      #GUID                   771c0d83-4921-466f-a3c3-b1255cdb20ad
+    }
+    Line {
+      SrcBlock                "PYTHON_CALIBRATION"
+      SrcPort                 4
+      DstBlock                "y1"
+      DstPort                 1
+      #GUID                   b905eff4-8452-4117-839c-4c8c16d4c8aa
+    }
+    Line {
+      SrcBlock                "RESET"
+      SrcPort                 1
+      Points                  [120, 0]
+      DstBlock                "OR_"
+      DstPort                 1
+      #GUID                   3685a437-88ea-4719-a07e-a44f5db01dbe
+    }
+    Line {
+      SrcBlock                "SAVE"
+      SrcPort                 1
+      DstBlock                "PYTHON_CALIBRATION"
+      DstPort                 9
+      #GUID                   92dc08dc-606f-481b-93ab-58a1e0474f45
+    }
+  }
+}

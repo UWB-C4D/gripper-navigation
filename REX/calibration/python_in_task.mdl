@@ -1,0 +1,165 @@
+Model {
+  Name                    "python_in_task"
+  Version                 3.00
+  #RexVersion             "2.52.0 rev. 15123 - REXCONV, Date 2023-3-29"
+  SavedCharacterEncoding  "UTF-8"
+  BlockDefaults {
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    NamePlacement           "normal"
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+    ShowName                on
+    Orientation             "right"
+  }
+  AnnotationDefaults {
+    HorizontalAlignment     "left"
+    VerticalAlignment       "middle"
+    ForegroundColor         "black"
+    BackgroundColor         "white"
+    DropShadow              off
+    FontName                "Arial"
+    FontSize                10
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  LineDefaults {
+    FontName                "Arial"
+    FontSize                9
+    FontWeight              "normal"
+    FontAngle               "normal"
+  }
+  System {
+    Name                    "python_in_task"
+    ZoomFactor              90
+    Location                [8, 444, 233, 671]
+    #GUID                   39f76f42-6e8d-4e59-a416-00b29e002066
+    Block {
+      BlockType               Reference
+      Name                    "CNB_ENABLE"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [40, 23, 60, 37]
+      SourceBlock             "mathlib/CNB"
+      YCN                     on
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   7d25898d-12eb-4af2-b16d-a293452199dc
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MP_CALIBRATE"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [40, 143, 55, 157]
+      SourceBlock             "genlib/MP"
+      BSTATE                  off
+      pwidth                  "0.001"
+      RPTF                    off
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   5ea90386-afbb-4d3e-b586-1528bc86ac53
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MP_RESET"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [40, 63, 55, 77]
+      SourceBlock             "genlib/MP"
+      BSTATE                  off
+      pwidth                  "0.001"
+      RPTF                    off
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   f265a462-072e-444c-8981-9da2ba4ba7c2
+    }
+    Block {
+      BlockType               Reference
+      Name                    "MP_SAVE"
+      Ports                   [0, 1, 0, 0, 0]
+      Position                [40, 98, 55, 112]
+      SourceBlock             "genlib/MP"
+      BSTATE                  off
+      pwidth                  "0.001"
+      RPTF                    off
+      FontSize                10
+      BackgroundColor         "magenta"
+      #GUID                   fe04ff6c-795d-427d-b499-ffda2a281fa1
+    }
+    Block {
+      BlockType               Outport
+      Name                    "ENABLE"
+      Position                [105, 23, 135, 37]
+      Port                    1
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      #GUID                   44834f89-15b8-49ac-84fe-59cdc3104d99
+    }
+    Block {
+      BlockType               Outport
+      Name                    "RESET"
+      Position                [105, 63, 135, 77]
+      Port                    2
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      #GUID                   507ae1e8-e30c-4c96-9d9c-9024b1fed0df
+    }
+    Block {
+      BlockType               Outport
+      Name                    "SAVE"
+      Position                [105, 98, 135, 112]
+      Port                    3
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      #GUID                   2764986d-3188-46d4-a748-dc756a53f8d4
+    }
+    Block {
+      BlockType               Outport
+      Name                    "CALIBRATE"
+      Position                [105, 143, 135, 157]
+      Port                    4
+      OutDataTypeStr          "Inherit: auto"
+      FontSize                10
+      #GUID                   2f518c6a-6b6f-4fb1-8873-5db7e175c792
+    }
+    Line {
+      SrcBlock                "CNB_ENABLE"
+      SrcPort                 1
+      DstBlock                "ENABLE"
+      DstPort                 1
+      #GUID                   3a2ea5f5-707c-4506-976c-6d964f8c7f8c
+    }
+    Line {
+      SrcBlock                "MP_CALIBRATE"
+      SrcPort                 1
+      DstBlock                "CALIBRATE"
+      DstPort                 1
+      #GUID                   e237b82c-0bdd-4ed8-9092-29936ff48795
+    }
+    Line {
+      SrcBlock                "MP_RESET"
+      SrcPort                 1
+      DstBlock                "RESET"
+      DstPort                 1
+      #GUID                   0ac2c89d-b3f2-43c5-87fd-777bb525d83b
+    }
+    Line {
+      SrcBlock                "MP_SAVE"
+      SrcPort                 1
+      DstBlock                "SAVE"
+      DstPort                 1
+      #GUID                   303c8a9b-82b6-4c8e-9a68-383317f5f928
+    }
+    Annotation {
+      Position                [30, 180]
+      Text                    "The internal webserver will not be blocked\nif "
+"data are written from HMI inside this task and\nafter communicated to long las"
+"ti task\nsuch as python_navigation_task"
+      HorizontalAlignment     "left"
+      VerticalAlignment       "top"
+      FontSize                10
+      #GUID                   5e418b2f-0616-4e27-983b-f1de5f540bd3
+    }
+  }
+}

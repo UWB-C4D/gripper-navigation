@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- REX HMI Template version=2.52.0-15123 -->
+
+<html class="mdc-typography">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate" />
+
+    <meta name="viewport" content="width=device-width">
+    <!-- Allow fullscreen on mobile platforms -->
+    <meta name="mobile-web-app-capable" content="yes"><!-- Chrome -->
+    <meta name="apple-mobile-web-app-capable" content="yes"><!-- iOS -->
+
+    <link rel="icon shortcut" sizes="any" href="images/favicon.ico">
+
+    <link rel="apple-touch-icon" href="/resources/images/homescreen-icon.png">
+    <link rel="icon" sizes="192x192" href="/resources/images/homescreen-icon.png">
+
+
+    <title>
+        <!-- Title -->
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui/jquery-ui-1.12.1-custom.min.css">
+    <link rel="stylesheet" type="text/css" href="css/rex-hmi.min.css">
+
+    
+
+    <script type="text/javascript" src="js/rexhmi-vendor.min.js?version=2.52.0-15123"></script>
+    <script type="text/javascript" src="js/rexhmi.min.js?version=2.52.0-15123"></script>
+
+    <script type="text/javascript">
+        REX.HMI.init = function(){
+          
+          REX.WebBuDi.addSection({
+            column: 1,
+            title: 'Save image',
+            rows: [
+              {type: 'MP', alias: 'SAVE', cstring:"python_in_task.MP_SAVE:BSTATE", desc: 'Save image', label:"SAVE"},
+        	  {type: 'AR', alias: 'no_save_images', cstring:"python_out_task:y1", desc: 'No. of saved images'},      	  
+        	  {type: 'MP', alias: 'CALIBRATE', cstring:"python_in_task.MP_CALIBRATE:BSTATE"},
+        	  {type:'ALT', alias:"state", cstring:"python_out_task:y0",
+        		values:{"-1":"ERROR", "0":"NOT READY", "1":"DONE"}, show_key: false},
+        	  {type: 'MP', alias: 'RESET', cstring:"python_in_task.MP_RESET:BSTATE"}
+            ]
+          });
+        
+          // Change title of the page
+          REX.HMI.setTitle('Save calibration image');
+        }
+    </script>
+    
+
+</head>
+
+<body>
+    <script>
+        window.startTime = new Date();
+    </script>
+    <header id="header">
+        <a id="logo" href="/"></a>
+        <div id="header-title" class="header-title-with-info-and-hearth-beat">
+            <!-- Header-Title -->
+        </div>
+        <time id="heart-beat-clock" class="current-time" style="display:none">XX:XX:XX</time>
+        <div id="heart-beat"></div>
+        <div id="info-btn" class="">
+            <div id="log-error-counter" class="">0</div>
+            <div id="alarms-error-counter" class="">0</div>
+        </div>
+    </header>
+    <div id="main-block">
+        <aside id="info" class="">
+            <div id="controls">
+                <table class="table-list">
+                    <tr>
+                        <td>User</td>
+                        <td class='info-whoami'>
+                            <span class="whoami">XXXXX</span>&nbsp;
+                            <form id="info-logout" action="/logout" method="POST">
+                                (<button type="submit">logout</button>)
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Version</td>
+                        <td class="info-version">X.X.X-XXXX</td>
+                    </tr>
+                    <tr>
+                        <td>Target time</td>
+                        <td class="current-time">XX:XX:XX</td>
+                    </tr>
+                    <tr>
+                        <td>Refresh rate</td>
+                        <td>
+                            <div class="mdc-text-field mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                                <input type="text" id="target-refresh-rate" class="mdc-text-field__input">
+                                <div class="mdc-text-field__bottom-line"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>
+                            <div class="mdc-text-field mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+                                <input type="text" id="target-url" class="mdc-text-field__input">
+                                <div class="mdc-text-field__bottom-line"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Virtual keyboard</td>
+                        <td>
+                            <div class="mdc-checkbox mdc-checkbox--primary">
+                                <input type="checkbox" id="virtual-keyboard" name="virtual-keyboard"
+                                    class="mdc-checkbox__native-control">
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark__path" fill="none" stroke="white"
+                                            d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="log">
+                <table></table>
+            </div>
+        </aside>
+        <main id="content" class="">
+            <div class="rex__loading-screen">
+                <div class="spinner"></div>
+            </div>
+            <!-- BEGIN OF CUSTOM CONTENT -->
+            <!-- END OF CUSTOM CONTENT -->
+        </main>
+        <script type="text/javascript" data-mdc="MDC init script">
+            window.mdc.autoInit();
+        </script>
+    </div>
+</body>
+
+</html>
