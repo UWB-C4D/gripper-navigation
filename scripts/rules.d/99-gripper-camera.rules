@@ -1,0 +1,1 @@
+SUBSYSTEM=="video4linux", ATTR{name}=="SIT USB2.0 Camera: SIT USB2.0 C", ATTR{index}=="0", SYMLINK+="cam-gripper"
